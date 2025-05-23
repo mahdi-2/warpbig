@@ -24,7 +24,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "IRAN-🔵-1",
+      "tag": "IRAN-🔵-0",
       "detour": "IRAN-🔵-0",
       "local_address": [
         "172.16.0.2/32",
@@ -40,7 +40,7 @@
     },
     {
       "type": "wireguard",
-      "tag": "Germany-🟢-2",
+      "tag": "Germany-🟢-1",
       "detour": "IRAN-🔵-1",
       "local_address": [
         "172.16.0.2/32",
