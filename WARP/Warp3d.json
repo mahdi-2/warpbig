@@ -12,7 +12,7 @@
         "2606:4700:110:8a2a:a8dd:8c8d:3ebf:484a/128"
       ],
       "private_key": "GEx9GTjG5g4jCZJkEDZin4KCJsIGJyxh8qRZ9n/85GE=",
-      "server": "22.softmehr.ir",
+      "server": "ipw.nscl.ir",
       "server_port": 0,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "0R6o",
@@ -31,7 +31,7 @@
         "2606:4700:110:8e13:b741:5a3:7be8:400a/128"
       ],
       "private_key": "cNpSWvTxyOt7o2Ay8XcQ/SFF1mThoOtNTE3CGmT7dEU=",
-      "server": "489163.xyz",
+      "server": "bitcoin.org",
       "server_port": 0,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "ivoo",
