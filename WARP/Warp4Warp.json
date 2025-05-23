@@ -8,7 +8,7 @@
       "type": "wireguard",
       "tag": "IRAN-🔵-0",
       "local_address": [
-        "172.16.0.2/24",
+        "172.16.0.2/32",
         "2606:4700:110:8a2a:a8dd:8c8d:3ebf:484a/128"
       ],
       "private_key": "GEx9GTjG5g4jCZJkEDZin4KCJsIGJyxh8qRZ9n/85GE=",
@@ -16,9 +16,9 @@
       "server_port": 0,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "0R6o",
-      "mtu": 1230,
+      "mtu": 1500,
       "fake_packets": "1-3",
-      "fake_packets_size": "10-30",
+      "fake_packets_size": "10-40",
       "fake_packets_delay": "10-30",
       "fake_packets_mode": "m4"
     },
@@ -27,15 +27,15 @@
       "tag": "IRAN-🔵-1",
       "detour": "IRAN-🔵-0",
       "local_address": [
-        "172.16.0.2/24",
+        "172.16.0.2/32",
         "2606:4700:110:8e13:b741:5a3:7be8:400a/128"
       ],
       "private_key": "cNpSWvTxyOt7o2Ay8XcQ/SFF1mThoOtNTE3CGmT7dEU=",
-      "server": "bitcoin.org",
+      "server": "zula.ru",
       "server_port": 0,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "ivoo",
-      "mtu": 1250,
+      "mtu": 1212,
       "fake_packets_mode": "m4"
     },
     {
@@ -43,15 +43,15 @@
       "tag": "Germany-🟢-2",
       "detour": "IRAN-🔵-1",
       "local_address": [
-        "172.16.0.2/24",
+        "172.16.0.2/32",
         "2606:4700:110:87e5:24b4:31a5:bebb:baa8/128"
       ],
       "private_key": "IMR1LGVaFxg2gsW/6y1+0QZxgPTEZsjYoF9L+m99mkE=",
-      "server": "489163.xyz",
+      "server": "www.zula.ir",
       "server_port": 0,
       "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
       "reserved": "PtNh",
-      "mtu": 1250,
+      "mtu": 1208,
       "fake_packets_mode": "m4"
     }
   ]
