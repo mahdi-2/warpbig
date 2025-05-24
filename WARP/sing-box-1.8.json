@@ -1,4 +1,4 @@
-
+r
 {
   "log": {
     "disabled": false,
@@ -461,8 +461,8 @@
         34,
         78
       ],
-      "server": "188.114.97.208",
-      "server_port": 854,
+      "server": 2606:4700:d1:0::bc72:6034",
+      "server_port": 908,
       "type": "wireguard",
       "domain_strategy": "",
       "tag": "Warp-IR💙-8"
@@ -482,8 +482,8 @@
         23,
         127
       ],
-      "server": "188.114.97.208",
-      "server_port": 854,
+      "server": "2606:4700:d1:0::bc72:6034",
+      "server_port": 908,
       "type": "wireguard",
       "domain_strategy": "",
       "tag": "Warp-Main💚-8"
@@ -502,8 +502,8 @@
         24,
         147
       ],
-      "server": "188.114.96.8",
-      "server_port": 854,
+      "server": "2606:4700:d1:0::bc72:6107",
+      "server_port": 903,
       "type": "wireguard",
       "domain_strategy": "",
       "tag": "Warp-IR💙-9"
@@ -523,8 +523,8 @@
         6,
         207
       ],
-      "server": "188.114.96.8",
-      "server_port": 854,
+      "server": 2606:4700:d1:0::bc72:6036",
+      "server_port": 908,
       "type": "wireguard",
       "domain_strategy": "",
       "tag": "Warp-Main💚-9"
