@@ -1,4 +1,4 @@
-r
+
 {
   "log": {
     "disabled": false,
@@ -462,7 +462,7 @@ r
         78
       ],
       "server": 2606:4700:d1:0::bc72:6034",
-      "server_port": 908,
+      "server_port": 903,
       "type": "wireguard",
       "domain_strategy": "",
       "tag": "Warp-IR💙-8"
