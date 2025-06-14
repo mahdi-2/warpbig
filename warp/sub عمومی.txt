@@ -1,0 +1,1390 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: :9090
+dns:
+  enable: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies:
+  - {name: "@FREE2CONFIG", server: 57.129.34.115, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 2", server: 51.75.93.98, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 3", server: 57.129.92.12, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 4", server: 51.89.4.177, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 5", server: 141.95.104.3, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 6", server: 54.36.113.118, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 7", server: 57.129.57.142, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 8", server: 57.129.31.152, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 9", server: 146.59.15.81, port: 443, reality-opts: {public-key: l8HS4g_h8xPWlhQm8hmj5ohKNMrMCBcoHSNBFij79Sk, short-id: 5bb805}, client-fingerprint: chrome, type: vless, uuid: c14b2731-7db6-49ee-9271-b1efc56c2630, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 10", server: 57.129.34.86, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 11", server: 57.129.29.160, port: 2030, reality-opts: {public-key: YWfCdTnr4FAOMYTY2dLrMtQUokyxOGpPhYEEszPj20E, short-id: 7fe29733}, client-fingerprint: chrome, type: vless, uuid: c8a71f9b-692d-4916-ad73-f070ac00257f, tls: true, tfo: false, skip-cert-verify: false, servername: wordpress.org, network: grpc, grpc-opts: {grpc-service-name: CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config}, udp: true}
+  - {name: "@FREE2CONFIG 12", server: 51.89.118.190, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 13", server: 57.129.50.175, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 14", server: 51.75.94.246, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 15", server: 51.75.95.31, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 16", server: 141.227.140.214, port: 2030, reality-opts: {public-key: YWfCdTnr4FAOMYTY2dLrMtQUokyxOGpPhYEEszPj20E, short-id: 7fe29733}, client-fingerprint: chrome, type: vless, uuid: c8a71f9b-692d-4916-ad73-f070ac00257f, tls: true, tfo: false, skip-cert-verify: false, servername: wordpress.org, network: grpc, grpc-opts: {grpc-service-name: CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config}, udp: true}
+  - {name: "@FREE2CONFIG 17", server: 185.168.194.59, port: 41445, reality-opts: {public-key: eb0fWFAevT3a_BqrfJ2dLhY_Hv910o9LSmaumdZpIyQ, short-id: f8a537}, client-fingerprint: chrome, type: vless, uuid: 3d8d5627-62c0-491a-ad68-0079983f95e1, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: tesla.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 18", server: 51.75.88.17, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 19", server: 57.129.93.114, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 20", server: 148.135.195.96, port: 44356, reality-opts: {public-key: hoyeyIygWaTAIdW2Cw42wBdeXfRkQCWoKq278YyyuU8, short-id: 67dea0af00c9d222}, client-fingerprint: chrome, type: vless, uuid: 594e62b9-bb88-4264-b3fe-57f66202a96d, tls: true, tfo: false, skip-cert-verify: false, servername: github.com, network: grpc, grpc-opts: {grpc-service-name: /}, udp: true}
+  - {name: "@FREE2CONFIG 21", server: 57.129.92.168, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 22", server: 135.125.247.90, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 23", server: 157.180.23.58, port: 2052, reality-opts: {public-key: BamXEb50W1rXENIC96WfSvMiFGE7hnbu_GcXkBv-8H8, short-id: 4156caa9}, client-fingerprint: chrome, type: vless, uuid: 392af9cc-9d20-41fb-9509-ee53090fe2ae, tls: true, tfo: false, skip-cert-verify: false, servername: wordpress.org, network: grpc, grpc-opts: {grpc-service-name: "@seyyedmt-@seyyedmt@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt"}, udp: true}
+  - {name: "@FREE2CONFIG 24", server: 51.89.119.125, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 25", server: 57.129.89.231, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 26", server: 148.251.147.177, port: 443, reality-opts: {public-key: Hng90MObJ5OBtIrfrf6U02WIx36R9srHLBwRsj1r7Dw, short-id: 05a6d4aa5e314637}, client-fingerprint: chrome, type: vless, uuid: 5d3074a6-751c-42d9-94e7-c3f1f1cb7db7, tls: true, alpn: [h2], tfo: false, skip-cert-verify: false, servername: stackoverflow.com, network: grpc, grpc-opts: {grpc-service-name: yZ1aB2cC3dD4eE5f6gH7iJ8kL9mNOoP}, udp: true}
+  - {name: "@FREE2CONFIG 27", server: 178.20.215.10, port: 443, reality-opts: {public-key: GfTzhy59k9CXlAdF819OUVeBdrqIILaDIWa1bddjGnA}, client-fingerprint: chrome, type: vless, uuid: d71357cc-638a-0b8a-ac7d-dd580e294281, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 28", server: 91.107.136.205, port: 443, reality-opts: {public-key: qSr0HyOelGxKsy1ZnEdtfKSPOtWcpfeYwoUMxFzHOmE, short-id: 5c5478b03df213cb}, client-fingerprint: chrome, type: vless, uuid: 3d2d549f-c33f-4ef9-a9ab-b7ad4571f171, tls: true, tfo: false, skip-cert-verify: false, servername: tgju.org, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 29", server: 148.113.174.213, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 30", server: 135.125.244.169, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 31", server: 178.128.231.204, port: 8080, reality-opts: {public-key: CZWbmrDdvesNCBlbMBuvHsJiR8Hsxmsd8DWDR_2JrjM, short-id: 8e36c7e79b74a6fa}, client-fingerprint: firefox, type: vless, uuid: acd867f1-a71b-4a17-a473-2b57930d8678, tls: true, tfo: false, skip-cert-verify: false, servername: rEfErSion.Com., network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 32", server: 113.29.230.65, port: 8880, reality-opts: {public-key: afyGbyVtSnU4-TVYh_UG3eAOwjrH2MNgxcxKeD_aOEM, short-id: 93c21ebdd1f7349e}, client-fingerprint: chrome, type: vless, uuid: 54af7d89-3ac6-426b-82c2-993984064066, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: www.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 33", server: 176.120.72.63, port: 38339, reality-opts: {public-key: o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA, short-id: e16883e511}, client-fingerprint: chrome, type: vless, uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 34", server: 103.175.79.10, port: 443, reality-opts: {public-key: 4e-unF1RO2v--E7-X3aqxnCSPaK9QaTfJ7LawAr2bRI}, client-fingerprint: chrome, type: vless, uuid: 49ed01ad-3bb4-204f-b0ff-a58f658fd618, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 35", server: 112.120.48.17, port: 443, reality-opts: {public-key: XDOJMg-h4KXwKN5KelFXi1bFB8XBmM1XtxgdHnw6qik, short-id: 56e852ac}, client-fingerprint: ios, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: dyn.felissimo.co.jp, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 36", server: 18.143.74.88, port: 443, reality-opts: {public-key: T1qm-lWyGwT_sYy7KsoVsIH20qVR3W79wHmElqjdgz4, short-id: c5905f97}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: iosapps.itunes.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 37", server: 18.140.68.145, port: 443, reality-opts: {public-key: 2fXYSD6vZyrb38UGOzeqjhQCj4N9kImoIjopb6tSii4, short-id: 9cbb1611}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: iosapps.itunes.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 38", server: 89.169.1.40, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 39", server: 57.129.30.207, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 40", server: 54.238.106.95, port: 443, reality-opts: {public-key: 0UFjUVBI4nT-rTdQewzCmsYLrs_a4-qTq2ksWpDanXw, short-id: c6306490}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: buylite.tv.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 41", server: 3.115.82.155, port: 443, reality-opts: {public-key: gkeUZppVQzutjGsRcsGMW8OrPHboJ3qRFpIvj8lcUj4, short-id: c174618d}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: tv.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 42", server: 86.104.72.211, port: 32401, reality-opts: {public-key: 8RJPuc5C7fcVe5LSQ0olGnhiqFL8LX-0pnLMrEHD1Bs, short-id: 7fb7a1507826c540}, client-fingerprint: chrome, type: vless, uuid: a90e3756-d330-4597-bcc3-ab7905741e52, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 43", server: 147.45.179.201, port: 443, reality-opts: {public-key: J0_Stw7IIr6naIGCtZ1ZB75HfD-KIITZMy84jQVufyU, short-id: 3303c7a5}, client-fingerprint: chrome, type: vless, uuid: 9835fbea-cfb1-402a-bdc6-16ca140c6788, tls: true, tfo: false, skip-cert-verify: false, servername: mirror.yandex.ru, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 44", server: 140.245.43.199, port: 443, reality-opts: {public-key: Wmz2q2twfWYu6FrO5xU1M87LO5KjkyGif0AuPLNMPW0, short-id: a86103965ac913f2}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: tv.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 45", server: 146.19.90.10, port: 443, reality-opts: {public-key: oE7ZEghzkaOUiw1q3PqBtpllP1NlPHLY8ydJRuICtko}, client-fingerprint: chrome, type: vless, uuid: a0de1607-5b63-fab8-a759-9f98706b6125, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 46", server: 142.179.77.40, port: 56565, reality-opts: {public-key: 59iI-5g0yQ3r6ZaoBOQSWOCnMw6_t_q0oS4gXngXhW0, short-id: 2e3b0488}, client-fingerprint: ios, type: vless, uuid: cfa392db-7445-4aa6-964f-2a3e20103936, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: www.samsung.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 47", server: 62.60.148.14, port: 25756, reality-opts: {public-key: QYKUzjbRc3V_-SwJ7DbChBt5nT6miAoFuNCqbflDF2o, short-id: 61}, client-fingerprint: chrome, type: vless, uuid: 053c2b4a-8eb0-430d-b4b2-b84124fbe2e4, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 48", server: 192.210.183.136, port: 36678, reality-opts: {public-key: rrGm0NemTtGQ8Vrd2AzB7pSoW_kYtqYvhRxsx_MtwG0, short-id: 5d20}, client-fingerprint: chrome, type: vless, uuid: bf9b316d-31ac-42ee-b8a5-8dc795118917, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: swdist.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 49", server: 77.91.74.189, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 50", server: 5.181.171.10, port: 443, reality-opts: {public-key: YNGotlyAx3ELUmi4lxOUjiEDmibqf1pPUTE9o3YYT2Y}, client-fingerprint: chrome, type: vless, uuid: 49ed01ad-3bb4-204f-b0ff-a58f658fd618, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 51", server: 45.15.170.80, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 52", server: 213.35.108.22, port: 443, reality-opts: {public-key: IPno1w9GUxhRN2JY_yIka2DNlnuJHQeb3_0yOCM4pQg, short-id: 3ae54db4833c}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: buylite.music.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 53", server: 5.253.41.42, port: 30488, reality-opts: {public-key: oAZiftXfDm4Kue2Zle0lB9QQXEFPRyd24Vf7useQRyY, short-id: a7}, client-fingerprint: chrome, type: vless, uuid: 4dc10699-ff48-4688-b7e3-675249f307c3, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 54", server: 185.33.24.229, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 55", server: 151.243.101.176, port: 443, reality-opts: {public-key: chH1NLDKKYvMZFZrxlDcOA9CwguHR1JSLbrB7xOjTXI, short-id: e12cc034}, client-fingerprint: chrome, type: vless, uuid: 9835fbea-cfb1-402a-bdc6-16ca140c6788, tls: true, tfo: false, skip-cert-verify: false, servername: mirror.yandex.ru, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 56", server: 8.218.114.184, port: 443, reality-opts: {public-key: z3dsRlZdhVuCHIaU6d5nNePmRmNG_-KGdLpu-m0Jz0M, short-id: 35f29e450ad773a3}, client-fingerprint: chrome, type: vless, uuid: f2d09fb7-ac3d-4b62-b359-e2c35a5be126, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: www.ebay.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 57", server: 157.173.127.224, port: 443, reality-opts: {public-key: Ajk0QudeMVQocN88OG14PpsxparFuRJlvqzXDlW-gyQ, short-id: aba7bc9a}, client-fingerprint: chrome, type: vless, uuid: bec44ac3-a662-4179-a9dd-2aa881706dde, tls: true, tfo: false, skip-cert-verify: false, servername: analytics.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 58", server: 45.82.251.83, port: 1001, reality-opts: {public-key: 8Gunn8hjWbit5yLtTPcvLph0u2ovHLsGoXX4IJS1EQ0, short-id: 5fab0deb}, client-fingerprint: chrome, type: vless, uuid: c7c922da-ab54-433c-8046-1f9bf9d95c23, tls: true, tfo: false, skip-cert-verify: false, servername: telewebion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 59", server: 170.64.156.152, port: 3114, reality-opts: {public-key: HmhJeIza6ZLRu38PWEI00aKv-Nqp4SglYXvDZj9rbhM, short-id: c03adf0e43c6bb75}, client-fingerprint: random, type: vless, uuid: 4d54fc83-3d4f-409f-a255-a3f3bfeec95c, tls: true, tfo: false, skip-cert-verify: false, servername: www.sunucun.com.tr, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 60", server: 157.173.127.233, port: 443, reality-opts: {public-key: MbTwpwMFXu8duJgVMb_jFpqEuopSWJW1FPH_D6fZAEM, short-id: 1f}, client-fingerprint: chrome, type: vless, uuid: 17a6e953-8fac-428c-b86c-8585722b0b52, tls: true, tfo: false, skip-cert-verify: false, servername: analytics.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 61", server: 51.75.94.188, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 62", server: 86.105.4.199, port: 8295, reality-opts: {public-key: jAMPNXKmyWrMP8Q5U3x1an17VmL3bwhWtcWgTZsPc1s}, client-fingerprint: chrome, type: vless, uuid: a2e4c95a-9257-4833-81ca-2c4e634a521a, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 63", server: 57.129.34.115, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 64", server: 51.75.93.98, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 65", server: 57.129.92.12, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 66", server: 51.89.4.177, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 67", server: 141.95.104.3, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 68", server: 54.36.113.118, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 69", server: 57.129.57.142, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 70", server: 57.129.31.152, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 71", server: 146.59.15.81, port: 443, reality-opts: {public-key: l8HS4g_h8xPWlhQm8hmj5ohKNMrMCBcoHSNBFij79Sk, short-id: 5bb805}, client-fingerprint: chrome, type: vless, uuid: c14b2731-7db6-49ee-9271-b1efc56c2630, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 72", server: 57.129.34.86, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 73", server: 57.129.29.160, port: 2030, reality-opts: {public-key: YWfCdTnr4FAOMYTY2dLrMtQUokyxOGpPhYEEszPj20E, short-id: 7fe29733}, client-fingerprint: chrome, type: vless, uuid: c8a71f9b-692d-4916-ad73-f070ac00257f, tls: true, tfo: false, skip-cert-verify: false, servername: wordpress.org, network: grpc, grpc-opts: {grpc-service-name: CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config}, udp: true}
+  - {name: "@FREE2CONFIG 74", server: 51.89.118.190, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 75", server: 57.129.50.175, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 76", server: 51.75.94.246, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 77", server: 51.75.95.31, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 78", server: 141.227.140.214, port: 2030, reality-opts: {public-key: YWfCdTnr4FAOMYTY2dLrMtQUokyxOGpPhYEEszPj20E, short-id: 7fe29733}, client-fingerprint: chrome, type: vless, uuid: c8a71f9b-692d-4916-ad73-f070ac00257f, tls: true, tfo: false, skip-cert-verify: false, servername: wordpress.org, network: grpc, grpc-opts: {grpc-service-name: CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config--TELEGRAM--jet_config--CANALTELEGRAM--jet_config}, udp: true}
+  - {name: "@FREE2CONFIG 79", server: 185.168.194.59, port: 41445, reality-opts: {public-key: eb0fWFAevT3a_BqrfJ2dLhY_Hv910o9LSmaumdZpIyQ, short-id: f8a537}, client-fingerprint: chrome, type: vless, uuid: 3d8d5627-62c0-491a-ad68-0079983f95e1, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: tesla.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 80", server: 51.75.88.17, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 81", server: 57.129.93.114, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 82", server: 148.135.195.96, port: 44356, reality-opts: {public-key: hoyeyIygWaTAIdW2Cw42wBdeXfRkQCWoKq278YyyuU8, short-id: 67dea0af00c9d222}, client-fingerprint: chrome, type: vless, uuid: 594e62b9-bb88-4264-b3fe-57f66202a96d, tls: true, tfo: false, skip-cert-verify: false, servername: github.com, network: grpc, grpc-opts: {grpc-service-name: /}, udp: true}
+  - {name: "@FREE2CONFIG 83", server: 57.129.92.168, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 84", server: 135.125.247.90, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 85", server: 157.180.23.58, port: 2052, reality-opts: {public-key: BamXEb50W1rXENIC96WfSvMiFGE7hnbu_GcXkBv-8H8, short-id: 4156caa9}, client-fingerprint: chrome, type: vless, uuid: 392af9cc-9d20-41fb-9509-ee53090fe2ae, tls: true, tfo: false, skip-cert-verify: false, servername: wordpress.org, network: grpc, grpc-opts: {grpc-service-name: "@seyyedmt-@seyyedmt@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt-@seyyedmt"}, udp: true}
+  - {name: "@FREE2CONFIG 86", server: 51.89.119.125, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 87", server: 57.129.89.231, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 88", server: 148.251.147.177, port: 443, reality-opts: {public-key: Hng90MObJ5OBtIrfrf6U02WIx36R9srHLBwRsj1r7Dw, short-id: 05a6d4aa5e314637}, client-fingerprint: chrome, type: vless, uuid: 5d3074a6-751c-42d9-94e7-c3f1f1cb7db7, tls: true, alpn: [h2], tfo: false, skip-cert-verify: false, servername: stackoverflow.com, network: grpc, grpc-opts: {grpc-service-name: yZ1aB2cC3dD4eE5f6gH7iJ8kL9mNOoP}, udp: true}
+  - {name: "@FREE2CONFIG 89", server: 178.20.215.10, port: 443, reality-opts: {public-key: GfTzhy59k9CXlAdF819OUVeBdrqIILaDIWa1bddjGnA}, client-fingerprint: chrome, type: vless, uuid: d71357cc-638a-0b8a-ac7d-dd580e294281, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 90", server: 91.107.136.205, port: 443, reality-opts: {public-key: qSr0HyOelGxKsy1ZnEdtfKSPOtWcpfeYwoUMxFzHOmE, short-id: 5c5478b03df213cb}, client-fingerprint: chrome, type: vless, uuid: 3d2d549f-c33f-4ef9-a9ab-b7ad4571f171, tls: true, tfo: false, skip-cert-verify: false, servername: tgju.org, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 91", server: 148.113.174.213, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 92", server: 135.125.244.169, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 93", server: 178.128.231.204, port: 8080, reality-opts: {public-key: CZWbmrDdvesNCBlbMBuvHsJiR8Hsxmsd8DWDR_2JrjM, short-id: 8e36c7e79b74a6fa}, client-fingerprint: firefox, type: vless, uuid: acd867f1-a71b-4a17-a473-2b57930d8678, tls: true, tfo: false, skip-cert-verify: false, servername: rEfErSion.Com., network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 94", server: 113.29.230.65, port: 8880, reality-opts: {public-key: afyGbyVtSnU4-TVYh_UG3eAOwjrH2MNgxcxKeD_aOEM, short-id: 93c21ebdd1f7349e}, client-fingerprint: chrome, type: vless, uuid: 54af7d89-3ac6-426b-82c2-993984064066, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: www.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 95", server: 176.120.72.63, port: 38339, reality-opts: {public-key: o0MFuznHh_Wztg0FTAMhFXm3hjAqOJAJIIVNn-_A9WA, short-id: e16883e511}, client-fingerprint: chrome, type: vless, uuid: 481c5606-b586-44d7-bc2e-d8ef30d67f62, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 96", server: 103.175.79.10, port: 443, reality-opts: {public-key: 4e-unF1RO2v--E7-X3aqxnCSPaK9QaTfJ7LawAr2bRI}, client-fingerprint: chrome, type: vless, uuid: 49ed01ad-3bb4-204f-b0ff-a58f658fd618, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 97", server: 112.120.48.17, port: 443, reality-opts: {public-key: XDOJMg-h4KXwKN5KelFXi1bFB8XBmM1XtxgdHnw6qik, short-id: 56e852ac}, client-fingerprint: ios, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: dyn.felissimo.co.jp, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 98", server: 18.143.74.88, port: 443, reality-opts: {public-key: T1qm-lWyGwT_sYy7KsoVsIH20qVR3W79wHmElqjdgz4, short-id: c5905f97}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: iosapps.itunes.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 99", server: 18.140.68.145, port: 443, reality-opts: {public-key: 2fXYSD6vZyrb38UGOzeqjhQCj4N9kImoIjopb6tSii4, short-id: 9cbb1611}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: iosapps.itunes.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 100", server: 89.169.1.40, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 101", server: 57.129.30.207, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 102", server: 54.238.106.95, port: 443, reality-opts: {public-key: 0UFjUVBI4nT-rTdQewzCmsYLrs_a4-qTq2ksWpDanXw, short-id: c6306490}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: buylite.tv.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 103", server: 3.115.82.155, port: 443, reality-opts: {public-key: gkeUZppVQzutjGsRcsGMW8OrPHboJ3qRFpIvj8lcUj4, short-id: c174618d}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: tv.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 104", server: 86.104.72.211, port: 32401, reality-opts: {public-key: 8RJPuc5C7fcVe5LSQ0olGnhiqFL8LX-0pnLMrEHD1Bs, short-id: 7fb7a1507826c540}, client-fingerprint: chrome, type: vless, uuid: a90e3756-d330-4597-bcc3-ab7905741e52, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 105", server: 147.45.179.201, port: 443, reality-opts: {public-key: J0_Stw7IIr6naIGCtZ1ZB75HfD-KIITZMy84jQVufyU, short-id: 3303c7a5}, client-fingerprint: chrome, type: vless, uuid: 9835fbea-cfb1-402a-bdc6-16ca140c6788, tls: true, tfo: false, skip-cert-verify: false, servername: mirror.yandex.ru, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 106", server: 140.245.43.199, port: 443, reality-opts: {public-key: Wmz2q2twfWYu6FrO5xU1M87LO5KjkyGif0AuPLNMPW0, short-id: a86103965ac913f2}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: tv.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 107", server: 146.19.90.10, port: 443, reality-opts: {public-key: oE7ZEghzkaOUiw1q3PqBtpllP1NlPHLY8ydJRuICtko}, client-fingerprint: chrome, type: vless, uuid: a0de1607-5b63-fab8-a759-9f98706b6125, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 108", server: 142.179.77.40, port: 56565, reality-opts: {public-key: 59iI-5g0yQ3r6ZaoBOQSWOCnMw6_t_q0oS4gXngXhW0, short-id: 2e3b0488}, client-fingerprint: ios, type: vless, uuid: cfa392db-7445-4aa6-964f-2a3e20103936, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: www.samsung.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 109", server: 62.60.148.14, port: 25756, reality-opts: {public-key: QYKUzjbRc3V_-SwJ7DbChBt5nT6miAoFuNCqbflDF2o, short-id: 61}, client-fingerprint: chrome, type: vless, uuid: 053c2b4a-8eb0-430d-b4b2-b84124fbe2e4, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 110", server: 192.210.183.136, port: 36678, reality-opts: {public-key: rrGm0NemTtGQ8Vrd2AzB7pSoW_kYtqYvhRxsx_MtwG0, short-id: 5d20}, client-fingerprint: chrome, type: vless, uuid: bf9b316d-31ac-42ee-b8a5-8dc795118917, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: swdist.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 111", server: 77.91.74.189, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 112", server: 5.181.171.10, port: 443, reality-opts: {public-key: YNGotlyAx3ELUmi4lxOUjiEDmibqf1pPUTE9o3YYT2Y}, client-fingerprint: chrome, type: vless, uuid: 49ed01ad-3bb4-204f-b0ff-a58f658fd618, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: speed.cloudflare.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 113", server: 45.15.170.80, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 114", server: 213.35.108.22, port: 443, reality-opts: {public-key: IPno1w9GUxhRN2JY_yIka2DNlnuJHQeb3_0yOCM4pQg, short-id: 3ae54db4833c}, client-fingerprint: chrome, type: vless, uuid: 7300363f-c18f-4bcf-a5a9-2ad35220505e, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: buylite.music.apple.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 115", server: 5.253.41.42, port: 30488, reality-opts: {public-key: oAZiftXfDm4Kue2Zle0lB9QQXEFPRyd24Vf7useQRyY, short-id: a7}, client-fingerprint: chrome, type: vless, uuid: 4dc10699-ff48-4688-b7e3-675249f307c3, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 116", server: 185.33.24.229, port: 28495, reality-opts: {public-key: KXMH8QzaRa66F6GxOR1CanBunO2uHdJvri2zCbar2RQ, short-id: 0ecc2c1392}, client-fingerprint: chrome, type: vless, uuid: 7e296434-2d17-48d3-928d-19eaa34aecb1, tls: true, tfo: false, skip-cert-verify: false, servername: dl.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 117", server: 151.243.101.176, port: 443, reality-opts: {public-key: chH1NLDKKYvMZFZrxlDcOA9CwguHR1JSLbrB7xOjTXI, short-id: e12cc034}, client-fingerprint: chrome, type: vless, uuid: 9835fbea-cfb1-402a-bdc6-16ca140c6788, tls: true, tfo: false, skip-cert-verify: false, servername: mirror.yandex.ru, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 118", server: 8.218.114.184, port: 443, reality-opts: {public-key: z3dsRlZdhVuCHIaU6d5nNePmRmNG_-KGdLpu-m0Jz0M, short-id: 35f29e450ad773a3}, client-fingerprint: chrome, type: vless, uuid: f2d09fb7-ac3d-4b62-b359-e2c35a5be126, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: www.ebay.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 119", server: 157.173.127.224, port: 443, reality-opts: {public-key: Ajk0QudeMVQocN88OG14PpsxparFuRJlvqzXDlW-gyQ, short-id: aba7bc9a}, client-fingerprint: chrome, type: vless, uuid: bec44ac3-a662-4179-a9dd-2aa881706dde, tls: true, tfo: false, skip-cert-verify: false, servername: analytics.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 120", server: 45.82.251.83, port: 1001, reality-opts: {public-key: 8Gunn8hjWbit5yLtTPcvLph0u2ovHLsGoXX4IJS1EQ0, short-id: 5fab0deb}, client-fingerprint: chrome, type: vless, uuid: c7c922da-ab54-433c-8046-1f9bf9d95c23, tls: true, tfo: false, skip-cert-verify: false, servername: telewebion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 121", server: 170.64.156.152, port: 3114, reality-opts: {public-key: HmhJeIza6ZLRu38PWEI00aKv-Nqp4SglYXvDZj9rbhM, short-id: c03adf0e43c6bb75}, client-fingerprint: random, type: vless, uuid: 4d54fc83-3d4f-409f-a255-a3f3bfeec95c, tls: true, tfo: false, skip-cert-verify: false, servername: www.sunucun.com.tr, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 122", server: 157.173.127.233, port: 443, reality-opts: {public-key: MbTwpwMFXu8duJgVMb_jFpqEuopSWJW1FPH_D6fZAEM, short-id: 1f}, client-fingerprint: chrome, type: vless, uuid: 17a6e953-8fac-428c-b86c-8585722b0b52, tls: true, tfo: false, skip-cert-verify: false, servername: analytics.google.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 123", server: 51.75.94.188, port: 1370, reality-opts: {public-key: _N3KecwB9Ck28IIMxIck00ivkq3_ZEUvU3KXELnfvHw, short-id: e1afb93bfe75a34b}, client-fingerprint: chrome, type: vless, uuid: 4aefa474-aa2c-46d4-aff1-82fa29dd5c25, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+  - {name: "@FREE2CONFIG 124", server: 86.105.4.199, port: 8295, reality-opts: {public-key: jAMPNXKmyWrMP8Q5U3x1an17VmL3bwhWtcWgTZsPc1s}, client-fingerprint: chrome, type: vless, uuid: a2e4c95a-9257-4833-81ca-2c4e634a521a, tls: true, tfo: false, skip-cert-verify: false, servername: refersion.com, network: tcp, udp: true}
+proxy-groups:
+  - name: 🚀 国外流量
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🔯 故障转移
+      - 🔮 负载均衡
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: ✈️ 手动选择
+    type: select
+    proxies:
+      - "@FREE2CONFIG"
+      - "@FREE2CONFIG 2"
+      - "@FREE2CONFIG 3"
+      - "@FREE2CONFIG 4"
+      - "@FREE2CONFIG 5"
+      - "@FREE2CONFIG 6"
+      - "@FREE2CONFIG 7"
+      - "@FREE2CONFIG 8"
+      - "@FREE2CONFIG 9"
+      - "@FREE2CONFIG 10"
+      - "@FREE2CONFIG 11"
+      - "@FREE2CONFIG 12"
+      - "@FREE2CONFIG 13"
+      - "@FREE2CONFIG 14"
+      - "@FREE2CONFIG 15"
+      - "@FREE2CONFIG 16"
+      - "@FREE2CONFIG 17"
+      - "@FREE2CONFIG 18"
+      - "@FREE2CONFIG 19"
+      - "@FREE2CONFIG 20"
+      - "@FREE2CONFIG 21"
+      - "@FREE2CONFIG 22"
+      - "@FREE2CONFIG 23"
+      - "@FREE2CONFIG 24"
+      - "@FREE2CONFIG 25"
+      - "@FREE2CONFIG 26"
+      - "@FREE2CONFIG 27"
+      - "@FREE2CONFIG 28"
+      - "@FREE2CONFIG 29"
+      - "@FREE2CONFIG 30"
+      - "@FREE2CONFIG 31"
+      - "@FREE2CONFIG 32"
+      - "@FREE2CONFIG 33"
+      - "@FREE2CONFIG 34"
+      - "@FREE2CONFIG 35"
+      - "@FREE2CONFIG 36"
+      - "@FREE2CONFIG 37"
+      - "@FREE2CONFIG 38"
+      - "@FREE2CONFIG 39"
+      - "@FREE2CONFIG 40"
+      - "@FREE2CONFIG 41"
+      - "@FREE2CONFIG 42"
+      - "@FREE2CONFIG 43"
+      - "@FREE2CONFIG 44"
+      - "@FREE2CONFIG 45"
+      - "@FREE2CONFIG 46"
+      - "@FREE2CONFIG 47"
+      - "@FREE2CONFIG 48"
+      - "@FREE2CONFIG 49"
+      - "@FREE2CONFIG 50"
+      - "@FREE2CONFIG 51"
+      - "@FREE2CONFIG 52"
+      - "@FREE2CONFIG 53"
+      - "@FREE2CONFIG 54"
+      - "@FREE2CONFIG 55"
+      - "@FREE2CONFIG 56"
+      - "@FREE2CONFIG 57"
+      - "@FREE2CONFIG 58"
+      - "@FREE2CONFIG 59"
+      - "@FREE2CONFIG 60"
+      - "@FREE2CONFIG 61"
+      - "@FREE2CONFIG 62"
+      - "@FREE2CONFIG 63"
+      - "@FREE2CONFIG 64"
+      - "@FREE2CONFIG 65"
+      - "@FREE2CONFIG 66"
+      - "@FREE2CONFIG 67"
+      - "@FREE2CONFIG 68"
+      - "@FREE2CONFIG 69"
+      - "@FREE2CONFIG 70"
+      - "@FREE2CONFIG 71"
+      - "@FREE2CONFIG 72"
+      - "@FREE2CONFIG 73"
+      - "@FREE2CONFIG 74"
+      - "@FREE2CONFIG 75"
+      - "@FREE2CONFIG 76"
+      - "@FREE2CONFIG 77"
+      - "@FREE2CONFIG 78"
+      - "@FREE2CONFIG 79"
+      - "@FREE2CONFIG 80"
+      - "@FREE2CONFIG 81"
+      - "@FREE2CONFIG 82"
+      - "@FREE2CONFIG 83"
+      - "@FREE2CONFIG 84"
+      - "@FREE2CONFIG 85"
+      - "@FREE2CONFIG 86"
+      - "@FREE2CONFIG 87"
+      - "@FREE2CONFIG 88"
+      - "@FREE2CONFIG 89"
+      - "@FREE2CONFIG 90"
+      - "@FREE2CONFIG 91"
+      - "@FREE2CONFIG 92"
+      - "@FREE2CONFIG 93"
+      - "@FREE2CONFIG 94"
+      - "@FREE2CONFIG 95"
+      - "@FREE2CONFIG 96"
+      - "@FREE2CONFIG 97"
+      - "@FREE2CONFIG 98"
+      - "@FREE2CONFIG 99"
+      - "@FREE2CONFIG 100"
+      - "@FREE2CONFIG 101"
+      - "@FREE2CONFIG 102"
+      - "@FREE2CONFIG 103"
+      - "@FREE2CONFIG 104"
+      - "@FREE2CONFIG 105"
+      - "@FREE2CONFIG 106"
+      - "@FREE2CONFIG 107"
+      - "@FREE2CONFIG 108"
+      - "@FREE2CONFIG 109"
+      - "@FREE2CONFIG 110"
+      - "@FREE2CONFIG 111"
+      - "@FREE2CONFIG 112"
+      - "@FREE2CONFIG 113"
+      - "@FREE2CONFIG 114"
+      - "@FREE2CONFIG 115"
+      - "@FREE2CONFIG 116"
+      - "@FREE2CONFIG 117"
+      - "@FREE2CONFIG 118"
+      - "@FREE2CONFIG 119"
+      - "@FREE2CONFIG 120"
+      - "@FREE2CONFIG 121"
+      - "@FREE2CONFIG 122"
+      - "@FREE2CONFIG 123"
+      - "@FREE2CONFIG 124"
+  - name: 🛩️ 手动选择备用
+    type: select
+    proxies:
+      - "@FREE2CONFIG"
+      - "@FREE2CONFIG 2"
+      - "@FREE2CONFIG 3"
+      - "@FREE2CONFIG 4"
+      - "@FREE2CONFIG 5"
+      - "@FREE2CONFIG 6"
+      - "@FREE2CONFIG 7"
+      - "@FREE2CONFIG 8"
+      - "@FREE2CONFIG 9"
+      - "@FREE2CONFIG 10"
+      - "@FREE2CONFIG 11"
+      - "@FREE2CONFIG 12"
+      - "@FREE2CONFIG 13"
+      - "@FREE2CONFIG 14"
+      - "@FREE2CONFIG 15"
+      - "@FREE2CONFIG 16"
+      - "@FREE2CONFIG 17"
+      - "@FREE2CONFIG 18"
+      - "@FREE2CONFIG 19"
+      - "@FREE2CONFIG 20"
+      - "@FREE2CONFIG 21"
+      - "@FREE2CONFIG 22"
+      - "@FREE2CONFIG 23"
+      - "@FREE2CONFIG 24"
+      - "@FREE2CONFIG 25"
+      - "@FREE2CONFIG 26"
+      - "@FREE2CONFIG 27"
+      - "@FREE2CONFIG 28"
+      - "@FREE2CONFIG 29"
+      - "@FREE2CONFIG 30"
+      - "@FREE2CONFIG 31"
+      - "@FREE2CONFIG 32"
+      - "@FREE2CONFIG 33"
+      - "@FREE2CONFIG 34"
+      - "@FREE2CONFIG 35"
+      - "@FREE2CONFIG 36"
+      - "@FREE2CONFIG 37"
+      - "@FREE2CONFIG 38"
+      - "@FREE2CONFIG 39"
+      - "@FREE2CONFIG 40"
+      - "@FREE2CONFIG 41"
+      - "@FREE2CONFIG 42"
+      - "@FREE2CONFIG 43"
+      - "@FREE2CONFIG 44"
+      - "@FREE2CONFIG 45"
+      - "@FREE2CONFIG 46"
+      - "@FREE2CONFIG 47"
+      - "@FREE2CONFIG 48"
+      - "@FREE2CONFIG 49"
+      - "@FREE2CONFIG 50"
+      - "@FREE2CONFIG 51"
+      - "@FREE2CONFIG 52"
+      - "@FREE2CONFIG 53"
+      - "@FREE2CONFIG 54"
+      - "@FREE2CONFIG 55"
+      - "@FREE2CONFIG 56"
+      - "@FREE2CONFIG 57"
+      - "@FREE2CONFIG 58"
+      - "@FREE2CONFIG 59"
+      - "@FREE2CONFIG 60"
+      - "@FREE2CONFIG 61"
+      - "@FREE2CONFIG 62"
+      - "@FREE2CONFIG 63"
+      - "@FREE2CONFIG 64"
+      - "@FREE2CONFIG 65"
+      - "@FREE2CONFIG 66"
+      - "@FREE2CONFIG 67"
+      - "@FREE2CONFIG 68"
+      - "@FREE2CONFIG 69"
+      - "@FREE2CONFIG 70"
+      - "@FREE2CONFIG 71"
+      - "@FREE2CONFIG 72"
+      - "@FREE2CONFIG 73"
+      - "@FREE2CONFIG 74"
+      - "@FREE2CONFIG 75"
+      - "@FREE2CONFIG 76"
+      - "@FREE2CONFIG 77"
+      - "@FREE2CONFIG 78"
+      - "@FREE2CONFIG 79"
+      - "@FREE2CONFIG 80"
+      - "@FREE2CONFIG 81"
+      - "@FREE2CONFIG 82"
+      - "@FREE2CONFIG 83"
+      - "@FREE2CONFIG 84"
+      - "@FREE2CONFIG 85"
+      - "@FREE2CONFIG 86"
+      - "@FREE2CONFIG 87"
+      - "@FREE2CONFIG 88"
+      - "@FREE2CONFIG 89"
+      - "@FREE2CONFIG 90"
+      - "@FREE2CONFIG 91"
+      - "@FREE2CONFIG 92"
+      - "@FREE2CONFIG 93"
+      - "@FREE2CONFIG 94"
+      - "@FREE2CONFIG 95"
+      - "@FREE2CONFIG 96"
+      - "@FREE2CONFIG 97"
+      - "@FREE2CONFIG 98"
+      - "@FREE2CONFIG 99"
+      - "@FREE2CONFIG 100"
+      - "@FREE2CONFIG 101"
+      - "@FREE2CONFIG 102"
+      - "@FREE2CONFIG 103"
+      - "@FREE2CONFIG 104"
+      - "@FREE2CONFIG 105"
+      - "@FREE2CONFIG 106"
+      - "@FREE2CONFIG 107"
+      - "@FREE2CONFIG 108"
+      - "@FREE2CONFIG 109"
+      - "@FREE2CONFIG 110"
+      - "@FREE2CONFIG 111"
+      - "@FREE2CONFIG 112"
+      - "@FREE2CONFIG 113"
+      - "@FREE2CONFIG 114"
+      - "@FREE2CONFIG 115"
+      - "@FREE2CONFIG 116"
+      - "@FREE2CONFIG 117"
+      - "@FREE2CONFIG 118"
+      - "@FREE2CONFIG 119"
+      - "@FREE2CONFIG 120"
+      - "@FREE2CONFIG 121"
+      - "@FREE2CONFIG 122"
+      - "@FREE2CONFIG 123"
+      - "@FREE2CONFIG 124"
+  - name: 🚁 自建节点
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🎯 国内流量
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🛸 IP归属地伪装
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🧚 AI
+    type: select
+    proxies:
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 📹 YouTube
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🎥 Netflix
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🐹 DisneyPlus
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 📽️ PrimeVideo
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🎦 HBO
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🎬 EMBY
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🍎 AppleTV
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 📺 Bilibili
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🎶 TikTok
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 📲 Telegram
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🤖 Discord
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 👨‍💻 GitHub
+    type: select
+    proxies:
+      - 🚀 国外流量
+      - 🎯 国内流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - 🎯 国内流量
+      - 🚀 国外流量
+      - ✈️ 手动选择
+      - 🛩️ 手动选择备用
+      - 🚁 自建节点
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - 🎯 国内流量
+      - 🚀 国外流量
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@FREE2CONFIG"
+      - "@FREE2CONFIG 2"
+      - "@FREE2CONFIG 3"
+      - "@FREE2CONFIG 4"
+      - "@FREE2CONFIG 5"
+      - "@FREE2CONFIG 6"
+      - "@FREE2CONFIG 7"
+      - "@FREE2CONFIG 8"
+      - "@FREE2CONFIG 9"
+      - "@FREE2CONFIG 10"
+      - "@FREE2CONFIG 11"
+      - "@FREE2CONFIG 12"
+      - "@FREE2CONFIG 13"
+      - "@FREE2CONFIG 14"
+      - "@FREE2CONFIG 15"
+      - "@FREE2CONFIG 16"
+      - "@FREE2CONFIG 17"
+      - "@FREE2CONFIG 18"
+      - "@FREE2CONFIG 19"
+      - "@FREE2CONFIG 20"
+      - "@FREE2CONFIG 21"
+      - "@FREE2CONFIG 22"
+      - "@FREE2CONFIG 23"
+      - "@FREE2CONFIG 24"
+      - "@FREE2CONFIG 25"
+      - "@FREE2CONFIG 26"
+      - "@FREE2CONFIG 27"
+      - "@FREE2CONFIG 28"
+      - "@FREE2CONFIG 29"
+      - "@FREE2CONFIG 30"
+      - "@FREE2CONFIG 31"
+      - "@FREE2CONFIG 32"
+      - "@FREE2CONFIG 33"
+      - "@FREE2CONFIG 34"
+      - "@FREE2CONFIG 35"
+      - "@FREE2CONFIG 36"
+      - "@FREE2CONFIG 37"
+      - "@FREE2CONFIG 38"
+      - "@FREE2CONFIG 39"
+      - "@FREE2CONFIG 40"
+      - "@FREE2CONFIG 41"
+      - "@FREE2CONFIG 42"
+      - "@FREE2CONFIG 43"
+      - "@FREE2CONFIG 44"
+      - "@FREE2CONFIG 45"
+      - "@FREE2CONFIG 46"
+      - "@FREE2CONFIG 47"
+      - "@FREE2CONFIG 48"
+      - "@FREE2CONFIG 49"
+      - "@FREE2CONFIG 50"
+      - "@FREE2CONFIG 51"
+      - "@FREE2CONFIG 52"
+      - "@FREE2CONFIG 53"
+      - "@FREE2CONFIG 54"
+      - "@FREE2CONFIG 55"
+      - "@FREE2CONFIG 56"
+      - "@FREE2CONFIG 57"
+      - "@FREE2CONFIG 58"
+      - "@FREE2CONFIG 59"
+      - "@FREE2CONFIG 60"
+      - "@FREE2CONFIG 61"
+      - "@FREE2CONFIG 62"
+      - "@FREE2CONFIG 63"
+      - "@FREE2CONFIG 64"
+      - "@FREE2CONFIG 65"
+      - "@FREE2CONFIG 66"
+      - "@FREE2CONFIG 67"
+      - "@FREE2CONFIG 68"
+      - "@FREE2CONFIG 69"
+      - "@FREE2CONFIG 70"
+      - "@FREE2CONFIG 71"
+      - "@FREE2CONFIG 72"
+      - "@FREE2CONFIG 73"
+      - "@FREE2CONFIG 74"
+      - "@FREE2CONFIG 75"
+      - "@FREE2CONFIG 76"
+      - "@FREE2CONFIG 77"
+      - "@FREE2CONFIG 78"
+      - "@FREE2CONFIG 79"
+      - "@FREE2CONFIG 80"
+      - "@FREE2CONFIG 81"
+      - "@FREE2CONFIG 82"
+      - "@FREE2CONFIG 83"
+      - "@FREE2CONFIG 84"
+      - "@FREE2CONFIG 85"
+      - "@FREE2CONFIG 86"
+      - "@FREE2CONFIG 87"
+      - "@FREE2CONFIG 88"
+      - "@FREE2CONFIG 89"
+      - "@FREE2CONFIG 90"
+      - "@FREE2CONFIG 91"
+      - "@FREE2CONFIG 92"
+      - "@FREE2CONFIG 93"
+      - "@FREE2CONFIG 94"
+      - "@FREE2CONFIG 95"
+      - "@FREE2CONFIG 96"
+      - "@FREE2CONFIG 97"
+      - "@FREE2CONFIG 98"
+      - "@FREE2CONFIG 99"
+      - "@FREE2CONFIG 100"
+      - "@FREE2CONFIG 101"
+      - "@FREE2CONFIG 102"
+      - "@FREE2CONFIG 103"
+      - "@FREE2CONFIG 104"
+      - "@FREE2CONFIG 105"
+      - "@FREE2CONFIG 106"
+      - "@FREE2CONFIG 107"
+      - "@FREE2CONFIG 108"
+      - "@FREE2CONFIG 109"
+      - "@FREE2CONFIG 110"
+      - "@FREE2CONFIG 111"
+      - "@FREE2CONFIG 112"
+      - "@FREE2CONFIG 113"
+      - "@FREE2CONFIG 114"
+      - "@FREE2CONFIG 115"
+      - "@FREE2CONFIG 116"
+      - "@FREE2CONFIG 117"
+      - "@FREE2CONFIG 118"
+      - "@FREE2CONFIG 119"
+      - "@FREE2CONFIG 120"
+      - "@FREE2CONFIG 121"
+      - "@FREE2CONFIG 122"
+      - "@FREE2CONFIG 123"
+      - "@FREE2CONFIG 124"
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@FREE2CONFIG"
+      - "@FREE2CONFIG 2"
+      - "@FREE2CONFIG 3"
+      - "@FREE2CONFIG 4"
+      - "@FREE2CONFIG 5"
+      - "@FREE2CONFIG 6"
+      - "@FREE2CONFIG 7"
+      - "@FREE2CONFIG 8"
+      - "@FREE2CONFIG 9"
+      - "@FREE2CONFIG 10"
+      - "@FREE2CONFIG 11"
+      - "@FREE2CONFIG 12"
+      - "@FREE2CONFIG 13"
+      - "@FREE2CONFIG 14"
+      - "@FREE2CONFIG 15"
+      - "@FREE2CONFIG 16"
+      - "@FREE2CONFIG 17"
+      - "@FREE2CONFIG 18"
+      - "@FREE2CONFIG 19"
+      - "@FREE2CONFIG 20"
+      - "@FREE2CONFIG 21"
+      - "@FREE2CONFIG 22"
+      - "@FREE2CONFIG 23"
+      - "@FREE2CONFIG 24"
+      - "@FREE2CONFIG 25"
+      - "@FREE2CONFIG 26"
+      - "@FREE2CONFIG 27"
+      - "@FREE2CONFIG 28"
+      - "@FREE2CONFIG 29"
+      - "@FREE2CONFIG 30"
+      - "@FREE2CONFIG 31"
+      - "@FREE2CONFIG 32"
+      - "@FREE2CONFIG 33"
+      - "@FREE2CONFIG 34"
+      - "@FREE2CONFIG 35"
+      - "@FREE2CONFIG 36"
+      - "@FREE2CONFIG 37"
+      - "@FREE2CONFIG 38"
+      - "@FREE2CONFIG 39"
+      - "@FREE2CONFIG 40"
+      - "@FREE2CONFIG 41"
+      - "@FREE2CONFIG 42"
+      - "@FREE2CONFIG 43"
+      - "@FREE2CONFIG 44"
+      - "@FREE2CONFIG 45"
+      - "@FREE2CONFIG 46"
+      - "@FREE2CONFIG 47"
+      - "@FREE2CONFIG 48"
+      - "@FREE2CONFIG 49"
+      - "@FREE2CONFIG 50"
+      - "@FREE2CONFIG 51"
+      - "@FREE2CONFIG 52"
+      - "@FREE2CONFIG 53"
+      - "@FREE2CONFIG 54"
+      - "@FREE2CONFIG 55"
+      - "@FREE2CONFIG 56"
+      - "@FREE2CONFIG 57"
+      - "@FREE2CONFIG 58"
+      - "@FREE2CONFIG 59"
+      - "@FREE2CONFIG 60"
+      - "@FREE2CONFIG 61"
+      - "@FREE2CONFIG 62"
+      - "@FREE2CONFIG 63"
+      - "@FREE2CONFIG 64"
+      - "@FREE2CONFIG 65"
+      - "@FREE2CONFIG 66"
+      - "@FREE2CONFIG 67"
+      - "@FREE2CONFIG 68"
+      - "@FREE2CONFIG 69"
+      - "@FREE2CONFIG 70"
+      - "@FREE2CONFIG 71"
+      - "@FREE2CONFIG 72"
+      - "@FREE2CONFIG 73"
+      - "@FREE2CONFIG 74"
+      - "@FREE2CONFIG 75"
+      - "@FREE2CONFIG 76"
+      - "@FREE2CONFIG 77"
+      - "@FREE2CONFIG 78"
+      - "@FREE2CONFIG 79"
+      - "@FREE2CONFIG 80"
+      - "@FREE2CONFIG 81"
+      - "@FREE2CONFIG 82"
+      - "@FREE2CONFIG 83"
+      - "@FREE2CONFIG 84"
+      - "@FREE2CONFIG 85"
+      - "@FREE2CONFIG 86"
+      - "@FREE2CONFIG 87"
+      - "@FREE2CONFIG 88"
+      - "@FREE2CONFIG 89"
+      - "@FREE2CONFIG 90"
+      - "@FREE2CONFIG 91"
+      - "@FREE2CONFIG 92"
+      - "@FREE2CONFIG 93"
+      - "@FREE2CONFIG 94"
+      - "@FREE2CONFIG 95"
+      - "@FREE2CONFIG 96"
+      - "@FREE2CONFIG 97"
+      - "@FREE2CONFIG 98"
+      - "@FREE2CONFIG 99"
+      - "@FREE2CONFIG 100"
+      - "@FREE2CONFIG 101"
+      - "@FREE2CONFIG 102"
+      - "@FREE2CONFIG 103"
+      - "@FREE2CONFIG 104"
+      - "@FREE2CONFIG 105"
+      - "@FREE2CONFIG 106"
+      - "@FREE2CONFIG 107"
+      - "@FREE2CONFIG 108"
+      - "@FREE2CONFIG 109"
+      - "@FREE2CONFIG 110"
+      - "@FREE2CONFIG 111"
+      - "@FREE2CONFIG 112"
+      - "@FREE2CONFIG 113"
+      - "@FREE2CONFIG 114"
+      - "@FREE2CONFIG 115"
+      - "@FREE2CONFIG 116"
+      - "@FREE2CONFIG 117"
+      - "@FREE2CONFIG 118"
+      - "@FREE2CONFIG 119"
+      - "@FREE2CONFIG 120"
+      - "@FREE2CONFIG 121"
+      - "@FREE2CONFIG 122"
+      - "@FREE2CONFIG 123"
+      - "@FREE2CONFIG 124"
+  - name: 🔮 负载均衡
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@FREE2CONFIG"
+      - "@FREE2CONFIG 2"
+      - "@FREE2CONFIG 3"
+      - "@FREE2CONFIG 4"
+      - "@FREE2CONFIG 5"
+      - "@FREE2CONFIG 6"
+      - "@FREE2CONFIG 7"
+      - "@FREE2CONFIG 8"
+      - "@FREE2CONFIG 9"
+      - "@FREE2CONFIG 10"
+      - "@FREE2CONFIG 11"
+      - "@FREE2CONFIG 12"
+      - "@FREE2CONFIG 13"
+      - "@FREE2CONFIG 14"
+      - "@FREE2CONFIG 15"
+      - "@FREE2CONFIG 16"
+      - "@FREE2CONFIG 17"
+      - "@FREE2CONFIG 18"
+      - "@FREE2CONFIG 19"
+      - "@FREE2CONFIG 20"
+      - "@FREE2CONFIG 21"
+      - "@FREE2CONFIG 22"
+      - "@FREE2CONFIG 23"
+      - "@FREE2CONFIG 24"
+      - "@FREE2CONFIG 25"
+      - "@FREE2CONFIG 26"
+      - "@FREE2CONFIG 27"
+      - "@FREE2CONFIG 28"
+      - "@FREE2CONFIG 29"
+      - "@FREE2CONFIG 30"
+      - "@FREE2CONFIG 31"
+      - "@FREE2CONFIG 32"
+      - "@FREE2CONFIG 33"
+      - "@FREE2CONFIG 34"
+      - "@FREE2CONFIG 35"
+      - "@FREE2CONFIG 36"
+      - "@FREE2CONFIG 37"
+      - "@FREE2CONFIG 38"
+      - "@FREE2CONFIG 39"
+      - "@FREE2CONFIG 40"
+      - "@FREE2CONFIG 41"
+      - "@FREE2CONFIG 42"
+      - "@FREE2CONFIG 43"
+      - "@FREE2CONFIG 44"
+      - "@FREE2CONFIG 45"
+      - "@FREE2CONFIG 46"
+      - "@FREE2CONFIG 47"
+      - "@FREE2CONFIG 48"
+      - "@FREE2CONFIG 49"
+      - "@FREE2CONFIG 50"
+      - "@FREE2CONFIG 51"
+      - "@FREE2CONFIG 52"
+      - "@FREE2CONFIG 53"
+      - "@FREE2CONFIG 54"
+      - "@FREE2CONFIG 55"
+      - "@FREE2CONFIG 56"
+      - "@FREE2CONFIG 57"
+      - "@FREE2CONFIG 58"
+      - "@FREE2CONFIG 59"
+      - "@FREE2CONFIG 60"
+      - "@FREE2CONFIG 61"
+      - "@FREE2CONFIG 62"
+      - "@FREE2CONFIG 63"
+      - "@FREE2CONFIG 64"
+      - "@FREE2CONFIG 65"
+      - "@FREE2CONFIG 66"
+      - "@FREE2CONFIG 67"
+      - "@FREE2CONFIG 68"
+      - "@FREE2CONFIG 69"
+      - "@FREE2CONFIG 70"
+      - "@FREE2CONFIG 71"
+      - "@FREE2CONFIG 72"
+      - "@FREE2CONFIG 73"
+      - "@FREE2CONFIG 74"
+      - "@FREE2CONFIG 75"
+      - "@FREE2CONFIG 76"
+      - "@FREE2CONFIG 77"
+      - "@FREE2CONFIG 78"
+      - "@FREE2CONFIG 79"
+      - "@FREE2CONFIG 80"
+      - "@FREE2CONFIG 81"
+      - "@FREE2CONFIG 82"
+      - "@FREE2CONFIG 83"
+      - "@FREE2CONFIG 84"
+      - "@FREE2CONFIG 85"
+      - "@FREE2CONFIG 86"
+      - "@FREE2CONFIG 87"
+      - "@FREE2CONFIG 88"
+      - "@FREE2CONFIG 89"
+      - "@FREE2CONFIG 90"
+      - "@FREE2CONFIG 91"
+      - "@FREE2CONFIG 92"
+      - "@FREE2CONFIG 93"
+      - "@FREE2CONFIG 94"
+      - "@FREE2CONFIG 95"
+      - "@FREE2CONFIG 96"
+      - "@FREE2CONFIG 97"
+      - "@FREE2CONFIG 98"
+      - "@FREE2CONFIG 99"
+      - "@FREE2CONFIG 100"
+      - "@FREE2CONFIG 101"
+      - "@FREE2CONFIG 102"
+      - "@FREE2CONFIG 103"
+      - "@FREE2CONFIG 104"
+      - "@FREE2CONFIG 105"
+      - "@FREE2CONFIG 106"
+      - "@FREE2CONFIG 107"
+      - "@FREE2CONFIG 108"
+      - "@FREE2CONFIG 109"
+      - "@FREE2CONFIG 110"
+      - "@FREE2CONFIG 111"
+      - "@FREE2CONFIG 112"
+      - "@FREE2CONFIG 113"
+      - "@FREE2CONFIG 114"
+      - "@FREE2CONFIG 115"
+      - "@FREE2CONFIG 116"
+      - "@FREE2CONFIG 117"
+      - "@FREE2CONFIG 118"
+      - "@FREE2CONFIG 119"
+      - "@FREE2CONFIG 120"
+      - "@FREE2CONFIG 121"
+      - "@FREE2CONFIG 122"
+      - "@FREE2CONFIG 123"
+      - "@FREE2CONFIG 124"
+rules:
+  - RULE-SET,GitHub,👨‍💻 GitHub
+  - DOMAIN-KEYWORD,tagss,🎯 国内流量
+  - RULE-SET,Inside_domain,🎯 国内流量
+  - RULE-SET,Inside_ipcidr,🎯 国内流量,no-resolve
+  - RULE-SET,SteamCN,🎯 国内流量
+  - RULE-SET,Outside_domain,🚀 国外流量
+  - RULE-SET,Outside_ipcidr,🚀 国外流量,no-resolve
+  - RULE-SET,ChatGPT_domain,🧚 AI
+  - RULE-SET,OpenAI,🧚 AI
+  - RULE-SET,Claude,🧚 AI
+  - RULE-SET,Gemini,🧚 AI
+  - RULE-SET,Copilot,🧚 AI
+  - RULE-SET,Perplexity_domain,🧚 AI
+  - RULE-SET,Lan,🎯 国内流量
+  - RULE-SET,UnBan_domain,🎯 国内流量
+  - RULE-SET,PikPak,🚀 国外流量
+  - RULE-SET,rule-provider,🛸 IP归属地伪装
+  - RULE-SET,ZhihuAds,🛑 广告拦截
+  - RULE-SET,YouTube,📹 YouTube
+  - RULE-SET,Netflix,🎥 Netflix
+  - RULE-SET,Disney,🐹 DisneyPlus
+  - RULE-SET,AmazonPrimeVideo,📽️ PrimeVideo
+  - RULE-SET,HBO,🎦 HBO
+  - RULE-SET,HBOAsia,🎦 HBO
+  - RULE-SET,HBOUSA,🎦 HBO
+  - RULE-SET,AppleTV,🍎 AppleTV
+  - RULE-SET,Emby,🎬 EMBY
+  - RULE-SET,Emby_2,🎬 EMBY
+  - RULE-SET,Bahamut,📺 巴哈姆特
+  - RULE-SET,BilibiliHMT_domain,📺 Bilibili
+  - RULE-SET,BilibiliHMT_ipcidr,📺 Bilibili,no-resolve
+  - RULE-SET,Bilibili_domain,📺 Bilibili
+  - RULE-SET,Spotify,🎵 Spotify
+  - RULE-SET,TikTok,🎶 TikTok
+  - RULE-SET,GlobalMedia_Classical,🌍 国外媒体
+  - RULE-SET,ChinaMedia,🌏 国内媒体
+  - RULE-SET,GoogleFCM_domain,📢 谷歌FCM
+  - RULE-SET,GoogleFCM_ipcidr,📢 谷歌FCM,no-resolve
+  - RULE-SET,GoogleCN_domain,🎯 国内流量
+  - RULE-SET,OneDrive,Ⓜ️ 微软云盘
+  - RULE-SET,Microsoft,Ⓜ️ 微软服务
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,Telegram,📲 Telegram
+  - RULE-SET,Discord,🤖 Discord
+  - RULE-SET,Game,🎮 游戏平台
+  - DOMAIN-KEYWORD,1e100,🚀 国外流量
+  - DOMAIN-KEYWORD,abema,🚀 国外流量
+  - DOMAIN-KEYWORD,appledaily,🚀 国外流量
+  - DOMAIN-KEYWORD,avtb,🚀 国外流量
+  - DOMAIN-KEYWORD,beetalk,🚀 国外流量
+  - DOMAIN-KEYWORD,blogspot,🚀 国外流量
+  - DOMAIN-KEYWORD,dropbox,🚀 国外流量
+  - DOMAIN-KEYWORD,facebook,🚀 国外流量
+  - DOMAIN-KEYWORD,fbcdn,🚀 国外流量
+  - DOMAIN-KEYWORD,github,🚀 国外流量
+  - DOMAIN-KEYWORD,gmail,🚀 国外流量
+  - DOMAIN-KEYWORD,google,🚀 国外流量
+  - DOMAIN-KEYWORD,instagram,🚀 国外流量
+  - DOMAIN-KEYWORD,porn,🚀 国外流量
+  - DOMAIN-KEYWORD,sci-hub,🚀 国外流量
+  - DOMAIN-KEYWORD,spotify,🚀 国外流量
+  - DOMAIN-KEYWORD,telegram,🚀 国外流量
+  - DOMAIN-KEYWORD,twitter,🚀 国外流量
+  - DOMAIN-KEYWORD,whatsapp,🚀 国外流量
+  - DOMAIN-KEYWORD,youtube,🚀 国外流量
+  - DOMAIN-KEYWORD,uk-live,🚀 国外流量
+  - DOMAIN-KEYWORD,1drv,🚀 国外流量
+  - DOMAIN-KEYWORD,onedrive,🚀 国外流量
+  - DOMAIN-KEYWORD,skydrive,🚀 国外流量
+  - DOMAIN-KEYWORD,porn,🚀 国外流量
+  - DOMAIN-KEYWORD,ttvnw,🚀 国外流量
+  - RULE-SET,ProxyGFWlist_domain,🚀 国外流量
+  - RULE-SET,ProxyGFWlist_ipcidr,🚀 国外流量,no-resolve
+  - DOMAIN-KEYWORD,360buy,🎯 国内流量
+  - DOMAIN-KEYWORD,alicdn,🎯 国内流量
+  - DOMAIN-KEYWORD,alimama,🎯 国内流量
+  - DOMAIN-KEYWORD,alipay,🎯 国内流量
+  - DOMAIN-KEYWORD,appzapp,🎯 国内流量
+  - DOMAIN-KEYWORD,baidupcs,🎯 国内流量
+  - DOMAIN-KEYWORD,bilibili,🎯 国内流量
+  - DOMAIN-KEYWORD,ccgslb,🎯 国内流量
+  - DOMAIN-KEYWORD,chinacache,🎯 国内流量
+  - DOMAIN-KEYWORD,duobao,🎯 国内流量
+  - DOMAIN-KEYWORD,jdpay,🎯 国内流量
+  - DOMAIN-KEYWORD,moke,🎯 国内流量
+  - DOMAIN-KEYWORD,qhimg,🎯 国内流量
+  - DOMAIN-KEYWORD,vpimg,🎯 国内流量
+  - DOMAIN-KEYWORD,xiami,🎯 国内流量
+  - DOMAIN-KEYWORD,xiaomi,🎯 国内流量
+  - RULE-SET,ChinaDomain_domain,🎯 国内流量
+  - RULE-SET,ChinaDomain_ipcidr,🎯 国内流量,no-resolve
+  - RULE-SET,ChinaCompanyIp_ipcidr,🎯 国内流量,no-resolve
+  - DOMAIN-KEYWORD,aria2,🎯 国内流量
+  - RULE-SET,Download_domain,🎯 国内流量
+  - GEOIP,CN,🎯 国内流量
+  - MATCH,🐟 漏网之鱼
+rule-providers:
+  GitHub:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
+    path: ./providers/rule-provider_GitHub.yaml
+    interval: 86400
+  Inside_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2N1dGV0aG90dy9DbGFzaFJ1bGUvbWFpbi9SdWxlL0luc2lkZS5saXN0"
+    path: ./providers/rule-provider_Inside_domain.yaml
+    interval: 86400
+  Inside_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2N1dGV0aG90dy9DbGFzaFJ1bGUvbWFpbi9SdWxlL0luc2lkZS5saXN0"
+    path: ./providers/rule-provider_Inside_ipcidr.yaml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml
+    path: ./providers/rule-provider_SteamCN.yaml
+    interval: 86400
+  Outside_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2N1dGV0aG90dy9DbGFzaFJ1bGUvbWFpbi9SdWxlL091dHNpZGUubGlzdA"
+    path: ./providers/rule-provider_Outside_domain.yaml
+    interval: 86400
+  Outside_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2N1dGV0aG90dy9DbGFzaFJ1bGUvbWFpbi9SdWxlL091dHNpZGUubGlzdA"
+    path: ./providers/rule-provider_Outside_ipcidr.yaml
+    interval: 86400
+  ChatGPT_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2N1dGV0aG90dy9DbGFzaFJ1bGUvbWFpbi9SdWxlL0NoYXRHUFQubGlzdA"
+    path: ./providers/rule-provider_ChatGPT_domain.yaml
+    interval: 86400
+  OpenAI:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./providers/rule-provider_OpenAI.yaml
+    interval: 86400
+  Claude:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+    path: ./providers/rule-provider_Claude.yaml
+    interval: 86400
+  Gemini:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Gemini/Gemini.yaml
+    path: ./providers/rule-provider_Gemini.yaml
+    interval: 86400
+  Copilot:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Copilot/Copilot.yaml
+    path: ./providers/rule-provider_Copilot.yaml
+    interval: 86400
+  Perplexity_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2N1dGV0aG90dy9DbGFzaFJ1bGUvbWFpbi9SdWxlL1BlcnBsZXhpdHkubGlzdA"
+    path: ./providers/rule-provider_Perplexity_domain.yaml
+    interval: 86400
+  Lan:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml
+    path: ./providers/rule-provider_Lan.yaml
+    interval: 86400
+  UnBan_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvVW5CYW4ubGlzdA"
+    path: ./providers/rule-provider_UnBan_domain.yaml
+    interval: 86400
+  PikPak:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/PikPak/PikPak.yaml
+    path: ./providers/rule-provider_PikPak.yaml
+    interval: 86400
+  rule-provider:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/lwd-temp/anti-ip-attribution/main/generated/rule-provider.yaml
+    path: ./providers/rule-provider_rule-provider.yaml
+    interval: 86400
+  ZhihuAds:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ZhihuAds/ZhihuAds.yaml
+    path: ./providers/rule-provider_ZhihuAds.yaml
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.yaml
+    path: ./providers/rule-provider_YouTube.yaml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.yaml
+    path: ./providers/rule-provider_Netflix.yaml
+    interval: 86400
+  Disney:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.yaml
+    path: ./providers/rule-provider_Disney.yaml
+    interval: 86400
+  AmazonPrimeVideo:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AmazonPrimeVideo/AmazonPrimeVideo.yaml
+    path: ./providers/rule-provider_AmazonPrimeVideo.yaml
+    interval: 86400
+  HBO:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO.yaml
+    path: ./providers/rule-provider_HBO.yaml
+    interval: 86400
+  HBOAsia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOAsia/HBOAsia.yaml
+    path: ./providers/rule-provider_HBOAsia.yaml
+    interval: 86400
+  HBOUSA:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBOUSA/HBOUSA.yaml
+    path: ./providers/rule-provider_HBOUSA.yaml
+    interval: 86400
+  AppleTV:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AppleTV/AppleTV.yaml
+    path: ./providers/rule-provider_AppleTV.yaml
+    interval: 86400
+  Emby:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/cutethotw/ClashRule/main/Rule/Emby.yaml
+    path: ./providers/rule-provider_Emby.yaml
+    interval: 86400
+  Emby_2:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml
+    path: ./providers/rule-provider_Emby_2.yaml
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Bahamut/Bahamut.yaml
+    path: ./providers/rule-provider_Bahamut.yaml
+    interval: 86400
+  BilibiliHMT_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9CaWxpYmlsaUhNVC5saXN0"
+    path: ./providers/rule-provider_BilibiliHMT_domain.yaml
+    interval: 86400
+  BilibiliHMT_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9CaWxpYmlsaUhNVC5saXN0"
+    path: ./providers/rule-provider_BilibiliHMT_ipcidr.yaml
+    interval: 86400
+  Bilibili_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9CaWxpYmlsaS5saXN0"
+    path: ./providers/rule-provider_Bilibili_domain.yaml
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.yaml
+    path: ./providers/rule-provider_Spotify.yaml
+    interval: 86400
+  TikTok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/TikTok/TikTok.yaml
+    path: ./providers/rule-provider_TikTok.yaml
+    interval: 86400
+  GlobalMedia_Classical:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GlobalMedia/GlobalMedia_Classical.yaml
+    path: ./providers/rule-provider_GlobalMedia_Classical.yaml
+    interval: 86400
+  ChinaMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/ChinaMedia/ChinaMedia.yaml
+    path: ./providers/rule-provider_ChinaMedia.yaml
+    interval: 86400
+  GoogleFCM_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Hb29nbGVGQ00ubGlzdA"
+    path: ./providers/rule-provider_GoogleFCM_domain.yaml
+    interval: 86400
+  GoogleFCM_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Hb29nbGVGQ00ubGlzdA"
+    path: ./providers/rule-provider_GoogleFCM_ipcidr.yaml
+    interval: 86400
+  GoogleCN_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvR29vZ2xlQ04ubGlzdA"
+    path: ./providers/rule-provider_GoogleCN_domain.yaml
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OneDrive/OneDrive.yaml
+    path: ./providers/rule-provider_OneDrive.yaml
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.yaml
+    path: ./providers/rule-provider_Microsoft.yaml
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.yaml
+    path: ./providers/rule-provider_Apple.yaml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.yaml
+    path: ./providers/rule-provider_Telegram.yaml
+    interval: 86400
+  Discord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Discord/Discord.yaml
+    path: ./providers/rule-provider_Discord.yaml
+    interval: 86400
+  Game:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Game/Game.yaml
+    path: ./providers/rule-provider_Game.yaml
+    interval: 86400
+  ProxyGFWlist_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUHJveHlHRldsaXN0Lmxpc3Q"
+    path: ./providers/rule-provider_ProxyGFWlist_domain.yaml
+    interval: 86400
+  ProxyGFWlist_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUHJveHlHRldsaXN0Lmxpc3Q"
+    path: ./providers/rule-provider_ProxyGFWlist_ipcidr.yaml
+    interval: 86400
+  ChinaDomain_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQ2hpbmFEb21haW4ubGlzdA"
+    path: ./providers/rule-provider_ChinaDomain_domain.yaml
+    interval: 86400
+  ChinaDomain_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQ2hpbmFEb21haW4ubGlzdA"
+    path: ./providers/rule-provider_ChinaDomain_ipcidr.yaml
+    interval: 86400
+  ChinaCompanyIp_ipcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://url.v1.mk/getruleset?type=4&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvQ2hpbmFDb21wYW55SXAubGlzdA"
+    path: ./providers/rule-provider_ChinaCompanyIp_ipcidr.yaml
+    interval: 86400
+  Download_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvRG93bmxvYWQubGlzdA"
+    path: ./providers/rule-provider_Download_domain.yaml
+    interval: 86400

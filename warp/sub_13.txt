@@ -1,0 +1,41 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: :9090
+dns:
+  enable: true
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  fallback:
+    - 8.8.8.8
+    - 8.8.4.4
+    - tls://1.0.0.1:853
+    - tls://dns.google:853
+proxies: ~
+proxy-groups:
+  - name: Proxies
+    type: select
+    proxies:
+      - DIRECT
+rules:
+  - RULE-SET,force-direct_domain,DIRECT
+  - DOMAIN-KEYWORD,github,Proxies
+  - RULE-SET,force-proxy_domain,Proxies
+  - GEOIP,CN,DIRECT
+  - MATCH,Proxies
+rule-providers:
+  force-direct_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL1NsZWVweUhlZWVhZC9zdWJjb252ZXJ0ZXItY29uZmlnQG1hc3Rlci9ydWxlc2V0L2ZvcmNlLWRpcmVjdC5saXN0"
+    path: ./providers/rule-provider_force-direct_domain.yaml
+    interval: 86400
+  force-proxy_domain:
+    type: http
+    behavior: domain
+    url: "https://url.v1.mk/getruleset?type=3&url=aHR0cHM6Ly9jZG4uanNkZWxpdnIubmV0L2doL1NsZWVweUhlZWVhZC9zdWJjb252ZXJ0ZXItY29uZmlnQG1hc3Rlci9ydWxlc2V0L2ZvcmNlLXByb3h5Lmxpc3Q"
+    path: ./providers/rule-provider_force-proxy_domain.yaml
+    interval: 86400

@@ -1,0 +1,1852 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+tcp-concurrent: true
+enable-process: true
+find-process-mode: strict
+ipv6: true
+log-level: debug
+geo-auto-update: true
+geo-update-interval: 168
+secret: ""
+bind-address: "*"
+unified-delay: false
+disable-keep-alive: false
+keep-alive-idle: 30
+keep-alive-interval: 30
+profile:
+  store-selected: true
+  store-fake-ip: true
+dns:
+  enable: true
+  ipv6: true
+  respect-rules: false
+  prefer-h3: true
+  cache-algorithm: arc
+  use-system-hosts: true
+  use-host: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-filter-mode: blacklist
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - time.*.com
+    - ntp.*.com
+    - time.*.com
+    - "*.ir"
+  default-nameserver:
+    - 8.8.8.8
+    - 8.8.4.4
+    - 1.0.0.1
+    - 1.1.1.1
+    - 9.9.9.9
+    - 9.9.9.11
+    - 9.9.9.10
+    - 94.140.14.15
+    - 94.140.15.15
+    - 223.5.5.5
+    - 77.88.8.8
+  nameserver:
+    - https://sky.rethinkdns.com/1:sIMQAAAFMAAAEQgAAgA=
+    - tls://1-wcbraaaaauyaaaarbaaaeaa.max.rethinkdns.com
+    - https://dns.nextdns.io/f1d647
+    - tls://f1d647.dns.nextdns.io
+    - https://dns.adguard-dns.com/dns-query
+    - quic://dns.adguard-dns.com
+    - tls://dns.adguard-dns.com
+    - https://dns.tls-data.de/dns-query
+    - https://dns0.eu/dns-query
+    - https://dns.kerekes.xyz/dns-query
+    - https://abel.waringer-atg.de/dns-query
+    - https://3dns.eu/dns-query
+    - https://doh-own-recursion.nicolas-dorriere.fr/dns-query
+    - https://doh-random-upstream.nicolas-dorriere.fr/dns-query
+    - https://dns.smartguard.io/dns-query
+    - https://ipv4-zepto-mci-1.edge.nextdns.io/dns-query
+    - https://xmission-slc-1.edge.nextdns.io/dns-query
+    - tls://dns.lavate.ch
+    - tls://dns.kerekes.xyz
+  direct-nameserver:
+    - 78.157.42.100
+    - 78.157.42.101
+    - 178.22.122.100
+    - 185.51.200.2
+  proxy-server-nameserver:
+    - 2606:4700:4700::1111
+    - 2606:4700:4700::1001
+    - 2001:4860:4860::8888
+    - 2001:4860:4860::8844
+    - 1.1.1.1
+    - 8.8.8.8
+    - 8.8.4.4
+    - 9.9.9.9
+    - 223.5.5.5
+    - 77.88.8.8
+    - 2400:3200::1
+    - 2a02:6b8::feed:0ff
+    - 2620:fe::fe
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports: [80, 8080, 8880, 2052, 2082, 2086, 2095]
+    TLS:
+      ports: [443, 8443, 2053, 2083, 2087, 2096]
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  auto-detect-interface: true
+  auto-redir: true
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+rule-providers:
+  category_public_tracker:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/category-public-tracker.yaml
+    interval: 86400
+    path: ./ruleset/category_public_tracker.yaml
+  iran_ads:
+    type: http
+    behavior: domain
+    url: https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.yaml
+    interval: 86400
+    path: ./ruleset/iran_ads.yaml
+  PersianBlocker:
+    type: http
+    behavior: domain
+    url: https://github.com/MasterKia/iran-hosted-domains/releases/latest/download/clash_rules_ads.yaml
+    path: ./ruleset/PersianBlocker.yaml
+    interval: 86400
+  youtube:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/youtube.yaml
+    interval: 86400
+    path: ./ruleset/youtube.yaml
+  telegram:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/telegram.yaml
+    interval: 86400
+    path: ./ruleset/telegram.yaml
+  twitch:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/twitch.yaml
+    interval: 86400
+    path: ./ruleset/twitch.yaml
+  censor:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/main/censor.yaml
+    interval: 86400
+    path: ./ruleset/tahrim.yaml
+  local_ips:
+    type: http
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/local-ips.yaml
+    interval: 86400
+    path: ./ruleset/local_ips.yaml
+  private:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/private.yaml
+    interval: 86400
+    path: ./ruleset/private.yaml
+  category_ir:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/category-ir.yaml
+    interval: 86400
+    path: ./ruleset/category_ir.yaml
+  iran:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/main/iran.yaml
+    interval: 86400
+    path: ./ruleset/iran.yaml
+  steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/main/steam.yaml
+    interval: 86400
+    path: ./ruleset/steam.yaml
+  game:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/game.yaml
+    interval: 86400
+    path: ./ruleset/game.yaml
+  category-games:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/category-games.yaml
+    interval: 86400
+    path: ./ruleset/category-games.yaml
+  ir:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ir.yaml
+    path: ./ruleset/ir.yaml
+    interval: 86400
+  apps:
+    type: http
+    format: yaml
+    behavior: classical
+    url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/apps.yaml
+    path: ./ruleset/apps.yaml
+    interval: 86400
+  ircidr:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://github.com/chocolate4u/Iran-clash-rules/releases/latest/download/ircidr.yaml
+    path: ./ruleset/ircidr.yaml
+    interval: 86400
+  irasn:
+    type: http
+    format: yaml
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/irasn.yaml
+    path: ./ruleset/irasn.yaml
+    interval: 86400
+  arvancloud:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/arvancloud.yaml
+    path: ./ruleset/arvancloud.yaml
+    interval: 86400
+  derakcloud:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/derakcloud.yaml
+    path: ./ruleset/derakcloud.yaml
+    interval: 86400
+  iranserver:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/iranserver.yaml
+    path: ./ruleset/iranserver.yaml
+    interval: 86400
+  parspack:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/parspack.yaml
+    path: ./ruleset/parspack.yaml
+    interval: 86400
+  malware:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/malware.yaml
+    path: ./ruleset/malware.yaml
+    interval: 86400
+  phishing:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/phishing.yaml
+    path: ./ruleset/phishing.yaml
+    interval: 86400
+  cryptominers:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/cryptominers.yaml
+    path: ./ruleset/cryptominers.yaml
+    interval: 86400
+  ads:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/category-ads-all.yaml
+    path: ./ruleset/ads.yaml
+    interval: 86400
+  DownloadManagers:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/DownloadManagers.yaml
+    interval: 86400
+    path: ./ruleset/DownloadManagers.yaml
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanProgramAD.yaml
+    interval: 86400
+    path: ./ruleset/BanProgramAD.yaml
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanAD.yaml
+    interval: 86400
+    path: ./ruleset/BanAD.yaml
+  PrivateTracker:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/PrivateTracker.yaml
+    interval: 86400
+    path: ./ruleset/PrivateTracker.yaml
+  BanEasyList:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanEasyList.yaml
+    interval: 86400
+    path: ./ruleset/BanEasyList.yaml
+  Download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Download.yaml
+    interval: 86400
+    path: ./ruleset/Download.yaml
+  GameDownload:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/GameDownload.yaml
+    interval: 86400
+    path: ./ruleset/GameDownload.yaml
+  SteamRegionCheck:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/SteamRegionCheck.yaml
+    interval: 86400
+    path: ./ruleset/SteamRegionCheck.yaml
+  Xbox:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Xbox.yaml
+    interval: 86400
+    path: ./ruleset/Xbox.yaml
+  YouTubeMusic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/YouTubeMusic.yaml
+    interval: 86400
+    path: ./ruleset/YouTubeMusic.yaml
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/YouTube.yaml
+    interval: 86400
+    path: ./ruleset/YouTube.yaml
+  Ponzi:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/Ponzi.yaml
+    interval: 86400
+    path: ./ruleset/Ponzi.yaml
+  warninglist:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/warning-list.yaml
+    interval: 86400
+    path: ./ruleset/warninglist.yaml
+  google:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/google.yaml
+    interval: 86400
+    path: ./ruleset/google.yaml
+  google-play:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/google-play.yaml
+    interval: 86400
+    path: ./ruleset/google-play.yaml
+  xiaomi-ads:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/xiaomi-ads.yaml
+    interval: 86400
+    path: ./ruleset/xiaomi-ads.yaml
+  xiaomi_block_list:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/xiaomi_block_list.yaml
+    path: ./ruleset/xiaomi_block_list.yaml
+    interval: 86400
+  xiaomi_white_list:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/xiaomi_white_list.yaml
+    path: ./ruleset/xiaomi_white_list.yaml
+    interval: 86400
+  cloudflare:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/cloudflare.yaml
+    interval: 86400
+    path: ./ruleset/cloudflare.yaml
+  github:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/github.yaml
+    interval: 86400
+    path: ./ruleset/xgithub.yaml
+  whatsapp:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/whatsapp.yaml
+    interval: 86400
+    path: ./ruleset/whatsapp.yaml
+  LiteAds:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/LiteAds.yaml
+    path: ./ruleset/LiteAds.yaml
+    interval: 86400
+  discord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/discord.yaml
+    path: ./ruleset/discord.yaml
+    interval: 86400
+  instagram:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/instagram.yaml
+    interval: 86400
+    path: ./ruleset/instagram.yaml
+  category-ai:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/category-ai-!cn.yaml
+    interval: 86400
+    path: ./ruleset/category-ai.yaml
+  stremio:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/stremio.yaml
+    path: ./ruleset/stremio.yaml
+    interval: 86400
+  windows:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/windows.yaml
+    path: ./ruleset/windows.yaml
+    interval: 86400
+proxies:
+  - {name: companypdf9-companypdf9.pages.dev-HTTPS-443, server: companypdf9.pages.dev, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-companypdf9.pages.dev-HTTPS-8443, server: companypdf9.pages.dev, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-companypdf9.pages.dev-HTTPS-2053, server: companypdf9.pages.dev, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-companypdf9.pages.dev-HTTPS-2096, server: companypdf9.pages.dev, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-companypdf9.pages.dev-HTTPS-2087, server: companypdf9.pages.dev, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-companypdf9.pages.dev-HTTPS-2083, server: companypdf9.pages.dev, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇭🇰 companypdf9-icook.hk-HTTPS-443, server: icook.hk, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇭🇰 companypdf9-icook.hk-HTTPS-8443, server: icook.hk, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇭🇰 companypdf9-icook.hk-HTTPS-2053, server: icook.hk, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇭🇰 companypdf9-icook.hk-HTTPS-2096, server: icook.hk, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇭🇰 companypdf9-icook.hk-HTTPS-2087, server: icook.hk, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇭🇰 companypdf9-icook.hk-HTTPS-2083, server: icook.hk, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇯🇵 companypdf9-japan.com-HTTPS-443, server: japan.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇯🇵 companypdf9-japan.com-HTTPS-8443, server: japan.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇯🇵 companypdf9-japan.com-HTTPS-2053, server: japan.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇯🇵 companypdf9-japan.com-HTTPS-2096, server: japan.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇯🇵 companypdf9-japan.com-HTTPS-2087, server: japan.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇯🇵 companypdf9-japan.com-HTTPS-2083, server: japan.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-malaysia.com-HTTPS-443, server: malaysia.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-malaysia.com-HTTPS-8443, server: malaysia.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-malaysia.com-HTTPS-2053, server: malaysia.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-malaysia.com-HTTPS-2096, server: malaysia.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-malaysia.com-HTTPS-2087, server: malaysia.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-malaysia.com-HTTPS-2083, server: malaysia.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇷🇺 companypdf9-russia.com-HTTPS-443, server: russia.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇷🇺 companypdf9-russia.com-HTTPS-8443, server: russia.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇷🇺 companypdf9-russia.com-HTTPS-2053, server: russia.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇷🇺 companypdf9-russia.com-HTTPS-2096, server: russia.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇷🇺 companypdf9-russia.com-HTTPS-2087, server: russia.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇷🇺 companypdf9-russia.com-HTTPS-2083, server: russia.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇸🇬 companypdf9-singapore.com-HTTPS-443, server: singapore.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇸🇬 companypdf9-singapore.com-HTTPS-8443, server: singapore.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇸🇬 companypdf9-singapore.com-HTTPS-2053, server: singapore.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇸🇬 companypdf9-singapore.com-HTTPS-2096, server: singapore.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇸🇬 companypdf9-singapore.com-HTTPS-2087, server: singapore.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇸🇬 companypdf9-singapore.com-HTTPS-2083, server: singapore.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.visa.com-HTTPS-443, server: www.visa.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.visa.com-HTTPS-8443, server: www.visa.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.visa.com-HTTPS-2053, server: www.visa.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.visa.com-HTTPS-2096, server: www.visa.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.visa.com-HTTPS-2087, server: www.visa.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.visa.com-HTTPS-2083, server: www.visa.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.csgo.com-HTTPS-443, server: www.csgo.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.csgo.com-HTTPS-8443, server: www.csgo.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.csgo.com-HTTPS-2053, server: www.csgo.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.csgo.com-HTTPS-2096, server: www.csgo.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.csgo.com-HTTPS-2087, server: www.csgo.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.csgo.com-HTTPS-2083, server: www.csgo.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.shopify.com-HTTPS-443, server: www.shopify.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.shopify.com-HTTPS-8443, server: www.shopify.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.shopify.com-HTTPS-2053, server: www.shopify.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.shopify.com-HTTPS-2096, server: www.shopify.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.shopify.com-HTTPS-2087, server: www.shopify.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.shopify.com-HTTPS-2083, server: www.shopify.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.whatismyip.com-HTTPS-443, server: www.whatismyip.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.whatismyip.com-HTTPS-8443, server: www.whatismyip.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.whatismyip.com-HTTPS-2053, server: www.whatismyip.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.whatismyip.com-HTTPS-2096, server: www.whatismyip.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.whatismyip.com-HTTPS-2087, server: www.whatismyip.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.whatismyip.com-HTTPS-2083, server: www.whatismyip.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.ipget.net-HTTPS-443, server: www.ipget.net, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.ipget.net-HTTPS-8443, server: www.ipget.net, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.ipget.net-HTTPS-2053, server: www.ipget.net, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.ipget.net-HTTPS-2096, server: www.ipget.net, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.ipget.net-HTTPS-2087, server: www.ipget.net, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-www.ipget.net-HTTPS-2083, server: www.ipget.net, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-speed.marisalnc.com-HTTPS-443, server: speed.marisalnc.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-speed.marisalnc.com-HTTPS-8443, server: speed.marisalnc.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-speed.marisalnc.com-HTTPS-2053, server: speed.marisalnc.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-speed.marisalnc.com-HTTPS-2096, server: speed.marisalnc.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-speed.marisalnc.com-HTTPS-2087, server: speed.marisalnc.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-speed.marisalnc.com-HTTPS-2083, server: speed.marisalnc.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443, server: freeyx.cloudflare88.eu.org, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443, server: freeyx.cloudflare88.eu.org, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053, server: freeyx.cloudflare88.eu.org, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096, server: freeyx.cloudflare88.eu.org, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087, server: freeyx.cloudflare88.eu.org, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083, server: freeyx.cloudflare88.eu.org, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.182682.xyz-HTTPS-443, server: cloudflare.182682.xyz, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.182682.xyz-HTTPS-8443, server: cloudflare.182682.xyz, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.182682.xyz-HTTPS-2053, server: cloudflare.182682.xyz, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.182682.xyz-HTTPS-2096, server: cloudflare.182682.xyz, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.182682.xyz-HTTPS-2087, server: cloudflare.182682.xyz, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.182682.xyz-HTTPS-2083, server: cloudflare.182682.xyz, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.cfcdn.vip-HTTPS-443, server: cfip.cfcdn.vip, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.cfcdn.vip-HTTPS-8443, server: cfip.cfcdn.vip, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.cfcdn.vip-HTTPS-2053, server: cfip.cfcdn.vip, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.cfcdn.vip-HTTPS-2096, server: cfip.cfcdn.vip, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.cfcdn.vip-HTTPS-2087, server: cfip.cfcdn.vip, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.cfcdn.vip-HTTPS-2083, server: cfip.cfcdn.vip, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.0sm.com-HTTPS-443, server: cf.0sm.com, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.0sm.com-HTTPS-8443, server: cf.0sm.com, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.0sm.com-HTTPS-2053, server: cf.0sm.com, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.0sm.com-HTTPS-2096, server: cf.0sm.com, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.0sm.com-HTTPS-2087, server: cf.0sm.com, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.0sm.com-HTTPS-2083, server: cf.0sm.com, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443, server: cloudflare-ip.mofashi.ltd, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443, server: cloudflare-ip.mofashi.ltd, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053, server: cloudflare-ip.mofashi.ltd, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096, server: cloudflare-ip.mofashi.ltd, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087, server: cloudflare-ip.mofashi.ltd, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083, server: cloudflare-ip.mofashi.ltd, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.090227.xyz-HTTPS-443, server: cf.090227.xyz, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.090227.xyz-HTTPS-8443, server: cf.090227.xyz, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.090227.xyz-HTTPS-2053, server: cf.090227.xyz, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.090227.xyz-HTTPS-2096, server: cf.090227.xyz, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.090227.xyz-HTTPS-2087, server: cf.090227.xyz, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.090227.xyz-HTTPS-2083, server: cf.090227.xyz, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443, server: cname.xirancdn.us, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443, server: cname.xirancdn.us, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053, server: cname.xirancdn.us, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096, server: cname.xirancdn.us, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087, server: cname.xirancdn.us, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083, server: cname.xirancdn.us, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zhetengsha.eu.org-HTTPS-443, server: cf.zhetengsha.eu.org, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zhetengsha.eu.org-HTTPS-8443, server: cf.zhetengsha.eu.org, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zhetengsha.eu.org-HTTPS-2053, server: cf.zhetengsha.eu.org, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zhetengsha.eu.org-HTTPS-2096, server: cf.zhetengsha.eu.org, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zhetengsha.eu.org-HTTPS-2087, server: cf.zhetengsha.eu.org, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zhetengsha.eu.org-HTTPS-2083, server: cf.zhetengsha.eu.org, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.9jy.cc-HTTPS-443, server: cloudflare.9jy.cc, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.9jy.cc-HTTPS-8443, server: cloudflare.9jy.cc, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.9jy.cc-HTTPS-2053, server: cloudflare.9jy.cc, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.9jy.cc-HTTPS-2096, server: cloudflare.9jy.cc, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.9jy.cc-HTTPS-2087, server: cloudflare.9jy.cc, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cloudflare.9jy.cc-HTTPS-2083, server: cloudflare.9jy.cc, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443, server: cf.zerone-cdn.pp.ua, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443, server: cf.zerone-cdn.pp.ua, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053, server: cf.zerone-cdn.pp.ua, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096, server: cf.zerone-cdn.pp.ua, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087, server: cf.zerone-cdn.pp.ua, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083, server: cf.zerone-cdn.pp.ua, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.1323123.xyz-HTTPS-443, server: cfip.1323123.xyz, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.1323123.xyz-HTTPS-8443, server: cfip.1323123.xyz, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.1323123.xyz-HTTPS-2053, server: cfip.1323123.xyz, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.1323123.xyz-HTTPS-2096, server: cfip.1323123.xyz, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.1323123.xyz-HTTPS-2087, server: cfip.1323123.xyz, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.1323123.xyz-HTTPS-2083, server: cfip.1323123.xyz, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.tzpro.xyz-HTTPS-443, server: cdn.tzpro.xyz, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.tzpro.xyz-HTTPS-8443, server: cdn.tzpro.xyz, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.tzpro.xyz-HTTPS-2053, server: cdn.tzpro.xyz, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.tzpro.xyz-HTTPS-2096, server: cdn.tzpro.xyz, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.tzpro.xyz-HTTPS-2087, server: cdn.tzpro.xyz, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.tzpro.xyz-HTTPS-2083, server: cdn.tzpro.xyz, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.877771.xyz-HTTPS-443, server: cf.877771.xyz, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.877771.xyz-HTTPS-8443, server: cf.877771.xyz, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.877771.xyz-HTTPS-2053, server: cf.877771.xyz, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.877771.xyz-HTTPS-2096, server: cf.877771.xyz, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.877771.xyz-HTTPS-2087, server: cf.877771.xyz, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cf.877771.xyz-HTTPS-2083, server: cf.877771.xyz, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443, server: cnamefuckxxs.yuchen.icu, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443, server: cnamefuckxxs.yuchen.icu, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053, server: cnamefuckxxs.yuchen.icu, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096, server: cnamefuckxxs.yuchen.icu, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087, server: cnamefuckxxs.yuchen.icu, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083, server: cnamefuckxxs.yuchen.icu, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.xxxxxxxx.tk-HTTPS-443, server: cfip.xxxxxxxx.tk, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443, server: cfip.xxxxxxxx.tk, port: 8443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053, server: cfip.xxxxxxxx.tk, port: 2053, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096, server: cfip.xxxxxxxx.tk, port: 2096, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087, server: cfip.xxxxxxxx.tk, port: 2087, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083, server: cfip.xxxxxxxx.tk, port: 2083, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+  - {name: companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel, server: cdn.xn--b6gac.eu.org, port: 443, client-fingerprint: random, type: vless, uuid: 48300e8d-4f24-483b-a817-f5e894f06b68, tls: true, tfo: false, skip-cert-verify: false, servername: companypdf9.pages.dev, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: companypdf9.pages.dev}}, udp: true}
+proxy-groups:
+  - name: نوع انتخاب پروکسی 🔀
+    type: select
+    proxies:
+      - اتصال پایدار 🔗
+      - خودکار (بهترین پینگ) 🤖
+      - دستی 🤏🏻
+      - پشتیبان (در صورت قطعی) 🧯
+      - توزیع بار (پایدار) 🧲
+      - توزیع بار (موقت) ⏳
+      - توزیع بار (گردشی) 🔁
+      - قطع اینترنت ⛔
+      - بدون فیلترشکن 🛡️
+  - name: دستی 🤏🏻
+    type: select
+    proxies:
+      - companypdf9-companypdf9.pages.dev-HTTPS-443
+      - companypdf9-companypdf9.pages.dev-HTTPS-8443
+      - companypdf9-companypdf9.pages.dev-HTTPS-2053
+      - companypdf9-companypdf9.pages.dev-HTTPS-2096
+      - companypdf9-companypdf9.pages.dev-HTTPS-2087
+      - companypdf9-companypdf9.pages.dev-HTTPS-2083
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-8443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2053
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2096
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2087
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2083
+      - 🇯🇵 companypdf9-japan.com-HTTPS-443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-8443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2053
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2096
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2087
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2083
+      - companypdf9-malaysia.com-HTTPS-443
+      - companypdf9-malaysia.com-HTTPS-8443
+      - companypdf9-malaysia.com-HTTPS-2053
+      - companypdf9-malaysia.com-HTTPS-2096
+      - companypdf9-malaysia.com-HTTPS-2087
+      - companypdf9-malaysia.com-HTTPS-2083
+      - 🇷🇺 companypdf9-russia.com-HTTPS-443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-8443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2053
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2096
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2087
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2083
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-8443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2053
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2096
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2087
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2083
+      - companypdf9-www.visa.com-HTTPS-443
+      - companypdf9-www.visa.com-HTTPS-8443
+      - companypdf9-www.visa.com-HTTPS-2053
+      - companypdf9-www.visa.com-HTTPS-2096
+      - companypdf9-www.visa.com-HTTPS-2087
+      - companypdf9-www.visa.com-HTTPS-2083
+      - companypdf9-www.csgo.com-HTTPS-443
+      - companypdf9-www.csgo.com-HTTPS-8443
+      - companypdf9-www.csgo.com-HTTPS-2053
+      - companypdf9-www.csgo.com-HTTPS-2096
+      - companypdf9-www.csgo.com-HTTPS-2087
+      - companypdf9-www.csgo.com-HTTPS-2083
+      - companypdf9-www.shopify.com-HTTPS-443
+      - companypdf9-www.shopify.com-HTTPS-8443
+      - companypdf9-www.shopify.com-HTTPS-2053
+      - companypdf9-www.shopify.com-HTTPS-2096
+      - companypdf9-www.shopify.com-HTTPS-2087
+      - companypdf9-www.shopify.com-HTTPS-2083
+      - companypdf9-www.whatismyip.com-HTTPS-443
+      - companypdf9-www.whatismyip.com-HTTPS-8443
+      - companypdf9-www.whatismyip.com-HTTPS-2053
+      - companypdf9-www.whatismyip.com-HTTPS-2096
+      - companypdf9-www.whatismyip.com-HTTPS-2087
+      - companypdf9-www.whatismyip.com-HTTPS-2083
+      - companypdf9-www.ipget.net-HTTPS-443
+      - companypdf9-www.ipget.net-HTTPS-8443
+      - companypdf9-www.ipget.net-HTTPS-2053
+      - companypdf9-www.ipget.net-HTTPS-2096
+      - companypdf9-www.ipget.net-HTTPS-2087
+      - companypdf9-www.ipget.net-HTTPS-2083
+      - companypdf9-speed.marisalnc.com-HTTPS-443
+      - companypdf9-speed.marisalnc.com-HTTPS-8443
+      - companypdf9-speed.marisalnc.com-HTTPS-2053
+      - companypdf9-speed.marisalnc.com-HTTPS-2096
+      - companypdf9-speed.marisalnc.com-HTTPS-2087
+      - companypdf9-speed.marisalnc.com-HTTPS-2083
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.182682.xyz-HTTPS-443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-8443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2053
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2096
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2087
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2083
+      - companypdf9-cfip.cfcdn.vip-HTTPS-443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-8443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2053
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2096
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2087
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2083
+      - companypdf9-cf.0sm.com-HTTPS-443
+      - companypdf9-cf.0sm.com-HTTPS-8443
+      - companypdf9-cf.0sm.com-HTTPS-2053
+      - companypdf9-cf.0sm.com-HTTPS-2096
+      - companypdf9-cf.0sm.com-HTTPS-2087
+      - companypdf9-cf.0sm.com-HTTPS-2083
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083
+      - companypdf9-cf.090227.xyz-HTTPS-443
+      - companypdf9-cf.090227.xyz-HTTPS-8443
+      - companypdf9-cf.090227.xyz-HTTPS-2053
+      - companypdf9-cf.090227.xyz-HTTPS-2096
+      - companypdf9-cf.090227.xyz-HTTPS-2087
+      - companypdf9-cf.090227.xyz-HTTPS-2083
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-8443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2053
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2096
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2087
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.9jy.cc-HTTPS-443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-8443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2053
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2096
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2087
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2083
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083
+      - companypdf9-cfip.1323123.xyz-HTTPS-443
+      - companypdf9-cfip.1323123.xyz-HTTPS-8443
+      - companypdf9-cfip.1323123.xyz-HTTPS-2053
+      - companypdf9-cfip.1323123.xyz-HTTPS-2096
+      - companypdf9-cfip.1323123.xyz-HTTPS-2087
+      - companypdf9-cfip.1323123.xyz-HTTPS-2083
+      - companypdf9-cdn.tzpro.xyz-HTTPS-443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-8443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2053
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2096
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2087
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2083
+      - companypdf9-cf.877771.xyz-HTTPS-443
+      - companypdf9-cf.877771.xyz-HTTPS-8443
+      - companypdf9-cf.877771.xyz-HTTPS-2053
+      - companypdf9-cf.877771.xyz-HTTPS-2096
+      - companypdf9-cf.877771.xyz-HTTPS-2087
+      - companypdf9-cf.877771.xyz-HTTPS-2083
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083
+      - companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel
+  - name: خودکار (بهترین پینگ) 🤖
+    type: url-test
+    url: https://api.v2fly.org/checkConnection.svgz
+    interval: 600
+    tolerance: 50
+    proxies:
+      - companypdf9-companypdf9.pages.dev-HTTPS-443
+      - companypdf9-companypdf9.pages.dev-HTTPS-8443
+      - companypdf9-companypdf9.pages.dev-HTTPS-2053
+      - companypdf9-companypdf9.pages.dev-HTTPS-2096
+      - companypdf9-companypdf9.pages.dev-HTTPS-2087
+      - companypdf9-companypdf9.pages.dev-HTTPS-2083
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-8443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2053
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2096
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2087
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2083
+      - 🇯🇵 companypdf9-japan.com-HTTPS-443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-8443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2053
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2096
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2087
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2083
+      - companypdf9-malaysia.com-HTTPS-443
+      - companypdf9-malaysia.com-HTTPS-8443
+      - companypdf9-malaysia.com-HTTPS-2053
+      - companypdf9-malaysia.com-HTTPS-2096
+      - companypdf9-malaysia.com-HTTPS-2087
+      - companypdf9-malaysia.com-HTTPS-2083
+      - 🇷🇺 companypdf9-russia.com-HTTPS-443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-8443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2053
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2096
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2087
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2083
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-8443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2053
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2096
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2087
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2083
+      - companypdf9-www.visa.com-HTTPS-443
+      - companypdf9-www.visa.com-HTTPS-8443
+      - companypdf9-www.visa.com-HTTPS-2053
+      - companypdf9-www.visa.com-HTTPS-2096
+      - companypdf9-www.visa.com-HTTPS-2087
+      - companypdf9-www.visa.com-HTTPS-2083
+      - companypdf9-www.csgo.com-HTTPS-443
+      - companypdf9-www.csgo.com-HTTPS-8443
+      - companypdf9-www.csgo.com-HTTPS-2053
+      - companypdf9-www.csgo.com-HTTPS-2096
+      - companypdf9-www.csgo.com-HTTPS-2087
+      - companypdf9-www.csgo.com-HTTPS-2083
+      - companypdf9-www.shopify.com-HTTPS-443
+      - companypdf9-www.shopify.com-HTTPS-8443
+      - companypdf9-www.shopify.com-HTTPS-2053
+      - companypdf9-www.shopify.com-HTTPS-2096
+      - companypdf9-www.shopify.com-HTTPS-2087
+      - companypdf9-www.shopify.com-HTTPS-2083
+      - companypdf9-www.whatismyip.com-HTTPS-443
+      - companypdf9-www.whatismyip.com-HTTPS-8443
+      - companypdf9-www.whatismyip.com-HTTPS-2053
+      - companypdf9-www.whatismyip.com-HTTPS-2096
+      - companypdf9-www.whatismyip.com-HTTPS-2087
+      - companypdf9-www.whatismyip.com-HTTPS-2083
+      - companypdf9-www.ipget.net-HTTPS-443
+      - companypdf9-www.ipget.net-HTTPS-8443
+      - companypdf9-www.ipget.net-HTTPS-2053
+      - companypdf9-www.ipget.net-HTTPS-2096
+      - companypdf9-www.ipget.net-HTTPS-2087
+      - companypdf9-www.ipget.net-HTTPS-2083
+      - companypdf9-speed.marisalnc.com-HTTPS-443
+      - companypdf9-speed.marisalnc.com-HTTPS-8443
+      - companypdf9-speed.marisalnc.com-HTTPS-2053
+      - companypdf9-speed.marisalnc.com-HTTPS-2096
+      - companypdf9-speed.marisalnc.com-HTTPS-2087
+      - companypdf9-speed.marisalnc.com-HTTPS-2083
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.182682.xyz-HTTPS-443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-8443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2053
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2096
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2087
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2083
+      - companypdf9-cfip.cfcdn.vip-HTTPS-443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-8443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2053
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2096
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2087
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2083
+      - companypdf9-cf.0sm.com-HTTPS-443
+      - companypdf9-cf.0sm.com-HTTPS-8443
+      - companypdf9-cf.0sm.com-HTTPS-2053
+      - companypdf9-cf.0sm.com-HTTPS-2096
+      - companypdf9-cf.0sm.com-HTTPS-2087
+      - companypdf9-cf.0sm.com-HTTPS-2083
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083
+      - companypdf9-cf.090227.xyz-HTTPS-443
+      - companypdf9-cf.090227.xyz-HTTPS-8443
+      - companypdf9-cf.090227.xyz-HTTPS-2053
+      - companypdf9-cf.090227.xyz-HTTPS-2096
+      - companypdf9-cf.090227.xyz-HTTPS-2087
+      - companypdf9-cf.090227.xyz-HTTPS-2083
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-8443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2053
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2096
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2087
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.9jy.cc-HTTPS-443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-8443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2053
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2096
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2087
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2083
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083
+      - companypdf9-cfip.1323123.xyz-HTTPS-443
+      - companypdf9-cfip.1323123.xyz-HTTPS-8443
+      - companypdf9-cfip.1323123.xyz-HTTPS-2053
+      - companypdf9-cfip.1323123.xyz-HTTPS-2096
+      - companypdf9-cfip.1323123.xyz-HTTPS-2087
+      - companypdf9-cfip.1323123.xyz-HTTPS-2083
+      - companypdf9-cdn.tzpro.xyz-HTTPS-443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-8443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2053
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2096
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2087
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2083
+      - companypdf9-cf.877771.xyz-HTTPS-443
+      - companypdf9-cf.877771.xyz-HTTPS-8443
+      - companypdf9-cf.877771.xyz-HTTPS-2053
+      - companypdf9-cf.877771.xyz-HTTPS-2096
+      - companypdf9-cf.877771.xyz-HTTPS-2087
+      - companypdf9-cf.877771.xyz-HTTPS-2083
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083
+      - companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel
+  - name: پشتیبان (در صورت قطعی) 🧯
+    type: fallback
+    url: https://www.gstatic.com/generate_204
+    interval: 600
+    tolerance: 50
+    proxies:
+      - companypdf9-companypdf9.pages.dev-HTTPS-443
+      - companypdf9-companypdf9.pages.dev-HTTPS-8443
+      - companypdf9-companypdf9.pages.dev-HTTPS-2053
+      - companypdf9-companypdf9.pages.dev-HTTPS-2096
+      - companypdf9-companypdf9.pages.dev-HTTPS-2087
+      - companypdf9-companypdf9.pages.dev-HTTPS-2083
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-8443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2053
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2096
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2087
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2083
+      - 🇯🇵 companypdf9-japan.com-HTTPS-443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-8443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2053
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2096
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2087
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2083
+      - companypdf9-malaysia.com-HTTPS-443
+      - companypdf9-malaysia.com-HTTPS-8443
+      - companypdf9-malaysia.com-HTTPS-2053
+      - companypdf9-malaysia.com-HTTPS-2096
+      - companypdf9-malaysia.com-HTTPS-2087
+      - companypdf9-malaysia.com-HTTPS-2083
+      - 🇷🇺 companypdf9-russia.com-HTTPS-443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-8443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2053
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2096
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2087
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2083
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-8443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2053
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2096
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2087
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2083
+      - companypdf9-www.visa.com-HTTPS-443
+      - companypdf9-www.visa.com-HTTPS-8443
+      - companypdf9-www.visa.com-HTTPS-2053
+      - companypdf9-www.visa.com-HTTPS-2096
+      - companypdf9-www.visa.com-HTTPS-2087
+      - companypdf9-www.visa.com-HTTPS-2083
+      - companypdf9-www.csgo.com-HTTPS-443
+      - companypdf9-www.csgo.com-HTTPS-8443
+      - companypdf9-www.csgo.com-HTTPS-2053
+      - companypdf9-www.csgo.com-HTTPS-2096
+      - companypdf9-www.csgo.com-HTTPS-2087
+      - companypdf9-www.csgo.com-HTTPS-2083
+      - companypdf9-www.shopify.com-HTTPS-443
+      - companypdf9-www.shopify.com-HTTPS-8443
+      - companypdf9-www.shopify.com-HTTPS-2053
+      - companypdf9-www.shopify.com-HTTPS-2096
+      - companypdf9-www.shopify.com-HTTPS-2087
+      - companypdf9-www.shopify.com-HTTPS-2083
+      - companypdf9-www.whatismyip.com-HTTPS-443
+      - companypdf9-www.whatismyip.com-HTTPS-8443
+      - companypdf9-www.whatismyip.com-HTTPS-2053
+      - companypdf9-www.whatismyip.com-HTTPS-2096
+      - companypdf9-www.whatismyip.com-HTTPS-2087
+      - companypdf9-www.whatismyip.com-HTTPS-2083
+      - companypdf9-www.ipget.net-HTTPS-443
+      - companypdf9-www.ipget.net-HTTPS-8443
+      - companypdf9-www.ipget.net-HTTPS-2053
+      - companypdf9-www.ipget.net-HTTPS-2096
+      - companypdf9-www.ipget.net-HTTPS-2087
+      - companypdf9-www.ipget.net-HTTPS-2083
+      - companypdf9-speed.marisalnc.com-HTTPS-443
+      - companypdf9-speed.marisalnc.com-HTTPS-8443
+      - companypdf9-speed.marisalnc.com-HTTPS-2053
+      - companypdf9-speed.marisalnc.com-HTTPS-2096
+      - companypdf9-speed.marisalnc.com-HTTPS-2087
+      - companypdf9-speed.marisalnc.com-HTTPS-2083
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.182682.xyz-HTTPS-443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-8443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2053
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2096
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2087
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2083
+      - companypdf9-cfip.cfcdn.vip-HTTPS-443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-8443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2053
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2096
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2087
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2083
+      - companypdf9-cf.0sm.com-HTTPS-443
+      - companypdf9-cf.0sm.com-HTTPS-8443
+      - companypdf9-cf.0sm.com-HTTPS-2053
+      - companypdf9-cf.0sm.com-HTTPS-2096
+      - companypdf9-cf.0sm.com-HTTPS-2087
+      - companypdf9-cf.0sm.com-HTTPS-2083
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083
+      - companypdf9-cf.090227.xyz-HTTPS-443
+      - companypdf9-cf.090227.xyz-HTTPS-8443
+      - companypdf9-cf.090227.xyz-HTTPS-2053
+      - companypdf9-cf.090227.xyz-HTTPS-2096
+      - companypdf9-cf.090227.xyz-HTTPS-2087
+      - companypdf9-cf.090227.xyz-HTTPS-2083
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-8443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2053
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2096
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2087
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.9jy.cc-HTTPS-443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-8443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2053
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2096
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2087
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2083
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083
+      - companypdf9-cfip.1323123.xyz-HTTPS-443
+      - companypdf9-cfip.1323123.xyz-HTTPS-8443
+      - companypdf9-cfip.1323123.xyz-HTTPS-2053
+      - companypdf9-cfip.1323123.xyz-HTTPS-2096
+      - companypdf9-cfip.1323123.xyz-HTTPS-2087
+      - companypdf9-cfip.1323123.xyz-HTTPS-2083
+      - companypdf9-cdn.tzpro.xyz-HTTPS-443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-8443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2053
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2096
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2087
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2083
+      - companypdf9-cf.877771.xyz-HTTPS-443
+      - companypdf9-cf.877771.xyz-HTTPS-8443
+      - companypdf9-cf.877771.xyz-HTTPS-2053
+      - companypdf9-cf.877771.xyz-HTTPS-2096
+      - companypdf9-cf.877771.xyz-HTTPS-2087
+      - companypdf9-cf.877771.xyz-HTTPS-2083
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083
+      - companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel
+  - name: اتصال پایدار 🔗
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 30
+    tolerance: 50
+    proxies:
+      - خودکار (بهترین پینگ) 🤖
+      - پشتیبان (در صورت قطعی) 🧯
+      - دستی 🤏🏻
+  - name: توزیع بار (پایدار) 🧲
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://api.v2fly.org/checkConnection.svgz
+    interval: 600
+    proxies:
+      - companypdf9-companypdf9.pages.dev-HTTPS-443
+      - companypdf9-companypdf9.pages.dev-HTTPS-8443
+      - companypdf9-companypdf9.pages.dev-HTTPS-2053
+      - companypdf9-companypdf9.pages.dev-HTTPS-2096
+      - companypdf9-companypdf9.pages.dev-HTTPS-2087
+      - companypdf9-companypdf9.pages.dev-HTTPS-2083
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-8443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2053
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2096
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2087
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2083
+      - 🇯🇵 companypdf9-japan.com-HTTPS-443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-8443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2053
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2096
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2087
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2083
+      - companypdf9-malaysia.com-HTTPS-443
+      - companypdf9-malaysia.com-HTTPS-8443
+      - companypdf9-malaysia.com-HTTPS-2053
+      - companypdf9-malaysia.com-HTTPS-2096
+      - companypdf9-malaysia.com-HTTPS-2087
+      - companypdf9-malaysia.com-HTTPS-2083
+      - 🇷🇺 companypdf9-russia.com-HTTPS-443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-8443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2053
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2096
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2087
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2083
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-8443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2053
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2096
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2087
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2083
+      - companypdf9-www.visa.com-HTTPS-443
+      - companypdf9-www.visa.com-HTTPS-8443
+      - companypdf9-www.visa.com-HTTPS-2053
+      - companypdf9-www.visa.com-HTTPS-2096
+      - companypdf9-www.visa.com-HTTPS-2087
+      - companypdf9-www.visa.com-HTTPS-2083
+      - companypdf9-www.csgo.com-HTTPS-443
+      - companypdf9-www.csgo.com-HTTPS-8443
+      - companypdf9-www.csgo.com-HTTPS-2053
+      - companypdf9-www.csgo.com-HTTPS-2096
+      - companypdf9-www.csgo.com-HTTPS-2087
+      - companypdf9-www.csgo.com-HTTPS-2083
+      - companypdf9-www.shopify.com-HTTPS-443
+      - companypdf9-www.shopify.com-HTTPS-8443
+      - companypdf9-www.shopify.com-HTTPS-2053
+      - companypdf9-www.shopify.com-HTTPS-2096
+      - companypdf9-www.shopify.com-HTTPS-2087
+      - companypdf9-www.shopify.com-HTTPS-2083
+      - companypdf9-www.whatismyip.com-HTTPS-443
+      - companypdf9-www.whatismyip.com-HTTPS-8443
+      - companypdf9-www.whatismyip.com-HTTPS-2053
+      - companypdf9-www.whatismyip.com-HTTPS-2096
+      - companypdf9-www.whatismyip.com-HTTPS-2087
+      - companypdf9-www.whatismyip.com-HTTPS-2083
+      - companypdf9-www.ipget.net-HTTPS-443
+      - companypdf9-www.ipget.net-HTTPS-8443
+      - companypdf9-www.ipget.net-HTTPS-2053
+      - companypdf9-www.ipget.net-HTTPS-2096
+      - companypdf9-www.ipget.net-HTTPS-2087
+      - companypdf9-www.ipget.net-HTTPS-2083
+      - companypdf9-speed.marisalnc.com-HTTPS-443
+      - companypdf9-speed.marisalnc.com-HTTPS-8443
+      - companypdf9-speed.marisalnc.com-HTTPS-2053
+      - companypdf9-speed.marisalnc.com-HTTPS-2096
+      - companypdf9-speed.marisalnc.com-HTTPS-2087
+      - companypdf9-speed.marisalnc.com-HTTPS-2083
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.182682.xyz-HTTPS-443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-8443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2053
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2096
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2087
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2083
+      - companypdf9-cfip.cfcdn.vip-HTTPS-443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-8443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2053
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2096
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2087
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2083
+      - companypdf9-cf.0sm.com-HTTPS-443
+      - companypdf9-cf.0sm.com-HTTPS-8443
+      - companypdf9-cf.0sm.com-HTTPS-2053
+      - companypdf9-cf.0sm.com-HTTPS-2096
+      - companypdf9-cf.0sm.com-HTTPS-2087
+      - companypdf9-cf.0sm.com-HTTPS-2083
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083
+      - companypdf9-cf.090227.xyz-HTTPS-443
+      - companypdf9-cf.090227.xyz-HTTPS-8443
+      - companypdf9-cf.090227.xyz-HTTPS-2053
+      - companypdf9-cf.090227.xyz-HTTPS-2096
+      - companypdf9-cf.090227.xyz-HTTPS-2087
+      - companypdf9-cf.090227.xyz-HTTPS-2083
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-8443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2053
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2096
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2087
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.9jy.cc-HTTPS-443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-8443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2053
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2096
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2087
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2083
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083
+      - companypdf9-cfip.1323123.xyz-HTTPS-443
+      - companypdf9-cfip.1323123.xyz-HTTPS-8443
+      - companypdf9-cfip.1323123.xyz-HTTPS-2053
+      - companypdf9-cfip.1323123.xyz-HTTPS-2096
+      - companypdf9-cfip.1323123.xyz-HTTPS-2087
+      - companypdf9-cfip.1323123.xyz-HTTPS-2083
+      - companypdf9-cdn.tzpro.xyz-HTTPS-443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-8443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2053
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2096
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2087
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2083
+      - companypdf9-cf.877771.xyz-HTTPS-443
+      - companypdf9-cf.877771.xyz-HTTPS-8443
+      - companypdf9-cf.877771.xyz-HTTPS-2053
+      - companypdf9-cf.877771.xyz-HTTPS-2096
+      - companypdf9-cf.877771.xyz-HTTPS-2087
+      - companypdf9-cf.877771.xyz-HTTPS-2083
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083
+      - companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel
+  - name: توزیع بار (گردشی) 🔁
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://api.v2fly.org/checkConnection.svgz
+    interval: 600
+    proxies:
+      - companypdf9-companypdf9.pages.dev-HTTPS-443
+      - companypdf9-companypdf9.pages.dev-HTTPS-8443
+      - companypdf9-companypdf9.pages.dev-HTTPS-2053
+      - companypdf9-companypdf9.pages.dev-HTTPS-2096
+      - companypdf9-companypdf9.pages.dev-HTTPS-2087
+      - companypdf9-companypdf9.pages.dev-HTTPS-2083
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-8443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2053
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2096
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2087
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2083
+      - 🇯🇵 companypdf9-japan.com-HTTPS-443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-8443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2053
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2096
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2087
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2083
+      - companypdf9-malaysia.com-HTTPS-443
+      - companypdf9-malaysia.com-HTTPS-8443
+      - companypdf9-malaysia.com-HTTPS-2053
+      - companypdf9-malaysia.com-HTTPS-2096
+      - companypdf9-malaysia.com-HTTPS-2087
+      - companypdf9-malaysia.com-HTTPS-2083
+      - 🇷🇺 companypdf9-russia.com-HTTPS-443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-8443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2053
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2096
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2087
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2083
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-8443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2053
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2096
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2087
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2083
+      - companypdf9-www.visa.com-HTTPS-443
+      - companypdf9-www.visa.com-HTTPS-8443
+      - companypdf9-www.visa.com-HTTPS-2053
+      - companypdf9-www.visa.com-HTTPS-2096
+      - companypdf9-www.visa.com-HTTPS-2087
+      - companypdf9-www.visa.com-HTTPS-2083
+      - companypdf9-www.csgo.com-HTTPS-443
+      - companypdf9-www.csgo.com-HTTPS-8443
+      - companypdf9-www.csgo.com-HTTPS-2053
+      - companypdf9-www.csgo.com-HTTPS-2096
+      - companypdf9-www.csgo.com-HTTPS-2087
+      - companypdf9-www.csgo.com-HTTPS-2083
+      - companypdf9-www.shopify.com-HTTPS-443
+      - companypdf9-www.shopify.com-HTTPS-8443
+      - companypdf9-www.shopify.com-HTTPS-2053
+      - companypdf9-www.shopify.com-HTTPS-2096
+      - companypdf9-www.shopify.com-HTTPS-2087
+      - companypdf9-www.shopify.com-HTTPS-2083
+      - companypdf9-www.whatismyip.com-HTTPS-443
+      - companypdf9-www.whatismyip.com-HTTPS-8443
+      - companypdf9-www.whatismyip.com-HTTPS-2053
+      - companypdf9-www.whatismyip.com-HTTPS-2096
+      - companypdf9-www.whatismyip.com-HTTPS-2087
+      - companypdf9-www.whatismyip.com-HTTPS-2083
+      - companypdf9-www.ipget.net-HTTPS-443
+      - companypdf9-www.ipget.net-HTTPS-8443
+      - companypdf9-www.ipget.net-HTTPS-2053
+      - companypdf9-www.ipget.net-HTTPS-2096
+      - companypdf9-www.ipget.net-HTTPS-2087
+      - companypdf9-www.ipget.net-HTTPS-2083
+      - companypdf9-speed.marisalnc.com-HTTPS-443
+      - companypdf9-speed.marisalnc.com-HTTPS-8443
+      - companypdf9-speed.marisalnc.com-HTTPS-2053
+      - companypdf9-speed.marisalnc.com-HTTPS-2096
+      - companypdf9-speed.marisalnc.com-HTTPS-2087
+      - companypdf9-speed.marisalnc.com-HTTPS-2083
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.182682.xyz-HTTPS-443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-8443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2053
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2096
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2087
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2083
+      - companypdf9-cfip.cfcdn.vip-HTTPS-443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-8443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2053
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2096
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2087
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2083
+      - companypdf9-cf.0sm.com-HTTPS-443
+      - companypdf9-cf.0sm.com-HTTPS-8443
+      - companypdf9-cf.0sm.com-HTTPS-2053
+      - companypdf9-cf.0sm.com-HTTPS-2096
+      - companypdf9-cf.0sm.com-HTTPS-2087
+      - companypdf9-cf.0sm.com-HTTPS-2083
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083
+      - companypdf9-cf.090227.xyz-HTTPS-443
+      - companypdf9-cf.090227.xyz-HTTPS-8443
+      - companypdf9-cf.090227.xyz-HTTPS-2053
+      - companypdf9-cf.090227.xyz-HTTPS-2096
+      - companypdf9-cf.090227.xyz-HTTPS-2087
+      - companypdf9-cf.090227.xyz-HTTPS-2083
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-8443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2053
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2096
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2087
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.9jy.cc-HTTPS-443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-8443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2053
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2096
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2087
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2083
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083
+      - companypdf9-cfip.1323123.xyz-HTTPS-443
+      - companypdf9-cfip.1323123.xyz-HTTPS-8443
+      - companypdf9-cfip.1323123.xyz-HTTPS-2053
+      - companypdf9-cfip.1323123.xyz-HTTPS-2096
+      - companypdf9-cfip.1323123.xyz-HTTPS-2087
+      - companypdf9-cfip.1323123.xyz-HTTPS-2083
+      - companypdf9-cdn.tzpro.xyz-HTTPS-443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-8443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2053
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2096
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2087
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2083
+      - companypdf9-cf.877771.xyz-HTTPS-443
+      - companypdf9-cf.877771.xyz-HTTPS-8443
+      - companypdf9-cf.877771.xyz-HTTPS-2053
+      - companypdf9-cf.877771.xyz-HTTPS-2096
+      - companypdf9-cf.877771.xyz-HTTPS-2087
+      - companypdf9-cf.877771.xyz-HTTPS-2083
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083
+      - companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel
+  - name: توزیع بار (موقت) ⏳
+    type: load-balance
+    strategy: consistent-hashing
+    url: https://api.v2fly.org/checkConnection.svgz
+    interval: 600
+    proxies:
+      - companypdf9-companypdf9.pages.dev-HTTPS-443
+      - companypdf9-companypdf9.pages.dev-HTTPS-8443
+      - companypdf9-companypdf9.pages.dev-HTTPS-2053
+      - companypdf9-companypdf9.pages.dev-HTTPS-2096
+      - companypdf9-companypdf9.pages.dev-HTTPS-2087
+      - companypdf9-companypdf9.pages.dev-HTTPS-2083
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-8443
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2053
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2096
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2087
+      - 🇭🇰 companypdf9-icook.hk-HTTPS-2083
+      - 🇯🇵 companypdf9-japan.com-HTTPS-443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-8443
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2053
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2096
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2087
+      - 🇯🇵 companypdf9-japan.com-HTTPS-2083
+      - companypdf9-malaysia.com-HTTPS-443
+      - companypdf9-malaysia.com-HTTPS-8443
+      - companypdf9-malaysia.com-HTTPS-2053
+      - companypdf9-malaysia.com-HTTPS-2096
+      - companypdf9-malaysia.com-HTTPS-2087
+      - companypdf9-malaysia.com-HTTPS-2083
+      - 🇷🇺 companypdf9-russia.com-HTTPS-443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-8443
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2053
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2096
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2087
+      - 🇷🇺 companypdf9-russia.com-HTTPS-2083
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-8443
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2053
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2096
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2087
+      - 🇸🇬 companypdf9-singapore.com-HTTPS-2083
+      - companypdf9-www.visa.com-HTTPS-443
+      - companypdf9-www.visa.com-HTTPS-8443
+      - companypdf9-www.visa.com-HTTPS-2053
+      - companypdf9-www.visa.com-HTTPS-2096
+      - companypdf9-www.visa.com-HTTPS-2087
+      - companypdf9-www.visa.com-HTTPS-2083
+      - companypdf9-www.csgo.com-HTTPS-443
+      - companypdf9-www.csgo.com-HTTPS-8443
+      - companypdf9-www.csgo.com-HTTPS-2053
+      - companypdf9-www.csgo.com-HTTPS-2096
+      - companypdf9-www.csgo.com-HTTPS-2087
+      - companypdf9-www.csgo.com-HTTPS-2083
+      - companypdf9-www.shopify.com-HTTPS-443
+      - companypdf9-www.shopify.com-HTTPS-8443
+      - companypdf9-www.shopify.com-HTTPS-2053
+      - companypdf9-www.shopify.com-HTTPS-2096
+      - companypdf9-www.shopify.com-HTTPS-2087
+      - companypdf9-www.shopify.com-HTTPS-2083
+      - companypdf9-www.whatismyip.com-HTTPS-443
+      - companypdf9-www.whatismyip.com-HTTPS-8443
+      - companypdf9-www.whatismyip.com-HTTPS-2053
+      - companypdf9-www.whatismyip.com-HTTPS-2096
+      - companypdf9-www.whatismyip.com-HTTPS-2087
+      - companypdf9-www.whatismyip.com-HTTPS-2083
+      - companypdf9-www.ipget.net-HTTPS-443
+      - companypdf9-www.ipget.net-HTTPS-8443
+      - companypdf9-www.ipget.net-HTTPS-2053
+      - companypdf9-www.ipget.net-HTTPS-2096
+      - companypdf9-www.ipget.net-HTTPS-2087
+      - companypdf9-www.ipget.net-HTTPS-2083
+      - companypdf9-speed.marisalnc.com-HTTPS-443
+      - companypdf9-speed.marisalnc.com-HTTPS-8443
+      - companypdf9-speed.marisalnc.com-HTTPS-2053
+      - companypdf9-speed.marisalnc.com-HTTPS-2096
+      - companypdf9-speed.marisalnc.com-HTTPS-2087
+      - companypdf9-speed.marisalnc.com-HTTPS-2083
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-8443
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2053
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2096
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2087
+      - companypdf9-freeyx.cloudflare88.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.182682.xyz-HTTPS-443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-8443
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2053
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2096
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2087
+      - companypdf9-cloudflare.182682.xyz-HTTPS-2083
+      - companypdf9-cfip.cfcdn.vip-HTTPS-443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-8443
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2053
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2096
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2087
+      - companypdf9-cfip.cfcdn.vip-HTTPS-2083
+      - companypdf9-cf.0sm.com-HTTPS-443
+      - companypdf9-cf.0sm.com-HTTPS-8443
+      - companypdf9-cf.0sm.com-HTTPS-2053
+      - companypdf9-cf.0sm.com-HTTPS-2096
+      - companypdf9-cf.0sm.com-HTTPS-2087
+      - companypdf9-cf.0sm.com-HTTPS-2083
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-8443
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2053
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2096
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2087
+      - companypdf9-cloudflare-ip.mofashi.ltd-HTTPS-2083
+      - companypdf9-cf.090227.xyz-HTTPS-443
+      - companypdf9-cf.090227.xyz-HTTPS-8443
+      - companypdf9-cf.090227.xyz-HTTPS-2053
+      - companypdf9-cf.090227.xyz-HTTPS-2096
+      - companypdf9-cf.090227.xyz-HTTPS-2087
+      - companypdf9-cf.090227.xyz-HTTPS-2083
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-8443
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2053
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2096
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2087
+      - 🇺🇸 companypdf9-cname.xirancdn.us-HTTPS-2083
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-8443
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2053
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2096
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2087
+      - companypdf9-cf.zhetengsha.eu.org-HTTPS-2083
+      - companypdf9-cloudflare.9jy.cc-HTTPS-443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-8443
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2053
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2096
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2087
+      - companypdf9-cloudflare.9jy.cc-HTTPS-2083
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-8443
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2053
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2096
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2087
+      - companypdf9-cf.zerone-cdn.pp.ua-HTTPS-2083
+      - companypdf9-cfip.1323123.xyz-HTTPS-443
+      - companypdf9-cfip.1323123.xyz-HTTPS-8443
+      - companypdf9-cfip.1323123.xyz-HTTPS-2053
+      - companypdf9-cfip.1323123.xyz-HTTPS-2096
+      - companypdf9-cfip.1323123.xyz-HTTPS-2087
+      - companypdf9-cfip.1323123.xyz-HTTPS-2083
+      - companypdf9-cdn.tzpro.xyz-HTTPS-443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-8443
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2053
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2096
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2087
+      - companypdf9-cdn.tzpro.xyz-HTTPS-2083
+      - companypdf9-cf.877771.xyz-HTTPS-443
+      - companypdf9-cf.877771.xyz-HTTPS-8443
+      - companypdf9-cf.877771.xyz-HTTPS-2053
+      - companypdf9-cf.877771.xyz-HTTPS-2096
+      - companypdf9-cf.877771.xyz-HTTPS-2087
+      - companypdf9-cf.877771.xyz-HTTPS-2083
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-8443
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2053
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2096
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2087
+      - companypdf9-cnamefuckxxs.yuchen.icu-HTTPS-2083
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-8443
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2053
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2096
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2087
+      - companypdf9-cfip.xxxxxxxx.tk-HTTPS-2083
+      - companypdf9-cdn.xn--b6gac.eu.org-HTTPS-443-EDtunnel
+  - name: دانلود منیجر 📥
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - نوع انتخاب پروکسی 🔀
+      - اجازه ندادن 🚫
+  - name: تلگرام 💬
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: یوتیوب ▶️
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: گوگل 🌍
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: واتس آپ 🟢
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: هوش مصنوعی 🤖
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: اینستاگرام 📸
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: تبلیغات 🆎
+    type: select
+    proxies:
+      - اجازه ندادن 🚫
+      - بدون فیلترشکن 🛡️
+      - نوع انتخاب پروکسی 🔀
+  - name: تبلیغات اپ ها 🍃
+    type: select
+    proxies:
+      - اجازه ندادن 🚫
+      - بدون فیلترشکن 🛡️
+      - نوع انتخاب پروکسی 🔀
+  - name: رهگیری جهانی 🛑
+    type: select
+    proxies:
+      - اجازه ندادن 🚫
+      - بدون فیلترشکن 🛡️
+      - نوع انتخاب پروکسی 🔀
+  - name: سایتای مخرب ⚠️
+    type: select
+    proxies:
+      - اجازه ندادن 🚫
+      - بدون فیلترشکن 🛡️
+      - نوع انتخاب پروکسی 🔀
+  - name: استیم 🖥️
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: گیم 🎮
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: توییچ 📡
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: سایتای ایرانی 🇮🇷
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: ویندوز 🧊
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: کلودفلر ☁️
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: گیتهاب 🐙
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+  - name: دیسکورد 🗣️
+    type: select
+    proxies:
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+      - اجازه ندادن 🚫
+  - name: استریمیو 🎬
+    type: select
+    proxies:
+      - بدون فیلترشکن 🛡️
+      - نوع انتخاب پروکسی 🔀
+      - اجازه ندادن 🚫
+  - name: سایتای سانسوری 🤬
+    type: select
+    proxies:
+      - اجازه ندادن 🚫
+      - نوع انتخاب پروکسی 🔀
+      - بدون فیلترشکن 🛡️
+  - name: بدون فیلترشکن 🛡️
+    type: select
+    proxies:
+      - DIRECT
+  - name: قطع اینترنت ⛔
+    type: select
+    proxies:
+      - REJECT
+  - name: اجازه ندادن 🚫
+    type: select
+    proxies:
+      - REJECT
+rules:
+  - IP-CIDR,10.10.34.0/24,نوع انتخاب پروکسی 🔀
+  - RULE-SET,DownloadManagers,دانلود منیجر 📥
+  - RULE-SET,Download,دانلود منیجر 📥
+  - RULE-SET,stremio,استریمیو 🎬
+  - RULE-SET,BanProgramAD,تبلیغات اپ ها 🍃
+  - RULE-SET,BanAD,رهگیری جهانی 🛑
+  - RULE-SET,PrivateTracker,رهگیری جهانی 🛑
+  - RULE-SET,category_public_tracker,رهگیری جهانی 🛑
+  - RULE-SET,malware,سایتای مخرب ⚠️
+  - RULE-SET,phishing,سایتای مخرب ⚠️
+  - RULE-SET,cryptominers,سایتای مخرب ⚠️
+  - RULE-SET,warninglist,سایتای مخرب ⚠️
+  - RULE-SET,Ponzi,سایتای مخرب ⚠️
+  - RULE-SET,LiteAds,تبلیغات 🆎
+  - RULE-SET,iran_ads,تبلیغات 🆎
+  - RULE-SET,PersianBlocker,تبلیغات 🆎
+  - RULE-SET,ads,تبلیغات 🆎
+  - RULE-SET,BanEasyList,تبلیغات 🆎
+  - RULE-SET,twitch,توییچ 📡
+  - PROCESS-NAME,Telegram.exe,تلگرام 💬
+  - PROCESS-NAME,org.telegram.messenger,تلگرام 💬
+  - PROCESS-NAME,org.telegram.messenger.web,تلگرام 💬
+  - RULE-SET,telegram,تلگرام 💬
+  - RULE-SET,YouTube,یوتیوب ▶️
+  - RULE-SET,youtube,یوتیوب ▶️
+  - RULE-SET,YouTubeMusic,یوتیوب ▶️
+  - PROCESS-NAME,com.instagram.android,اینستاگرام 📸
+  - RULE-SET,instagram,اینستاگرام 📸
+  - DOMAIN-SUFFIX,deepseek.com,هوش مصنوعی 🤖
+  - DOMAIN-SUFFIX,qwen.ai,هوش مصنوعی 🤖
+  - RULE-SET,category-ai,هوش مصنوعی 🤖
+  - RULE-SET,censor,سایتای سانسوری 🤬
+  - RULE-SET,apps,سایتای ایرانی 🇮🇷
+  - RULE-SET,iran,سایتای ایرانی 🇮🇷
+  - RULE-SET,arvancloud,سایتای ایرانی 🇮🇷
+  - RULE-SET,derakcloud,سایتای ایرانی 🇮🇷
+  - RULE-SET,iranserver,سایتای ایرانی 🇮🇷
+  - RULE-SET,parspack,سایتای ایرانی 🇮🇷
+  - RULE-SET,irasn,سایتای ایرانی 🇮🇷
+  - RULE-SET,ircidr,سایتای ایرانی 🇮🇷
+  - RULE-SET,ir,سایتای ایرانی 🇮🇷
+  - RULE-SET,category_ir,سایتای ایرانی 🇮🇷
+  - RULE-SET,whatsapp,واتس آپ 🟢
+  - RULE-SET,steam,استیم 🖥️
+  - RULE-SET,SteamRegionCheck,استیم 🖥️
+  - RULE-SET,game,گیم 🎮
+  - RULE-SET,GameDownload,گیم 🎮
+  - RULE-SET,category-games,گیم 🎮
+  - RULE-SET,Xbox,گیم 🎮
+  - RULE-SET,discord,دیسکورد 🗣️
+  - RULE-SET,xiaomi_white_list,نوع انتخاب پروکسی 🔀
+  - RULE-SET,xiaomi-ads,تبلیغات اپ ها 🍃
+  - RULE-SET,xiaomi_block_list,تبلیغات اپ ها 🍃
+  - RULE-SET,windows,ویندوز 🧊
+  - RULE-SET,cloudflare,کلودفلر ☁️
+  - RULE-SET,github,گیتهاب 🐙
+  - PROCESS-NAME,com.android.vending,نوع انتخاب پروکسی 🔀
+  - PROCESS-NAME,com.google.android.gms,نوع انتخاب پروکسی 🔀
+  - RULE-SET,google-play,نوع انتخاب پروکسی 🔀
+  - RULE-SET,google,گوگل 🌍
+  - RULE-SET,local_ips,بدون فیلترشکن 🛡️
+  - RULE-SET,private,بدون فیلترشکن 🛡️
+  - MATCH,نوع انتخاب پروکسی 🔀
+ntp:
+  enable: true
+  server: time.apple.com
+  port: 123
+  interval: 30
