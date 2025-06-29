@@ -186,7 +186,7 @@ warp://p1@188.114.98.184?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
 warp://p1@188.114.98.185?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
 warp://p1@188.114.98.186?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
 warp://p1@188.114.98.187?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
-warp://p1@188.114.98.warp://p1@188?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
+warp://p1@188.114.98.188?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
 warp://p1@188.114.98.189?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
 warp://p1@188.114.98.190?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
 warp://p1@188.114.98.191?ifp=4-8&ifps=40-100&ifpd=40-80&ifpm=m4#Warp 🇮🇷 IP
