@@ -1,4 +1,4 @@
-warp://p1@188.114.96.141?ifp=5-10#🇩🇪-Tehran
+warp://p1@162.159.195.107?ifp=5-10#🇩🇪-Tehran
 warp://p1@188.114.96.0?ifp=5-10#🇮🇷-Tehran
 warp://p1@188.114.96.1?ifp=5-10#🇮🇷-Tehran
 warp://p1@188.114.96.2?ifp=5-10#🇮🇷-Tehran
