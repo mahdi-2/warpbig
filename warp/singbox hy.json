@@ -1,0 +1,438 @@
+{
+	"log": {
+		"disabled": false,
+		"level": "info",
+		"timestamp": true
+	},
+	"dns": {
+		"servers": [
+			{
+				"tag": "dns_proxy",
+				"address": "tls://1.1.1.1",
+				"address_resolver": "dns_resolver"
+			},
+			{
+				"tag": "dns_direct",
+				"address": "h3://dns.alidns.com/dns-query",
+				"address_resolver": "dns_resolver",
+				"detour": "DIRECT"
+			},
+			{
+				"tag": "dns_fakeip",
+				"address": "fakeip"
+			},
+			{
+				"tag": "dns_resolver",
+				"address": "223.5.5.5",
+				"detour": "DIRECT"
+			},
+			{
+				"tag": "block",
+				"address": "rcode://success"
+			}
+		],
+		"rules": [
+			{
+				"outbound": [
+					"any"
+				],
+				"server": "dns_resolver"
+			},
+			{
+				"geosite": [
+					"category-ads-all"
+				],
+				"server": "dns_block",
+				"disable_cache": true
+			},
+			{
+				"geosite": [
+					"geolocation-!cn"
+				],
+				"query_type": [
+					"A",
+					"AAAA"
+				],
+				"server": "dns_fakeip"
+			},
+			{
+				"geosite": [
+					"geolocation-!cn"
+				],
+				"server": "dns_proxy"
+			}
+		],
+		"final": "dns_direct",
+		"independent_cache": true,
+		"fakeip": {
+			"enabled": true,
+			"inet4_range": "198.18.0.0/15"
+		}
+	},
+	"ntp": {
+		"enabled": true,
+		"server": "time.apple.com",
+		"server_port": 123,
+		"interval": "30m",
+		"detour": "DIRECT"
+	},
+	"inbounds": [
+		{
+			"type": "mixed",
+			"tag": "mixed-in",
+			"listen": "0.0.0.0",
+			"listen_port": 2080
+		},
+		{
+			"type": "tun",
+			"tag": "tun-in",
+			"inet4_address": "172.19.0.1/30",
+			"auto_route": true,
+			"strict_route": true,
+			"stack": "mixed",
+			"sniff": true
+		}
+	],
+	"outbounds": [
+		{
+			"type": "direct",
+			"tag": "DIRECT"
+		},
+		{
+			"type": "block",
+			"tag": "REJECT"
+		},
+		{
+			"type": "dns",
+			"tag": "dns-out"
+		},
+		{
+			"type": "selector",
+			"tag": "نوع انتخاب پروکسی 🔀",
+			"outbounds": [
+				"اتصال پایدار 🔗",
+				"خودکار (بهترین پینگ) 🤖",
+				"دستی 🤏🏻",
+				"پشتیبان (در صورت قطعی) 🧯",
+				"توزیع بار (پایدار) 🧲",
+				"توزیع بار (موقت) ⏳",
+				"توزیع بار (گردشی) 🔁",
+				"قطع اینترنت ⛔",
+				"بدون فیلترشکن 🛡️"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "دستی 🤏🏻",
+			"outbounds": [
+				"DIRECT"
+			]
+		},
+		{
+			"type": "urltest",
+			"tag": "خودکار (بهترین پینگ) 🤖",
+			"outbounds": [
+				"DIRECT"
+			],
+			"url": "https://api.v2fly.org/checkConnection.svgz",
+			"interval": "10m",
+			"tolerance": 50
+		},
+		{
+			"type": "urltest",
+			"tag": "پشتیبان (در صورت قطعی) 🧯",
+			"outbounds": [
+				"DIRECT"
+			]
+		},
+		{
+			"type": "urltest",
+			"tag": "اتصال پایدار 🔗",
+			"outbounds": [
+				"خودکار (بهترین پینگ) 🤖",
+				"پشتیبان (در صورت قطعی) 🧯",
+				"دستی 🤏🏻"
+			],
+			"url": "https://cp.cloudflare.com/generate_204",
+			"interval": "30s",
+			"tolerance": 50
+		},
+		{
+			"type": "urltest",
+			"tag": "توزیع بار (پایدار) 🧲",
+			"outbounds": [
+				"DIRECT"
+			]
+		},
+		{
+			"type": "urltest",
+			"tag": "توزیع بار (گردشی) 🔁",
+			"outbounds": [
+				"DIRECT"
+			]
+		},
+		{
+			"type": "urltest",
+			"tag": "توزیع بار (موقت) ⏳",
+			"outbounds": [
+				"DIRECT"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "دانلود منیجر 📥",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"نوع انتخاب پروکسی 🔀",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "تلگرام 💬",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "یوتیوب ▶️",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "گوگل 🌍",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "واتس آپ 🟢",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "هوش مصنوعی 🤖",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "اینستاگرام 📸",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "تبلیغات 🆎",
+			"outbounds": [
+				"اجازه ندادن 🚫",
+				"بدون فیلترشکن 🛡️",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "تبلیغات اپ ها 🍃",
+			"outbounds": [
+				"اجازه ندادن 🚫",
+				"بدون فیلترشکن 🛡️",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "رهگیری جهانی 🛑",
+			"outbounds": [
+				"اجازه ندادن 🚫",
+				"بدون فیلترشکن 🛡️",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "سایتای مخرب ⚠️",
+			"outbounds": [
+				"اجازه ندادن 🚫",
+				"بدون فیلترشکن 🛡️",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "استیم 🖥️",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "گیم 🎮",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "توییچ 📡",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "سایتای ایرانی 🇮🇷",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "ویندوز 🧊",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "کلودفلر ☁️",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "گیتهاب 🐙",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "دیسکورد 🗣️",
+			"outbounds": [
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "استریمیو 🎬",
+			"outbounds": [
+				"بدون فیلترشکن 🛡️",
+				"نوع انتخاب پروکسی 🔀",
+				"اجازه ندادن 🚫"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "سایتای سانسوری 🤬",
+			"outbounds": [
+				"اجازه ندادن 🚫",
+				"نوع انتخاب پروکسی 🔀",
+				"بدون فیلترشکن 🛡️"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "بدون فیلترشکن 🛡️",
+			"outbounds": [
+				"DIRECT"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "قطع اینترنت ⛔",
+			"outbounds": [
+				"REJECT"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "اجازه ندادن 🚫",
+			"outbounds": [
+				"REJECT"
+			]
+		},
+		{
+			"type": "selector",
+			"tag": "GLOBAL",
+			"outbounds": [
+				"DIRECT"
+			]
+		}
+	],
+	"route": {
+		"rules": [
+			{
+				"clash_mode": "Global",
+				"outbound": "GLOBAL"
+			},
+			{
+				"clash_mode": "Direct",
+				"outbound": "DIRECT"
+			},
+			{
+				"protocol": "dns",
+				"outbound": "dns-out"
+			}
+		],
+		"auto_detect_interface": true,
+		"final": "نوع انتخاب پروکسی 🔀"
+	},
+	"experimental": {
+		"cache_file": {
+			"enabled": true,
+			"store_fakeip": true
+		}
+	}
+}
+
+
+
+
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/1.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/2.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/3.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/4.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/5.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/6.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/7.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/8.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/9.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/10.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/0f9b16adbd96332d967c3c9a42e3b0cc15c8440e/githubmirror/11.txt

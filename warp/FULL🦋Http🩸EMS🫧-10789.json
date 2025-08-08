@@ -1,0 +1,5751 @@
+{
+	"log": {
+		"level": "warn"
+	},
+	"dns": {
+		"servers": [
+			{
+				"tag": "default",
+				"address": "tcp://8.8.8.8",
+				"detour": "Best🔹️Latency"
+			},
+			{
+				"tag": "Inte🔸️rnet-dns",
+				"address": "https://1.1.1.1/dns-query",
+				"detour": "Inte🔸️rnet"
+			},
+			{
+				"tag": "Direct",
+				"address": "tls://223.5.5.5",
+				"detour": "Urltest"
+			},
+			{
+				"address": "tls://223.5.5.5:53",
+				"detour": "dns-direct"
+			},
+			{
+				"tag": "dns-direct",
+				"address": "1.1.1.1",
+				"detour": "Best🔹️Latency"
+			},
+			{
+				"tag": "dns-local",
+				"address": "local",
+				"detour": "direct"
+			}
+		],
+		"rules": [
+			{
+				"outbound": "any",
+				"server": "direct"
+			},
+			{
+				"clash_mode": "Global",
+				"server": "Best🔹️Latency"
+			},
+			{
+				"clash_mode": "Direct",
+				"server": "DIRECT"
+			}
+		],
+		"strategy": "ipv4_only"
+	},
+	"inbounds": [
+		{
+			"type": "mixed",
+			"listen": "127.0.0.1",
+			"listen_port": 20122,
+			"udp_fragment": true,
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		},
+		{
+			"type": "http",
+			"listen": "127.0.0.1",
+			"listen_port": 8181,
+			"udp_fragment": true,
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		},
+		{
+			"type": "socks",
+			"listen": "127.0.0.1",
+			"listen_port": 8080,
+			"udp_fragment": true,
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		},
+		{
+			"type": "tun",
+			"address": [
+				"172.19.0.1/30",
+				"fdfe:dcba:9876::1/126"
+			],
+			"auto_route": true,
+			"strict_route": true,
+			"stack": "mixed",
+			"platform": {
+				"http_proxy": {
+					"enabled": true,
+					"server": "127.0.0.1",
+					"server_port": 20122
+				}
+			},
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		}
+	],
+	"outbounds": [
+		{
+			"type": "selector",
+			"tag": "🍆Best",
+			"outbounds": [
+				"Best🔹️Latency",
+				"Best🔹️Latency"
+			],
+
+			"default": "Best🔹️Latency",
+			"interrupt_exist_connections": true
+		},
+		{
+			"type": "selector",
+			"tag": "🥒Best",
+			"outbounds": [
+				"Best🔹️Latency",
+				"Best🔹️Latency"
+			],
+
+			"default": "Best🔹️Latency",
+			"interrupt_exist_connections": true
+		},
+		{
+			"type": "selector",
+			"tag": "Inte🔸️rnet",
+			"outbounds": [
+				"Best🔹️Latency",
+				"🦋Http🩸EMS🫧-0",
+				"🦋Http🩸EMS🫧-1",
+				"🦋Http🩸EMS🫧-2",
+				"🦋Http🩸EMS🫧-3",
+				"🦋Http🩸EMS🫧-4",
+				"🦋Http🩸EMS🫧-5",
+				"🦋Http🩸EMS🫧-6",
+				"🦋Http🩸EMS🫧-7",
+				"🦋Http🩸EMS🫧-8",
+				"🦋Http🩸EMS🫧-9",
+				"🦋Http🩸EMS🫧-10",
+				"🦋Http🩸EMS🫧-11",
+				"🦋Http🩸EMS🫧-12",
+				"🦋Http🩸EMS🫧-13",
+				"🦋Http🩸EMS🫧-14",
+				"🦋Http🩸EMS🫧-15",
+				"🦋Http🩸EMS🫧-16",
+				"🦋Http🩸EMS🫧-17",
+				"🦋Http🩸EMS🫧-18",
+				"🦋Http🩸EMS🫧-19",
+				"🦋Http🩸EMS🫧-20",
+				"🦋Http🩸EMS🫧-21",
+				"🦋Http🩸EMS🫧-22",
+				"🦋Http🩸EMS🫧-23",
+				"🦋Http🩸EMS🫧-24",
+				"🦋Http🩸EMS🫧-25",
+				"🦋Http🩸EMS🫧-26",
+				"🦋Http🩸EMS🫧-27",
+				"🦋Http🩸EMS🫧-28",
+				"🦋Http🩸EMS🫧-29",
+				"🦋Http🩸EMS🫧-30",
+				"🦋Http🩸EMS🫧-31",
+				"🦋Http🩸EMS🫧-32",
+				"🦋Http🩸EMS🫧-33",
+				"🦋Http🩸EMS🫧-34",
+				"🦋Http🩸EMS🫧-35",
+				"🦋Http🩸EMS🫧-36",
+				"🦋Http🩸EMS🫧-37",
+				"🦋Http🩸EMS🫧-38",
+				"🦋Http🩸EMS🫧-39",
+				"🦋Http🩸EMS🫧-40",
+				"🦋Http🩸EMS🫧-41",
+				"🦋Http🩸EMS🫧-42",
+				"🦋Http🩸EMS🫧-43",
+				"🦋Http🩸EMS🫧-44",
+				"🦋Http🩸EMS🫧-45",
+				"🦋Http🩸EMS🫧-46",
+				"🦋Http🩸EMS🫧-47",
+				"🦋Http🩸EMS🫧-48",
+				"🦋Http🩸EMS🫧-49",
+				"🦋Http🩸EMS🫧-50",
+				"🦋Http🩸EMS🫧-51",
+				"🦋Http🩸EMS🫧-52",
+				"🦋Http🩸EMS🫧-53",
+				"🦋Http🩸EMS🫧-54",
+				"🦋Http🩸EMS🫧-55",
+				"🦋Http🩸EMS🫧-56",
+				"🦋Http🩸EMS🫧-57",
+				"🦋Http🩸EMS🫧-58",
+				"🦋Http🩸EMS🫧-59",
+				"🦋Http🩸EMS🫧-60",
+				"🦋Http🩸EMS🫧-61",
+				"🦋Http🩸EMS🫧-62",
+				"🦋Http🩸EMS🫧-63",
+				"🦋Http🩸EMS🫧-64",
+				"🦋Http🩸EMS🫧-65",
+				"🦋Http🩸EMS🫧-66",
+				"🦋Http🩸EMS🫧-67",
+				"🦋Http🩸EMS🫧-68",
+				"🦋Http🩸EMS🫧-69",
+				"🦋Http🩸EMS🫧-70",
+				"🦋Http🩸EMS🫧-71",
+				"🦋Http🩸EMS🫧-72",
+				"🦋Http🩸EMS🫧-73",
+				"🦋Http🩸EMS🫧-74",
+				"🦋Http🩸EMS🫧-75",
+				"🦋Http🩸EMS🫧-76",
+				"🦋Http🩸EMS🫧-77",
+				"🦋Http🩸EMS🫧-78",
+				"🦋Http🩸EMS🫧-79",
+				"🦋Http🩸EMS🫧-80",
+				"🦋Http🩸EMS🫧-81",
+				"🦋Http🩸EMS🫧-82",
+				"🦋Http🩸EMS🫧-83",
+				"🦋Http🩸EMS🫧-84",
+				"🦋Http🩸EMS🫧-85",
+				"🦋Http🩸EMS🫧-86",
+				"🦋Http🩸EMS🫧-87",
+				"🦋Http🩸EMS🫧-88",
+				"🦋Http🩸EMS🫧-89",
+				"🦋Http🩸EMS🫧-90",
+				"🦋Http🩸EMS🫧-91",
+				"🦋Http🩸EMS🫧-92",
+				"🦋Http🩸EMS🫧-93",
+				"🦋Http🩸EMS🫧-94",
+				"🦋Http🩸EMS🫧-95",
+				"🦋Http🩸EMS🫧-96",
+				"🦋Http🩸EMS🫧-97",
+				"🦋Http🩸EMS🫧-98",
+				"🦋Http🩸EMS🫧-99",
+				"🦋Http🩸EMS🫧-100",
+				"🦋Http🩸EMS🫧-101",
+				"🦋Http🩸EMS🫧-102",
+				"🦋Http🩸EMS🫧-103",
+				"🦋Http🩸EMS🫧-104",
+				"🦋Http🩸EMS🫧-105",
+				"🦋Http🩸EMS🫧-106",
+				"🦋Http🩸EMS🫧-107",
+				"🦋Http🩸EMS🫧-108",
+				"🦋Http🩸EMS🫧-109",
+				"🦋Http🩸EMS🫧-110",
+				"🦋Http🩸EMS🫧-111",
+				"🦋Http🩸EMS🫧-112",
+				"🦋Http🩸EMS🫧-113",
+				"🦋Http🩸EMS🫧-114",
+				"🦋Http🩸EMS🫧-115",
+				"🦋Http🩸EMS🫧-116",
+				"🦋Http🩸EMS🫧-117",
+				"🦋Http🩸EMS🫧-118",
+				"🦋Http🩸EMS🫧-119",
+				"🦋Http🩸EMS🫧-120",
+				"🦋Http🩸EMS🫧-121",
+				"🦋Http🩸EMS🫧-122",
+				"🦋Http🩸EMS🫧-123",
+				"🦋Http🩸EMS🫧-124",
+				"🦋Http🩸EMS🫧-125",
+				"🦋Http🩸EMS🫧-126",
+				"🦋Http🩸EMS🫧-127",
+				"🦋Http🩸EMS🫧-128",
+				"🦋Http🩸EMS🫧-129",
+				"🦋Http🩸EMS🫧-130",
+				"🦋Http🩸EMS🫧-131",
+				"🦋Http🩸EMS🫧-132",
+				"🦋Http🩸EMS🫧-133",
+				"🦋Http🩸EMS🫧-134",
+				"🦋Http🩸EMS🫧-135",
+				"🦋Http🩸EMS🫧-136",
+				"🦋Http🩸EMS🫧-137",
+				"🦋Http🩸EMS🫧-138",
+				"🦋Http🩸EMS🫧-139",
+				"🦋Http🩸EMS🫧-140",
+				"🦋Http🩸EMS🫧-141",
+				"🦋Http🩸EMS🫧-142",
+				"🦋Http🩸EMS🫧-143",
+				"🦋Http🩸EMS🫧-144",
+				"🦋Http🩸EMS🫧-145",
+				"🦋Http🩸EMS🫧-146",
+				"🦋Http🩸EMS🫧-147",
+				"🦋Http🩸EMS🫧-148",
+				"🦋Http🩸EMS🫧-149",
+				"🦋Http🩸EMS🫧-150",
+				"🦋Http🩸EMS🫧-151",
+				"🦋Http🩸EMS🫧-152",
+				"🦋Http🩸EMS🫧-153",
+				"🦋Http🩸EMS🫧-154",
+				"🦋Http🩸EMS🫧-155",
+				"🦋Http🩸EMS🫧-156",
+				"🦋Http🩸EMS🫧-157",
+				"🦋Http🩸EMS🫧-158",
+				"🦋Http🩸EMS🫧-159",
+				"🦋Http🩸EMS🫧-160",
+				"🦋Http🩸EMS🫧-161",
+				"🦋Http🩸EMS🫧-162",
+				"🦋Http🩸EMS🫧-163",
+				"🦋Http🩸EMS🫧-164",
+				"🦋Http🩸EMS🫧-165",
+				"🦋Http🩸EMS🫧-166",
+				"🦋Http🩸EMS🫧-167",
+				"🦋Http🩸EMS🫧-168",
+				"🦋Http🩸EMS🫧-169",
+				"🦋Http🩸EMS🫧-170",
+				"🦋Http🩸EMS🫧-171",
+				"🦋Http🩸EMS🫧-172",
+				"🦋Http🩸EMS🫧-173",
+				"🦋Http🩸EMS🫧-174",
+				"🦋Http🩸EMS🫧-175",
+				"🦋Http🩸EMS🫧-176",
+				"🦋Http🩸EMS🫧-177",
+				"🦋Http🩸EMS🫧-178",
+				"🦋Http🩸EMS🫧-179",
+				"🦋Http🩸EMS🫧-180",
+				"🦋Http🩸EMS🫧-181",
+				"🦋Http🩸EMS🫧-182",
+				"🦋Http🩸EMS🫧-183",
+				"🦋Http🩸EMS🫧-184",
+				"🦋Http🩸EMS🫧-185",
+				"🦋Http🩸EMS🫧-186",
+				"🦋Http🩸EMS🫧-187",
+				"🦋Http🩸EMS🫧-188",
+				"🦋Http🩸EMS🫧-189",
+				"🦋Http🩸EMS🫧-190",
+				"🦋Http🩸EMS🫧-191",
+				"🦋Http🩸EMS🫧-192",
+				"🦋Http🩸EMS🫧-193",
+				"🦋Http🩸EMS🫧-194",
+				"🦋Http🩸EMS🫧-195",
+				"🦋Http🩸EMS🫧-196",
+				"🦋Http🩸EMS🫧-197",
+				"🦋Http🩸EMS🫧-198",
+				"🦋Http🩸EMS🫧-199",
+				"🦋Http🩸EMS🫧-200",
+				"🦋Http🩸EMS🫧-201",
+				"🦋Http🩸EMS🫧-202",
+				"🦋Http🩸EMS🫧-203",
+				"🦋Http🩸EMS🫧-204",
+				"🦋Http🩸EMS🫧-205",
+				"🦋Http🩸EMS🫧-206",
+				"🦋Http🩸EMS🫧-207",
+				"🦋Http🩸EMS🫧-208",
+				"🦋Http🩸EMS🫧-209",
+				"🦋Http🩸EMS🫧-210",
+				"🦋Http🩸EMS🫧-211",
+				"🦋Http🩸EMS🫧-212",
+				"🦋Http🩸EMS🫧-213",
+				"🦋Http🩸EMS🫧-214",
+				"🦋Http🩸EMS🫧-215",
+				"🦋Http🩸EMS🫧-216",
+				"🦋Http🩸EMS🫧-217",
+				"🦋Http🩸EMS🫧-218",
+				"🦋Http🩸EMS🫧-219",
+				"🦋Http🩸EMS🫧-220",
+				"🦋Http🩸EMS🫧-221",
+				"🦋Http🩸EMS🫧-222",
+				"🦋Http🩸EMS🫧-223",
+				"🦋Http🩸EMS🫧-224",
+				"🦋Http🩸EMS🫧-225",
+				"🦋Http🩸EMS🫧-226",
+				"🦋Http🩸EMS🫧-227",
+				"🦋Http🩸EMS🫧-228",
+				"🦋Http🩸EMS🫧-229",
+				"🦋Http🩸EMS🫧-230",
+				"🦋Http🩸EMS🫧-231",
+				"🦋Http🩸EMS🫧-232",
+				"🦋Http🩸EMS🫧-233",
+				"🦋Http🩸EMS🫧-234",
+				"🦋Http🩸EMS🫧-235",
+				"🦋Http🩸EMS🫧-236",
+				"🦋Http🩸EMS🫧-237",
+				"🦋Http🩸EMS🫧-238",
+				"🦋Http🩸EMS🫧-239",
+				"🦋Http🩸EMS🫧-240",
+				"🦋Http🩸EMS🫧-241",
+				"🦋Http🩸EMS🫧-242",
+				"🦋Http🩸EMS🫧-243",
+				"🦋Http🩸EMS🫧-244",
+				"🦋Http🩸EMS🫧-245",
+				"🦋Http🩸EMS🫧-246",
+				"🦋Http🩸EMS🫧-247",
+				"🦋Http🩸EMS🫧-248",
+				"🦋Http🩸EMS🫧-249",
+				"🦋Http🩸EMS🫧-250",
+				"🦋Http🩸EMS🫧-251",
+				"🦋Http🩸EMS🫧-252",
+				"🦋Http🩸EMS🫧-253",
+				"🦋Http🩸EMS🫧-254",
+				"🦋Http🩸EMS🫧-255",
+				"🦋Http🩸EMS🫧-256",
+				"🦋Http🩸EMS🫧-257",
+				"🦋Http🩸EMS🫧-258",
+				"🦋Http🩸EMS🫧-259",
+				"🦋Http🩸EMS🫧-260",
+				"🦋Http🩸EMS🫧-261",
+				"🦋Http🩸EMS🫧-262",
+				"🦋Http🩸EMS🫧-263",
+				"🦋Http🩸EMS🫧-264",
+				"🦋Http🩸EMS🫧-265",
+				"🦋Http🩸EMS🫧-266",
+				"🦋Http🩸EMS🫧-267",
+				"🦋Http🩸EMS🫧-268",
+				"🦋Http🩸EMS🫧-269",
+				"🦋Http🩸EMS🫧-270",
+				"🦋Http🩸EMS🫧-271",
+				"🦋Http🩸EMS🫧-272",
+				"🦋Http🩸EMS🫧-273",
+				"🦋Http🩸EMS🫧-274",
+				"🦋Http🩸EMS🫧-275",
+				"🦋Http🩸EMS🫧-276",
+				"🦋Http🩸EMS🫧-277",
+				"🦋Http🩸EMS🫧-278",
+				"🦋Http🩸EMS🫧-279",
+				"🦋Http🩸EMS🫧-280",
+				"🦋Http🩸EMS🫧-281",
+				"🦋Http🩸EMS🫧-282",
+				"🦋Http🩸EMS🫧-283",
+				"🦋Http🩸EMS🫧-284",
+				"🦋Http🩸EMS🫧-285",
+				"🦋Http🩸EMS🫧-286",
+				"🦋Http🩸EMS🫧-287",
+				"🦋Http🩸EMS🫧-288",
+				"🦋Http🩸EMS🫧-289",
+				"🦋Http🩸EMS🫧-290",
+				"🦋Http🩸EMS🫧-291",
+				"🦋Http🩸EMS🫧-292",
+				"🦋Http🩸EMS🫧-293",
+				"🦋Http🩸EMS🫧-294",
+				"🦋Http🩸EMS🫧-295",
+				"🦋Http🩸EMS🫧-296",
+				"🦋Http🩸EMS🫧-297",
+				"🦋Http🩸EMS🫧-298",
+				"🦋Http🩸EMS🫧-299",
+				"🦋Http🩸EMS🫧-300",
+				"🦋Http🩸EMS🫧-301",
+				"🦋Http🩸EMS🫧-302",
+				"🦋Http🩸EMS🫧-303",
+				"🦋Http🩸EMS🫧-304",
+				"🦋Http🩸EMS🫧-305",
+				"🦋Http🩸EMS🫧-306",
+				"🦋Http🩸EMS🫧-307",
+				"🦋Http🩸EMS🫧-308",
+				"🦋Http🩸EMS🫧-309",
+				"🦋Http🩸EMS🫧-310",
+				"🦋Http🩸EMS🫧-311",
+				"🦋Http🩸EMS🫧-312",
+				"🦋Http🩸EMS🫧-313",
+				"🦋Http🩸EMS🫧-314",
+				"🦋Http🩸EMS🫧-315",
+				"🦋Http🩸EMS🫧-316",
+				"🦋Http🩸EMS🫧-317",
+				"🦋Http🩸EMS🫧-318",
+				"🦋Http🩸EMS🫧-319",
+				"🦋Http🩸EMS🫧-320",
+				"🦋Http🩸EMS🫧-321",
+				"🦋Http🩸EMS🫧-322",
+				"🦋Http🩸EMS🫧-323",
+				"🦋Http🩸EMS🫧-324",
+				"🦋Http🩸EMS🫧-325",
+				"🦋Http🩸EMS🫧-326",
+				"🦋Http🩸EMS🫧-327",
+				"🦋Http🩸EMS🫧-328",
+				"🦋Http🩸EMS🫧-329",
+				"🦋Http🩸EMS🫧-330",
+				"🦋Http🩸EMS🫧-331",
+				"🦋Http🩸EMS🫧-332",
+				"🦋Http🩸EMS🫧-333",
+				"🦋Http🩸EMS🫧-334",
+				"🦋Http🩸EMS🫧-335",
+				"🦋Http🩸EMS🫧-336",
+				"🦋Http🩸EMS🫧-337",
+				"🦋Http🩸EMS🫧-338",
+				"🦋Http🩸EMS🫧-339",
+				"🦋Http🩸EMS🫧-340",
+				"🦋Http🩸EMS🫧-341",
+				"🦋Http🩸EMS🫧-342",
+				"🦋Http🩸EMS🫧-343",
+				"🦋Http🩸EMS🫧-344",
+				"🦋Http🩸EMS🫧-345",
+				"🦋Http🩸EMS🫧-346",
+				"🦋Http🩸EMS🫧-347",
+				"🦋Http🩸EMS🫧-348",
+				"🦋Http🩸EMS🫧-349",
+				"🦋Http🩸EMS🫧-350",
+				"🦋Http🩸EMS🫧-351",
+				"🦋Http🩸EMS🫧-352",
+				"🦋Http🩸EMS🫧-353",
+				"🦋Http🩸EMS🫧-354",
+				"🦋Http🩸EMS🫧-355",
+				"🦋Http🩸EMS🫧-356",
+				"🦋Http🩸EMS🫧-357",
+				"🦋Http🩸EMS🫧-358",
+				"🦋Http🩸EMS🫧-359",
+				"🦋Http🩸EMS🫧-360",
+				"🦋Http🩸EMS🫧-361",
+				"🦋Http🩸EMS🫧-362",
+				"🦋Http🩸EMS🫧-363",
+				"🦋Http🩸EMS🫧-364",
+				"🦋Http🩸EMS🫧-365",
+				"🦋Http🩸EMS🫧-366",
+				"🦋Http🩸EMS🫧-367"
+			],
+
+			"default": "Best🔹️Latency",
+			"interrupt_exist_connections": true
+		},
+		{
+			"type": "urltest",
+			"tag": "Best🔹️Latency",
+			"outbounds": [
+				"🦋Http🩸EMS🫧-0",
+				"🦋Http🩸EMS🫧-1",
+				"🦋Http🩸EMS🫧-2",
+				"🦋Http🩸EMS🫧-3",
+				"🦋Http🩸EMS🫧-4",
+				"🦋Http🩸EMS🫧-5",
+				"🦋Http🩸EMS🫧-6",
+				"🦋Http🩸EMS🫧-7",
+				"🦋Http🩸EMS🫧-8",
+				"🦋Http🩸EMS🫧-9",
+				"🦋Http🩸EMS🫧-10",
+				"🦋Http🩸EMS🫧-11",
+				"🦋Http🩸EMS🫧-12",
+				"🦋Http🩸EMS🫧-13",
+				"🦋Http🩸EMS🫧-14",
+				"🦋Http🩸EMS🫧-15",
+				"🦋Http🩸EMS🫧-16",
+				"🦋Http🩸EMS🫧-17",
+				"🦋Http🩸EMS🫧-18",
+				"🦋Http🩸EMS🫧-19",
+				"🦋Http🩸EMS🫧-20",
+				"🦋Http🩸EMS🫧-21",
+				"🦋Http🩸EMS🫧-22",
+				"🦋Http🩸EMS🫧-23",
+				"🦋Http🩸EMS🫧-24",
+				"🦋Http🩸EMS🫧-25",
+				"🦋Http🩸EMS🫧-26",
+				"🦋Http🩸EMS🫧-27",
+				"🦋Http🩸EMS🫧-28",
+				"🦋Http🩸EMS🫧-29",
+				"🦋Http🩸EMS🫧-30",
+				"🦋Http🩸EMS🫧-31",
+				"🦋Http🩸EMS🫧-32",
+				"🦋Http🩸EMS🫧-33",
+				"🦋Http🩸EMS🫧-34",
+				"🦋Http🩸EMS🫧-35",
+				"🦋Http🩸EMS🫧-36",
+				"🦋Http🩸EMS🫧-37",
+				"🦋Http🩸EMS🫧-38",
+				"🦋Http🩸EMS🫧-39",
+				"🦋Http🩸EMS🫧-40",
+				"🦋Http🩸EMS🫧-41",
+				"🦋Http🩸EMS🫧-42",
+				"🦋Http🩸EMS🫧-43",
+				"🦋Http🩸EMS🫧-44",
+				"🦋Http🩸EMS🫧-45",
+				"🦋Http🩸EMS🫧-46",
+				"🦋Http🩸EMS🫧-47",
+				"🦋Http🩸EMS🫧-48",
+				"🦋Http🩸EMS🫧-49",
+				"🦋Http🩸EMS🫧-50",
+				"🦋Http🩸EMS🫧-51",
+				"🦋Http🩸EMS🫧-52",
+				"🦋Http🩸EMS🫧-53",
+				"🦋Http🩸EMS🫧-54",
+				"🦋Http🩸EMS🫧-55",
+				"🦋Http🩸EMS🫧-56",
+				"🦋Http🩸EMS🫧-57",
+				"🦋Http🩸EMS🫧-58",
+				"🦋Http🩸EMS🫧-59",
+				"🦋Http🩸EMS🫧-60",
+				"🦋Http🩸EMS🫧-61",
+				"🦋Http🩸EMS🫧-62",
+				"🦋Http🩸EMS🫧-63",
+				"🦋Http🩸EMS🫧-64",
+				"🦋Http🩸EMS🫧-65",
+				"🦋Http🩸EMS🫧-66",
+				"🦋Http🩸EMS🫧-67",
+				"🦋Http🩸EMS🫧-68",
+				"🦋Http🩸EMS🫧-69",
+				"🦋Http🩸EMS🫧-70",
+				"🦋Http🩸EMS🫧-71",
+				"🦋Http🩸EMS🫧-72",
+				"🦋Http🩸EMS🫧-73",
+				"🦋Http🩸EMS🫧-74",
+				"🦋Http🩸EMS🫧-75",
+				"🦋Http🩸EMS🫧-76",
+				"🦋Http🩸EMS🫧-77",
+				"🦋Http🩸EMS🫧-78",
+				"🦋Http🩸EMS🫧-79",
+				"🦋Http🩸EMS🫧-80",
+				"🦋Http🩸EMS🫧-81",
+				"🦋Http🩸EMS🫧-82",
+				"🦋Http🩸EMS🫧-83",
+				"🦋Http🩸EMS🫧-84",
+				"🦋Http🩸EMS🫧-85",
+				"🦋Http🩸EMS🫧-86",
+				"🦋Http🩸EMS🫧-87",
+				"🦋Http🩸EMS🫧-88",
+				"🦋Http🩸EMS🫧-89",
+				"🦋Http🩸EMS🫧-90",
+				"🦋Http🩸EMS🫧-91",
+				"🦋Http🩸EMS🫧-92",
+				"🦋Http🩸EMS🫧-93",
+				"🦋Http🩸EMS🫧-94",
+				"🦋Http🩸EMS🫧-95",
+				"🦋Http🩸EMS🫧-96",
+				"🦋Http🩸EMS🫧-97",
+				"🦋Http🩸EMS🫧-98",
+				"🦋Http🩸EMS🫧-99",
+				"🦋Http🩸EMS🫧-100",
+				"🦋Http🩸EMS🫧-101",
+				"🦋Http🩸EMS🫧-102",
+				"🦋Http🩸EMS🫧-103",
+				"🦋Http🩸EMS🫧-104",
+				"🦋Http🩸EMS🫧-105",
+				"🦋Http🩸EMS🫧-106",
+				"🦋Http🩸EMS🫧-107",
+				"🦋Http🩸EMS🫧-108",
+				"🦋Http🩸EMS🫧-109",
+				"🦋Http🩸EMS🫧-110",
+				"🦋Http🩸EMS🫧-111",
+				"🦋Http🩸EMS🫧-112",
+				"🦋Http🩸EMS🫧-113",
+				"🦋Http🩸EMS🫧-114",
+				"🦋Http🩸EMS🫧-115",
+				"🦋Http🩸EMS🫧-116",
+				"🦋Http🩸EMS🫧-117",
+				"🦋Http🩸EMS🫧-118",
+				"🦋Http🩸EMS🫧-119",
+				"🦋Http🩸EMS🫧-120",
+				"🦋Http🩸EMS🫧-121",
+				"🦋Http🩸EMS🫧-122",
+				"🦋Http🩸EMS🫧-123",
+				"🦋Http🩸EMS🫧-124",
+				"🦋Http🩸EMS🫧-125",
+				"🦋Http🩸EMS🫧-126",
+				"🦋Http🩸EMS🫧-127",
+				"🦋Http🩸EMS🫧-128",
+				"🦋Http🩸EMS🫧-129",
+				"🦋Http🩸EMS🫧-130",
+				"🦋Http🩸EMS🫧-131",
+				"🦋Http🩸EMS🫧-132",
+				"🦋Http🩸EMS🫧-133",
+				"🦋Http🩸EMS🫧-134",
+				"🦋Http🩸EMS🫧-135",
+				"🦋Http🩸EMS🫧-136",
+				"🦋Http🩸EMS🫧-137",
+				"🦋Http🩸EMS🫧-138",
+				"🦋Http🩸EMS🫧-139",
+				"🦋Http🩸EMS🫧-140",
+				"🦋Http🩸EMS🫧-141",
+				"🦋Http🩸EMS🫧-142",
+				"🦋Http🩸EMS🫧-143",
+				"🦋Http🩸EMS🫧-144",
+				"🦋Http🩸EMS🫧-145",
+				"🦋Http🩸EMS🫧-146",
+				"🦋Http🩸EMS🫧-147",
+				"🦋Http🩸EMS🫧-148",
+				"🦋Http🩸EMS🫧-149",
+				"🦋Http🩸EMS🫧-150",
+				"🦋Http🩸EMS🫧-151",
+				"🦋Http🩸EMS🫧-152",
+				"🦋Http🩸EMS🫧-153",
+				"🦋Http🩸EMS🫧-154",
+				"🦋Http🩸EMS🫧-155",
+				"🦋Http🩸EMS🫧-156",
+				"🦋Http🩸EMS🫧-157",
+				"🦋Http🩸EMS🫧-158",
+				"🦋Http🩸EMS🫧-159",
+				"🦋Http🩸EMS🫧-160",
+				"🦋Http🩸EMS🫧-161",
+				"🦋Http🩸EMS🫧-162",
+				"🦋Http🩸EMS🫧-163",
+				"🦋Http🩸EMS🫧-164",
+				"🦋Http🩸EMS🫧-165",
+				"🦋Http🩸EMS🫧-166",
+				"🦋Http🩸EMS🫧-167",
+				"🦋Http🩸EMS🫧-168",
+				"🦋Http🩸EMS🫧-169",
+				"🦋Http🩸EMS🫧-170",
+				"🦋Http🩸EMS🫧-171",
+				"🦋Http🩸EMS🫧-172",
+				"🦋Http🩸EMS🫧-173",
+				"🦋Http🩸EMS🫧-174",
+				"🦋Http🩸EMS🫧-175",
+				"🦋Http🩸EMS🫧-176",
+				"🦋Http🩸EMS🫧-177",
+				"🦋Http🩸EMS🫧-178",
+				"🦋Http🩸EMS🫧-179",
+				"🦋Http🩸EMS🫧-180",
+				"🦋Http🩸EMS🫧-181",
+				"🦋Http🩸EMS🫧-182",
+				"🦋Http🩸EMS🫧-183",
+				"🦋Http🩸EMS🫧-184",
+				"🦋Http🩸EMS🫧-185",
+				"🦋Http🩸EMS🫧-186",
+				"🦋Http🩸EMS🫧-187",
+				"🦋Http🩸EMS🫧-188",
+				"🦋Http🩸EMS🫧-189",
+				"🦋Http🩸EMS🫧-190",
+				"🦋Http🩸EMS🫧-191",
+				"🦋Http🩸EMS🫧-192",
+				"🦋Http🩸EMS🫧-193",
+				"🦋Http🩸EMS🫧-194",
+				"🦋Http🩸EMS🫧-195",
+				"🦋Http🩸EMS🫧-196",
+				"🦋Http🩸EMS🫧-197",
+				"🦋Http🩸EMS🫧-198",
+				"🦋Http🩸EMS🫧-199",
+				"🦋Http🩸EMS🫧-200",
+				"🦋Http🩸EMS🫧-201",
+				"🦋Http🩸EMS🫧-202",
+				"🦋Http🩸EMS🫧-203",
+				"🦋Http🩸EMS🫧-204",
+				"🦋Http🩸EMS🫧-205",
+				"🦋Http🩸EMS🫧-206",
+				"🦋Http🩸EMS🫧-207",
+				"🦋Http🩸EMS🫧-208",
+				"🦋Http🩸EMS🫧-209",
+				"🦋Http🩸EMS🫧-210",
+				"🦋Http🩸EMS🫧-211",
+				"🦋Http🩸EMS🫧-212",
+				"🦋Http🩸EMS🫧-213",
+				"🦋Http🩸EMS🫧-214",
+				"🦋Http🩸EMS🫧-215",
+				"🦋Http🩸EMS🫧-216",
+				"🦋Http🩸EMS🫧-217",
+				"🦋Http🩸EMS🫧-218",
+				"🦋Http🩸EMS🫧-219",
+				"🦋Http🩸EMS🫧-220",
+				"🦋Http🩸EMS🫧-221",
+				"🦋Http🩸EMS🫧-222",
+				"🦋Http🩸EMS🫧-223",
+				"🦋Http🩸EMS🫧-224",
+				"🦋Http🩸EMS🫧-225",
+				"🦋Http🩸EMS🫧-226",
+				"🦋Http🩸EMS🫧-227",
+				"🦋Http🩸EMS🫧-228",
+				"🦋Http🩸EMS🫧-229",
+				"🦋Http🩸EMS🫧-230",
+				"🦋Http🩸EMS🫧-231",
+				"🦋Http🩸EMS🫧-232",
+				"🦋Http🩸EMS🫧-233",
+				"🦋Http🩸EMS🫧-234",
+				"🦋Http🩸EMS🫧-235",
+				"🦋Http🩸EMS🫧-236",
+				"🦋Http🩸EMS🫧-237",
+				"🦋Http🩸EMS🫧-238",
+				"🦋Http🩸EMS🫧-239",
+				"🦋Http🩸EMS🫧-240",
+				"🦋Http🩸EMS🫧-241",
+				"🦋Http🩸EMS🫧-242",
+				"🦋Http🩸EMS🫧-243",
+				"🦋Http🩸EMS🫧-244",
+				"🦋Http🩸EMS🫧-245",
+				"🦋Http🩸EMS🫧-246",
+				"🦋Http🩸EMS🫧-247",
+				"🦋Http🩸EMS🫧-248",
+				"🦋Http🩸EMS🫧-249",
+				"🦋Http🩸EMS🫧-250",
+				"🦋Http🩸EMS🫧-251",
+				"🦋Http🩸EMS🫧-252",
+				"🦋Http🩸EMS🫧-253",
+				"🦋Http🩸EMS🫧-254",
+				"🦋Http🩸EMS🫧-255",
+				"🦋Http🩸EMS🫧-256",
+				"🦋Http🩸EMS🫧-257",
+				"🦋Http🩸EMS🫧-258",
+				"🦋Http🩸EMS🫧-259",
+				"🦋Http🩸EMS🫧-260",
+				"🦋Http🩸EMS🫧-261",
+				"🦋Http🩸EMS🫧-262",
+				"🦋Http🩸EMS🫧-263",
+				"🦋Http🩸EMS🫧-264",
+				"🦋Http🩸EMS🫧-265",
+				"🦋Http🩸EMS🫧-266",
+				"🦋Http🩸EMS🫧-267",
+				"🦋Http🩸EMS🫧-268",
+				"🦋Http🩸EMS🫧-269",
+				"🦋Http🩸EMS🫧-270",
+				"🦋Http🩸EMS🫧-271",
+				"🦋Http🩸EMS🫧-272",
+				"🦋Http🩸EMS🫧-273",
+				"🦋Http🩸EMS🫧-274",
+				"🦋Http🩸EMS🫧-275",
+				"🦋Http🩸EMS🫧-276",
+				"🦋Http🩸EMS🫧-277",
+				"🦋Http🩸EMS🫧-278",
+				"🦋Http🩸EMS🫧-279",
+				"🦋Http🩸EMS🫧-280",
+				"🦋Http🩸EMS🫧-281",
+				"🦋Http🩸EMS🫧-282",
+				"🦋Http🩸EMS🫧-283",
+				"🦋Http🩸EMS🫧-284",
+				"🦋Http🩸EMS🫧-285",
+				"🦋Http🩸EMS🫧-286",
+				"🦋Http🩸EMS🫧-287",
+				"🦋Http🩸EMS🫧-288",
+				"🦋Http🩸EMS🫧-289",
+				"🦋Http🩸EMS🫧-290",
+				"🦋Http🩸EMS🫧-291",
+				"🦋Http🩸EMS🫧-292",
+				"🦋Http🩸EMS🫧-293",
+				"🦋Http🩸EMS🫧-294",
+				"🦋Http🩸EMS🫧-295",
+				"🦋Http🩸EMS🫧-296",
+				"🦋Http🩸EMS🫧-297",
+				"🦋Http🩸EMS🫧-298",
+				"🦋Http🩸EMS🫧-299",
+				"🦋Http🩸EMS🫧-300",
+				"🦋Http🩸EMS🫧-301",
+				"🦋Http🩸EMS🫧-302",
+				"🦋Http🩸EMS🫧-303",
+				"🦋Http🩸EMS🫧-304",
+				"🦋Http🩸EMS🫧-305",
+				"🦋Http🩸EMS🫧-306",
+				"🦋Http🩸EMS🫧-307",
+				"🦋Http🩸EMS🫧-308",
+				"🦋Http🩸EMS🫧-309",
+				"🦋Http🩸EMS🫧-310",
+				"🦋Http🩸EMS🫧-311",
+				"🦋Http🩸EMS🫧-312",
+				"🦋Http🩸EMS🫧-313",
+				"🦋Http🩸EMS🫧-314",
+				"🦋Http🩸EMS🫧-315",
+				"🦋Http🩸EMS🫧-316",
+				"🦋Http🩸EMS🫧-317",
+				"🦋Http🩸EMS🫧-318",
+				"🦋Http🩸EMS🫧-319",
+				"🦋Http🩸EMS🫧-320",
+				"🦋Http🩸EMS🫧-321",
+				"🦋Http🩸EMS🫧-322",
+				"🦋Http🩸EMS🫧-323",
+				"🦋Http🩸EMS🫧-324",
+				"🦋Http🩸EMS🫧-325",
+				"🦋Http🩸EMS🫧-326",
+				"🦋Http🩸EMS🫧-327",
+				"🦋Http🩸EMS🫧-328",
+				"🦋Http🩸EMS🫧-329",
+				"🦋Http🩸EMS🫧-330",
+				"🦋Http🩸EMS🫧-331",
+				"🦋Http🩸EMS🫧-332",
+				"🦋Http🩸EMS🫧-333",
+				"🦋Http🩸EMS🫧-334",
+				"🦋Http🩸EMS🫧-335",
+				"🦋Http🩸EMS🫧-336",
+				"🦋Http🩸EMS🫧-337",
+				"🦋Http🩸EMS🫧-338",
+				"🦋Http🩸EMS🫧-339",
+				"🦋Http🩸EMS🫧-340",
+				"🦋Http🩸EMS🫧-341",
+				"🦋Http🩸EMS🫧-342",
+				"🦋Http🩸EMS🫧-343",
+				"🦋Http🩸EMS🫧-344",
+				"🦋Http🩸EMS🫧-345",
+				"🦋Http🩸EMS🫧-346",
+				"🦋Http🩸EMS🫧-347",
+				"🦋Http🩸EMS🫧-348",
+				"🦋Http🩸EMS🫧-349",
+				"🦋Http🩸EMS🫧-350",
+				"🦋Http🩸EMS🫧-351",
+				"🦋Http🩸EMS🫧-352",
+				"🦋Http🩸EMS🫧-353",
+				"🦋Http🩸EMS🫧-354",
+				"🦋Http🩸EMS🫧-355",
+				"🦋Http🩸EMS🫧-356",
+				"🦋Http🩸EMS🫧-357",
+				"🦋Http🩸EMS🫧-358",
+				"🦋Http🩸EMS🫧-359",
+				"🦋Http🩸EMS🫧-360",
+				"🦋Http🩸EMS🫧-361",
+				"🦋Http🩸EMS🫧-362",
+				"🦋Http🩸EMS🫧-363",
+				"🦋Http🩸EMS🫧-364",
+				"🦋Http🩸EMS🫧-365",
+				"🦋Http🩸EMS🫧-366",
+				"🦋Http🩸EMS🫧-367",
+				"direct"
+			],
+
+			"url": "https://detectportal.firefox.com/success.txt",
+			"interval": "5m0s",
+			"tolerance": 50
+		},
+		{
+			"type": "direct",
+			"tag": "direct_out"
+		},
+		{
+			"type": "block",
+			"tag": "block_out"
+		},
+		{
+			"type": "dns",
+			"tag": "dns_out"
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-0",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.195",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-1",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.195",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-2",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-3",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-4",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-5",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-6",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-7",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-8",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-9",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-10",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-11",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.197.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-12",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.199.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-13",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.199.180",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-14",
+			"domain_strategy": "ipv4_only",
+			"server": "103.109.103.118",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-15",
+			"domain_strategy": "ipv4_only",
+			"server": "103.109.103.61",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-16",
+			"domain_strategy": "ipv4_only",
+			"server": "103.109.103.61",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-17",
+			"domain_strategy": "ipv4_only",
+			"server": "107.175.196.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-18",
+			"domain_strategy": "ipv4_only",
+			"server": "107.175.196.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-19",
+			"domain_strategy": "ipv4_only",
+			"server": "107.175.196.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-20",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.31.8",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-21",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.31.8",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-22",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-23",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-24",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-25",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.44.138",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-26",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.44.138",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-27",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.44.138",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-28",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.47.59",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-29",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.109.190",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-30",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.123.84",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-31",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.123.84",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-32",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.126.54",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-33",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.126.54",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-34",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.170.59",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-35",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.170.59",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-36",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.181.250",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-37",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.181.250",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-38",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.181.250",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-39",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-40",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-41",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-42",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-43",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.101",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-44",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.102",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-45",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.102",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-46",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.103",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-47",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.103",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-48",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.104",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-49",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.104",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-50",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.105",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-51",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.105",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-52",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.106",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-53",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.106",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-54",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.107",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-55",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.107",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-56",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.108",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-57",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.108",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-58",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.112",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-59",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.117",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-60",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.117",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-61",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.122",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-62",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.122",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-63",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.238.165",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-64",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.238.165",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-65",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.243.23",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-66",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.244.53",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-67",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.244.53",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-68",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.251.21",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-69",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.251.21",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-70",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.252.35",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-71",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.252.80",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-72",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.253.93",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-73",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.48.59",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-74",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.49.227",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-75",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.51.50",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-76",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-77",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-78",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-79",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-80",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.211.73",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-81",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.215.109",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-82",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.215.109",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-83",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.217.196",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-84",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.217.196",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-85",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.222.2",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-86",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.222.2",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-87",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.18.2",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-88",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.19.19",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-89",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.19.19",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-90",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-91",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-92",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-93",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-94",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.98.130",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-95",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.27.115",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-96",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.27.86",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-97",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.30.182",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-98",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.30.182",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-99",
+			"domain_strategy": "ipv4_only",
+			"server": "156.146.63.69",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-100",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-101",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-102",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-103",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-104",
+			"domain_strategy": "ipv4_only",
+			"server": "185.220.69.117",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-105",
+			"domain_strategy": "ipv4_only",
+			"server": "185.232.23.118",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-106",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.240",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-107",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.240",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-108",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.241",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-109",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.241",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-110",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.242",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-111",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.242",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-112",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.243",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-113",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.243",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-114",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.244",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-115",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.244",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-116",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.245",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-117",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.245",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-118",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.246",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-119",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.246",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-120",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.247",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-121",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.247",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-122",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.248",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-123",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.248",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-124",
+			"domain_strategy": "ipv4_only",
+			"server": "192.3.53.243",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-125",
+			"domain_strategy": "ipv4_only",
+			"server": "194.110.114.99",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-126",
+			"domain_strategy": "ipv4_only",
+			"server": "198.144.155.68",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-127",
+			"domain_strategy": "ipv4_only",
+			"server": "198.144.155.68",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-128",
+			"domain_strategy": "ipv4_only",
+			"server": "203.17.245.213",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-129",
+			"domain_strategy": "ipv4_only",
+			"server": "203.209.219.55",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-130",
+			"domain_strategy": "ipv4_only",
+			"server": "203.23.179.22",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-131",
+			"domain_strategy": "ipv4_only",
+			"server": "203.23.179.22",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-132",
+			"domain_strategy": "ipv4_only",
+			"server": "203.23.179.35",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-133",
+			"domain_strategy": "ipv4_only",
+			"server": "203.27.106.83",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-134",
+			"domain_strategy": "ipv4_only",
+			"server": "203.27.106.83",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-135",
+			"domain_strategy": "ipv4_only",
+			"server": "203.27.106.91",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-136",
+			"domain_strategy": "ipv4_only",
+			"server": "206.123.159.20",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-137",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.195",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-138",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.195",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-139",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.207",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-140",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.207",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-141",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.209",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-142",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.209",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-143",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.211",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-144",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.211",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-145",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.212",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-146",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.212",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-147",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.213",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-148",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.213",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-149",
+			"domain_strategy": "ipv4_only",
+			"server": "217.138.217.83",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-150",
+			"domain_strategy": "ipv4_only",
+			"server": "217.138.217.83",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-151",
+			"domain_strategy": "ipv4_only",
+			"server": "217.148.140.150",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-152",
+			"domain_strategy": "ipv4_only",
+			"server": "217.148.140.150",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-153",
+			"domain_strategy": "ipv4_only",
+			"server": "37.120.138.3",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-154",
+			"domain_strategy": "ipv4_only",
+			"server": "37.19.217.82",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-155",
+			"domain_strategy": "ipv4_only",
+			"server": "37.19.217.82",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-156",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.140.229",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-157",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.140.229",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-158",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.142.85",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-159",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.142.85",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-160",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.38",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-161",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.38",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-162",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.38",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-163",
+			"domain_strategy": "ipv4_only",
+			"server": "45.250.255.25",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-164",
+			"domain_strategy": "ipv4_only",
+			"server": "45.250.255.25",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-165",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.112.120",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-166",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.112.120",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-167",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.112.194",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-168",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.23.84",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-169",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.26.20",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-170",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.70.217",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-171",
+			"domain_strategy": "ipv4_only",
+			"server": "64.31.20.3",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-172",
+			"domain_strategy": "ipv4_only",
+			"server": "64.31.3.117",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-173",
+			"domain_strategy": "ipv4_only",
+			"server": "85.208.3.116",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-174",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.196",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-175",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.197",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-176",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.199",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-177",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.20",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-178",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.20",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-179",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.21",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-180",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.21",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-181",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.26",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-182",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.26",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-183",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.28",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-184",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.28",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-185",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.206",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-186",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.213",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-187",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.239",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-188",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.240",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-189",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.213",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-190",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.49",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-191",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.51",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-192",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.51",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-193",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.51",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-194",
+			"domain_strategy": "ipv4_only",
+			"server": "91.228.216.121",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-195",
+			"domain_strategy": "ipv4_only",
+			"server": "91.228.216.121",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-196",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-197",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-198",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-199",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-200",
+			"domain_strategy": "ipv4_only",
+			"server": "95.153.32.118",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-201",
+			"domain_strategy": "ipv4_only",
+			"server": "95.153.32.118",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-202",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-abc.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-203",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ae.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-204",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-af.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-205",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-al.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-206",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-amc.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-207",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-amzuk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-208",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-amzus.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-209",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ao.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-210",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-at.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-211",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-au.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-212",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-aw.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-213",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bb.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-214",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bbc.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-215",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bd.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-216",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-be.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-217",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bg.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-218",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bh.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-219",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bm.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-220",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bn.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-221",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bo.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-222",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-br.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-223",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-bs.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-224",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ca.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-225",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-cbcgem.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-226",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ch.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-227",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-channel4.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-228",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-channel5.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-229",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-cn.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-230",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-cpt.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-231",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-cw.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-232",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-cz.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-233",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-de.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-234",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-disco.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-235",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-disus.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-236",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-dk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-237",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-dz.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-238",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ee.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-239",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-eg.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-240",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-es.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-241",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-espus.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-242",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-fi.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-243",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-foxtel.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-244",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-fr.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-245",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-fubo.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-246",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-gr.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-247",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-hallmark.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-248",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-hbus.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-249",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-hk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-250",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-hu.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-251",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-hulu.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-252",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ie.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-253",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-in.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-254",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-it.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-255",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-itv.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-256",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-jp.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-257",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-kr.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-258",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ky.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-259",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-lt.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-260",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-lu.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-261",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-mc.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-262",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-md.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-263",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-mgm.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-264",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-netflixuk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-265",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-nflau.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-266",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-nflus.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-267",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ng.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-268",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-nine.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-269",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-nl.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-270",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-no.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-271",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-om.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-272",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-optus.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-273",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-pa.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-274",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-para.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-275",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ph.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-276",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-pl.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-277",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-pr.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-278",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-pt.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-279",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ptv.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-280",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ro.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-281",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-roku.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-282",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-rs.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-283",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ru.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-284",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-sbs.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-285",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-se.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-286",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-servustv.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-287",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-seven.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-288",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-sg.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-289",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-sk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-290",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-sportsnet.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-291",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-tenplay.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-292",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-tubi.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-293",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-uk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-294",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-us.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-295",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-vg.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-296",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-vn.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-297",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-xumo.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-298",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-za.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-299",
+			"domain_strategy": "ipv4_only",
+			"server": "px010702.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-300",
+			"domain_strategy": "ipv4_only",
+			"server": "px0110402.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-301",
+			"domain_strategy": "ipv4_only",
+			"server": "px0110501.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-302",
+			"domain_strategy": "ipv4_only",
+			"server": "px0110901.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-303",
+			"domain_strategy": "ipv4_only",
+			"server": "px0111001.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-304",
+			"domain_strategy": "ipv4_only",
+			"server": "px012702.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-305",
+			"domain_strategy": "ipv4_only",
+			"server": "px013301.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-306",
+			"domain_strategy": "ipv4_only",
+			"server": "px013302.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-307",
+			"domain_strategy": "ipv4_only",
+			"server": "px013304.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-308",
+			"domain_strategy": "ipv4_only",
+			"server": "px013401.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-309",
+			"domain_strategy": "ipv4_only",
+			"server": "px013403.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-310",
+			"domain_strategy": "ipv4_only",
+			"server": "px013601.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-311",
+			"domain_strategy": "ipv4_only",
+			"server": "px014004.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-312",
+			"domain_strategy": "ipv4_only",
+			"server": "px015601.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-313",
+			"domain_strategy": "ipv4_only",
+			"server": "px016007.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-314",
+			"domain_strategy": "ipv4_only",
+			"server": "px016008.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-315",
+			"domain_strategy": "ipv4_only",
+			"server": "px016102.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-316",
+			"domain_strategy": "ipv4_only",
+			"server": "px016104.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-317",
+			"domain_strategy": "ipv4_only",
+			"server": "px019501.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-318",
+			"domain_strategy": "ipv4_only",
+			"server": "px019603.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-319",
+			"domain_strategy": "ipv4_only",
+			"server": "px022408.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-320",
+			"domain_strategy": "ipv4_only",
+			"server": "px022409.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-321",
+			"domain_strategy": "ipv4_only",
+			"server": "px022505.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-322",
+			"domain_strategy": "ipv4_only",
+			"server": "px022507.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-323",
+			"domain_strategy": "ipv4_only",
+			"server": "px023004.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-324",
+			"domain_strategy": "ipv4_only",
+			"server": "px023005.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-325",
+			"domain_strategy": "ipv4_only",
+			"server": "px031901.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-326",
+			"domain_strategy": "ipv4_only",
+			"server": "px032002.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-327",
+			"domain_strategy": "ipv4_only",
+			"server": "px040706.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-328",
+			"domain_strategy": "ipv4_only",
+			"server": "px040805.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-329",
+			"domain_strategy": "ipv4_only",
+			"server": "px041201.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-330",
+			"domain_strategy": "ipv4_only",
+			"server": "px041202.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-331",
+			"domain_strategy": "ipv4_only",
+			"server": "px043004.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-332",
+			"domain_strategy": "ipv4_only",
+			"server": "px043005.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-333",
+			"domain_strategy": "ipv4_only",
+			"server": "px043006.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-334",
+			"domain_strategy": "ipv4_only",
+			"server": "px051003.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-335",
+			"domain_strategy": "ipv4_only",
+			"server": "px051005.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-336",
+			"domain_strategy": "ipv4_only",
+			"server": "px060301.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-337",
+			"domain_strategy": "ipv4_only",
+			"server": "px070701.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-338",
+			"domain_strategy": "ipv4_only",
+			"server": "px080702.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-339",
+			"domain_strategy": "ipv4_only",
+			"server": "px090404.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-340",
+			"domain_strategy": "ipv4_only",
+			"server": "px100801.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-341",
+			"domain_strategy": "ipv4_only",
+			"server": "px100802.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-342",
+			"domain_strategy": "ipv4_only",
+			"server": "px1160303.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-343",
+			"domain_strategy": "ipv4_only",
+			"server": "px121101.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-344",
+			"domain_strategy": "ipv4_only",
+			"server": "px121102.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-345",
+			"domain_strategy": "ipv4_only",
+			"server": "px1400403.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-346",
+			"domain_strategy": "ipv4_only",
+			"server": "px173003.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-347",
+			"domain_strategy": "ipv4_only",
+			"server": "px210404.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-348",
+			"domain_strategy": "ipv4_only",
+			"server": "px220601.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-349",
+			"domain_strategy": "ipv4_only",
+			"server": "px241102.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-350",
+			"domain_strategy": "ipv4_only",
+			"server": "px241104.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-351",
+			"domain_strategy": "ipv4_only",
+			"server": "px251002.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-352",
+			"domain_strategy": "ipv4_only",
+			"server": "px260901.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-353",
+			"domain_strategy": "ipv4_only",
+			"server": "px270401.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-354",
+			"domain_strategy": "ipv4_only",
+			"server": "px300902.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-355",
+			"domain_strategy": "ipv4_only",
+			"server": "px320702.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-356",
+			"domain_strategy": "ipv4_only",
+			"server": "px320704.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-357",
+			"domain_strategy": "ipv4_only",
+			"server": "px331101.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-358",
+			"domain_strategy": "ipv4_only",
+			"server": "px400501.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-359",
+			"domain_strategy": "ipv4_only",
+			"server": "px400518.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-360",
+			"domain_strategy": "ipv4_only",
+			"server": "px410701.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-361",
+			"domain_strategy": "ipv4_only",
+			"server": "px420602.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-362",
+			"domain_strategy": "ipv4_only",
+			"server": "px730503.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-363",
+			"domain_strategy": "ipv4_only",
+			"server": "px960206.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-364",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-ru.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-365",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-uk.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-366",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-no.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "🦋Http🩸EMS🫧-367",
+			"domain_strategy": "ipv4_only",
+			"server": "prox-fr.pointtoserver.com",
+			"server_port": 10780,
+			"username": "purevpn0s4792041:",
+			"password": "bh9yujblxzfi",
+			"headers": {
+				"host": "ieeesight.org",
+				"user-agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"
+			}
+		},
+		{
+			"type": "direct",
+			"tag": "direct"
+		},
+		{
+			"type": "dns",
+			"tag": "dns-out"
+		}
+	],
+	"route": {
+		"rules": [
+			{
+				"inbound": "tun-in",
+				"action": "sniff"
+			},
+			{
+				"protocol": "dns",
+				"action": "hijack-dns"
+			},
+			{
+				"clash_mode": "Global",
+				"outbound": "GLOBAL"
+			},
+			{
+				"clash_mode": "Direct",
+				"outbound": "Best🔹️Latency"
+			},
+			{
+				"protocol": "dns",
+				"outbound": "dns-out"
+			},
+			{
+				"network": "tcp",
+				"port": [
+					853,
+					433
+				],
+				"action": "resolve"
+			},
+			{
+				"port": 443,
+				"action": "reject"
+			},
+			{
+				"action": "reject"
+			},
+			{
+				"inbound": "tun-in",
+				"action": "resolve"
+			},
+			{
+				"ip_cidr": "10.10.34.0/24",
+				"outbound": "Best🔹️Latency"
+			},
+			{
+				"ip_is_private": true,
+				"outbound": "direct"
+			}
+		],
+		"final": "Best🔹️Latency",
+		"auto_detect_interface": true
+	},
+	"experimental": {
+		"cache_file": {
+			"enabled": true
+		},
+		"clash_api": {
+			"external_controller": "127.0.0.1:1234",
+			"default_mode": "Rule",
+			"access_control_allow_origin": "https://yacd.metacubex.one",
+			"access_control_allow_private_network": true
+		}
+	}
+}

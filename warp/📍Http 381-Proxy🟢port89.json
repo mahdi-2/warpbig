@@ -1,0 +1,7866 @@
+{
+	"log": {
+		"level": "warn",
+		"timestamp": true
+	},
+	"dns": {
+		"servers": [
+			{
+				"tag": "default",
+				"address": "tcp://8.8.8.8",
+				"detour": "Best Latency"
+			},
+			{
+				"tag": "local",
+				"address": "https://1.1.1.1/dns-query",
+				"detour": "Internet"
+			},
+			{
+				"tag": "Direct",
+				"address": "tls://223.5.5.5",
+				"detour": "Urltest"
+			},
+			{
+				"tag": "dns-remote",
+				"address": "tls://223.5.5.5:53",
+				"detour": "dns-direct"
+			},
+			{
+				"tag": "dns-direct",
+				"address": "1.1.1.1",
+				"detour": "Best Latency"
+			},
+			{
+				"tag": "dns-local",
+				"address": "local",
+				"detour": "direct"
+			}
+		],
+		"rules": [
+			{
+				"outbound": "any",
+				"server": "direct"
+			},
+			{
+				"clash_mode": "Global",
+				"server": "Internet"
+			},
+			{
+				"clash_mode": "Direct",
+				"server": "DIRECT"
+			}
+		],
+		"strategy": "ipv4_only"
+	},
+	"inbounds": [
+		{
+			"type": "mixed",
+			"listen": "127.0.0.1",
+			"listen_port": 20122,
+			"udp_fragment": true,
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		},
+		{
+			"type": "http",
+			"listen": "127.0.0.1",
+			"listen_port": 8181,
+			"udp_fragment": true,
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		},
+		{
+			"type": "socks",
+			"listen": "127.0.0.1",
+			"listen_port": 8080,
+			"udp_fragment": true,
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		},
+		{
+			"type": "tun",
+			"address": [
+				"172.19.0.1/30",
+				"fdfe:dcba:9876::1/126"
+			],
+			"auto_route": true,
+			"strict_route": true,
+			"stack": "mixed",
+			"platform": {
+				"http_proxy": {
+					"enabled": true,
+					"server": "127.0.0.1",
+					"server_port": 20122
+				}
+			},
+			"sniff": true,
+			"sniff_override_destination": true,
+			"domain_strategy": "ipv4_only"
+		}
+	],
+  "outbounds": [
+    {
+      "type": "selector",
+      "tag": "🍆Best",
+      "outbounds": [
+        "Best🔹️Latency",
+        "Best🔹️Latency"
+      ],
+     
+      "default": "Best🔹️Latency",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "🥒Best",
+      "outbounds": [
+        "Best🔹️Latency",
+        "Best🔹️Latency"
+      ],
+   
+      "default": "Best🔹️Latency",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "Inte🔸️rnet",
+      "outbounds": [
+				"📍-IPV4🟢EMS-0",
+				"📍-IPV4🟢EMS-1",
+				"📍-IPV4🟢EMS-2",
+				"📍-IPV4🟢EMS-3",
+				"📍-IPV4🟢EMS-4",
+				"📍-IPV4🟢EMS-5",
+				"📍-IPV4🟢EMS-6",
+				"📍-IPV4🟢EMS-7",
+				"📍-IPV4🟢EMS-8",
+				"📍-IPV4🟢EMS-9",
+				"📍-IPV4🟢EMS-10",
+				"📍-IPV4🟢EMS-11",
+				"📍-IPV4🟢EMS-12",
+				"📍-IPV4🟢EMS-13",
+				"📍-IPV4🟢EMS-14",
+				"📍-IPV4🟢EMS-15",
+				"📍-IPV4🟢EMS-16",
+				"📍-IPV4🟢EMS-17",
+				"📍-IPV4🟢EMS-18",
+				"📍-IPV4🟢EMS-19",
+				"📍-IPV4🟢EMS-20",
+				"📍-IPV4🟢EMS-21",
+				"📍-IPV4🟢EMS-22",
+				"📍-IPV4🟢EMS-23",
+				"📍-IPV4🟢EMS-24",
+				"📍-IPV4🟢EMS-25",
+				"📍-IPV4🟢EMS-26",
+				"📍-IPV4🟢EMS-27",
+				"📍-IPV4🟢EMS-28",
+				"📍-IPV4🟢EMS-29",
+				"📍-IPV4🟢EMS-30",
+				"📍-IPV4🟢EMS-31",
+				"📍-IPV4🟢EMS-32",
+				"📍-IPV4🟢EMS-33",
+				"📍-IPV4🟢EMS-34",
+				"📍-IPV4🟢EMS-35",
+				"📍-IPV4🟢EMS-36",
+				"📍-IPV4🟢EMS-37",
+				"📍-IPV4🟢EMS-38",
+				"📍-IPV4🟢EMS-39",
+				"📍-IPV4🟢EMS-40",
+				"📍-IPV4🟢EMS-41",
+				"📍-IPV4🟢EMS-42",
+				"📍-IPV4🟢EMS-43",
+				"📍-IPV4🟢EMS-44",
+				"📍-IPV4🟢EMS-45",
+				"📍-IPV4🟢EMS-46",
+				"📍-IPV4🟢EMS-47",
+				"📍-IPV4🟢EMS-48",
+				"📍-IPV4🟢EMS-49",
+				"📍-IPV4🟢EMS-50",
+				"📍-IPV4🟢EMS-51",
+				"📍-IPV4🟢EMS-52",
+				"📍-IPV4🟢EMS-53",
+				"📍-IPV4🟢EMS-54",
+				"📍-IPV4🟢EMS-55",
+				"📍-IPV4🟢EMS-56",
+				"📍-IPV4🟢EMS-57",
+				"📍-IPV4🟢EMS-58",
+				"📍-IPV4🟢EMS-59",
+				"📍-IPV4🟢EMS-60",
+				"📍-IPV4🟢EMS-61",
+				"📍-IPV4🟢EMS-62",
+				"📍-IPV4🟢EMS-63",
+				"📍-IPV4🟢EMS-64",
+				"📍-IPV4🟢EMS-65",
+				"📍-IPV4🟢EMS-66",
+				"📍-IPV4🟢EMS-67",
+				"📍-IPV4🟢EMS-68",
+				"📍-IPV4🟢EMS-69",
+				"📍-IPV4🟢EMS-70",
+				"📍-IPV4🟢EMS-71",
+				"📍-IPV4🟢EMS-72",
+				"📍-IPV4🟢EMS-73",
+				"📍-IPV4🟢EMS-74",
+				"📍-IPV4🟢EMS-75",
+				"📍-IPV4🟢EMS-76",
+				"📍-IPV4🟢EMS-77",
+				"📍-IPV4🟢EMS-78",
+				"📍-IPV4🟢EMS-79",
+				"📍-IPV4🟢EMS-80",
+				"📍-IPV4🟢EMS-81",
+				"📍-IPV4🟢EMS-82",
+				"📍-IPV4🟢EMS-83",
+				"📍-IPV4🟢EMS-84",
+				"📍-IPV4🟢EMS-85",
+				"📍-IPV4🟢EMS-86",
+				"📍-IPV4🟢EMS-87",
+				"📍-IPV4🟢EMS-88",
+				"📍-IPV4🟢EMS-89",
+				"📍-IPV4🟢EMS-90",
+				"📍-IPV4🟢EMS-91",
+				"📍-IPV4🟢EMS-92",
+				"📍-IPV4🟢EMS-93",
+				"📍-IPV4🟢EMS-94",
+				"📍-IPV4🟢EMS-95",
+				"📍-IPV4🟢EMS-96",
+				"📍-IPV4🟢EMS-97",
+				"📍-IPV4🟢EMS-98",
+				"📍-IPV4🟢EMS-99",
+				"📍-IPV4🟢EMS-100",
+				"📍-IPV4🟢EMS-101",
+				"📍-IPV4🟢EMS-102",
+				"📍-IPV4🟢EMS-103",
+				"📍-IPV4🟢EMS-104",
+				"📍-IPV4🟢EMS-105",
+				"📍-IPV4🟢EMS-106",
+				"📍-IPV4🟢EMS-107",
+				"📍-IPV4🟢EMS-108",
+				"📍-IPV4🟢EMS-109",
+				"📍-IPV4🟢EMS-110",
+				"📍-IPV4🟢EMS-111",
+				"📍-IPV4🟢EMS-112",
+				"📍-IPV4🟢EMS-113",
+				"📍-IPV4🟢EMS-114",
+				"📍-IPV4🟢EMS-115",
+				"📍-IPV4🟢EMS-116",
+				"📍-IPV4🟢EMS-117",
+				"📍-IPV4🟢EMS-118",
+				"📍-IPV4🟢EMS-119",
+				"📍-IPV4🟢EMS-120",
+				"📍-IPV4🟢EMS-121",
+				"📍-IPV4🟢EMS-122",
+				"📍-IPV4🟢EMS-123",
+				"📍-IPV4🟢EMS-124",
+				"📍-IPV4🟢EMS-125",
+				"📍-IPV4🟢EMS-126",
+				"📍-IPV4🟢EMS-127",
+				"📍-IPV4🟢EMS-128",
+				"📍-IPV4🟢EMS-129",
+				"📍-IPV4🟢EMS-130",
+				"📍-IPV4🟢EMS-131",
+				"📍-IPV4🟢EMS-132",
+				"📍-IPV4🟢EMS-133",
+				"📍-IPV4🟢EMS-134",
+				"📍-IPV4🟢EMS-135",
+				"📍-IPV4🟢EMS-136",
+				"📍-IPV4🟢EMS-137",
+				"📍-IPV4🟢EMS-138",
+				"📍-IPV4🟢EMS-139",
+				"📍-IPV4🟢EMS-140",
+				"📍-IPV4🟢EMS-141",
+				"📍-IPV4🟢EMS-142",
+				"📍-IPV4🟢EMS-143",
+				"📍-IPV4🟢EMS-144",
+				"📍-IPV4🟢EMS-145",
+				"📍-IPV4🟢EMS-146",
+				"📍-IPV4🟢EMS-147",
+				"📍-IPV4🟢EMS-148",
+				"📍-IPV4🟢EMS-149",
+				"📍-IPV4🟢EMS-150",
+				"📍-IPV4🟢EMS-151",
+				"📍-IPV4🟢EMS-152",
+				"📍-IPV4🟢EMS-153",
+				"📍-IPV4🟢EMS-154",
+				"📍-IPV4🟢EMS-155",
+				"📍-IPV4🟢EMS-156",
+				"📍-IPV4🟢EMS-157",
+				"📍-IPV4🟢EMS-158",
+				"📍-IPV4🟢EMS-159",
+				"📍-IPV4🟢EMS-160",
+				"📍-IPV4🟢EMS-161",
+				"📍-IPV4🟢EMS-162",
+				"📍-IPV4🟢EMS-163",
+				"📍-IPV4🟢EMS-164",
+				"📍-IPV4🟢EMS-165",
+				"📍-IPV4🟢EMS-166",
+				"📍-IPV4🟢EMS-167",
+				"📍-IPV4🟢EMS-168",
+				"📍-IPV4🟢EMS-169",
+				"📍-IPV4🟢EMS-170",
+				"📍-IPV4🟢EMS-171",
+				"📍-IPV4🟢EMS-172",
+				"📍-IPV4🟢EMS-173",
+				"📍-IPV4🟢EMS-174",
+				"📍-IPV4🟢EMS-175",
+				"📍-IPV4🟢EMS-176",
+				"📍-IPV4🟢EMS-177",
+				"📍-IPV4🟢EMS-178",
+				"📍-IPV4🟢EMS-179",
+				"📍-IPV4🟢EMS-180",
+				"📍-IPV4🟢EMS-181",
+				"📍-IPV4🟢EMS-182",
+				"📍-IPV4🟢EMS-183",
+				"📍-IPV4🟢EMS-184",
+				"📍-IPV4🟢EMS-185",
+				"📍-IPV4🟢EMS-186",
+				"📍-IPV4🟢EMS-187",
+				"📍-IPV4🟢EMS-188",
+				"📍-IPV4🟢EMS-189",
+				"📍-IPV4🟢EMS-190",
+				"📍-IPV4🟢EMS-191",
+				"📍-IPV4🟢EMS-192",
+				"📍-IPV4🟢EMS-193",
+				"📍-IPV4🟢EMS-194",
+				"📍-IPV4🟢EMS-195",
+				"📍-IPV4🟢EMS-196",
+				"📍-IPV4🟢EMS-197",
+				"📍-IPV4🟢EMS-198",
+				"📍-IPV4🟢EMS-199",
+				"📍-IPV4🟢EMS-200",
+				"📍-IPV4🟢EMS-201",
+				"📍-IPV4🟢EMS-202",
+				"📍-IPV4🟢EMS-203",
+				"📍-IPV4🟢EMS-204",
+				"📍-IPV4🟢EMS-205",
+				"📍-IPV4🟢EMS-206",
+				"📍-IPV4🟢EMS-207",
+				"📍-IPV4🟢EMS-208",
+				"📍-IPV4🟢EMS-209",
+				"📍-IPV4🟢EMS-210",
+				"📍-IPV4🟢EMS-211",
+				"📍-IPV4🟢EMS-212",
+				"📍-IPV4🟢EMS-213",
+				"📍-IPV4🟢EMS-214",
+				"📍-IPV4🟢EMS-215",
+				"📍-IPV4🟢EMS-216",
+				"📍-IPV4🟢EMS-217",
+				"📍-IPV4🟢EMS-218",
+				"📍-IPV4🟢EMS-219",
+				"📍-IPV4🟢EMS-220",
+				"📍-IPV4🟢EMS-221",
+				"📍-IPV4🟢EMS-222",
+				"📍-IPV4🟢EMS-223",
+				"📍-IPV4🟢EMS-224",
+				"📍-IPV4🟢EMS-225",
+				"📍-IPV4🟢EMS-226",
+				"📍-IPV4🟢EMS-227",
+				"📍-IPV4🟢EMS-228",
+				"📍-IPV4🟢EMS-229",
+				"📍-IPV4🟢EMS-230",
+				"📍-IPV4🟢EMS-231",
+				"📍-IPV4🟢EMS-232",
+				"📍-IPV4🟢EMS-233",
+				"📍-IPV4🟢EMS-234",
+				"📍-IPV4🟢EMS-235",
+				"📍-IPV4🟢EMS-236",
+				"📍-IPV4🟢EMS-237",
+				"📍-IPV4🟢EMS-238",
+				"📍-IPV4🟢EMS-239",
+				"📍-IPV4🟢EMS-240",
+				"📍-IPV4🟢EMS-241",
+				"📍-IPV4🟢EMS-242",
+				"📍-IPV4🟢EMS-243",
+				"📍-IPV4🟢EMS-244",
+				"📍-IPV4🟢EMS-245",
+				"📍-IPV4🟢EMS-246",
+				"📍-IPV4🟢EMS-247",
+				"📍-IPV4🟢EMS-248",
+				"📍-IPV4🟢EMS-249",
+				"📍-IPV4🟢EMS-250",
+				"📍-IPV4🟢EMS-251",
+				"📍-IPV4🟢EMS-252",
+				"📍-IPV4🟢EMS-253",
+				"📍-IPV4🟢EMS-254",
+				"📍-IPV4🟢EMS-255",
+				"📍-IPV4🟢EMS-256",
+				"📍-IPV4🟢EMS-257",
+				"📍-IPV4🟢EMS-258",
+				"📍-IPV4🟢EMS-259",
+				"📍-IPV4🟢EMS-260",
+				"📍-IPV4🟢EMS-261",
+				"📍-IPV4🟢EMS-262",
+				"📍-IPV4🟢EMS-263",
+				"📍-IPV4🟢EMS-264",
+				"📍-IPV4🟢EMS-265",
+				"📍-IPV4🟢EMS-266",
+				"📍-IPV4🟢EMS-267",
+				"📍-IPV4🟢EMS-268",
+				"📍-IPV4🟢EMS-269",
+				"📍-IPV4🟢EMS-270",
+				"📍-IPV4🟢EMS-271",
+				"📍-IPV4🟢EMS-272",
+				"📍-IPV4🟢EMS-273",
+				"📍-IPV4🟢EMS-274",
+				"📍-IPV4🟢EMS-275",
+				"📍-IPV4🟢EMS-276",
+				"📍-IPV4🟢EMS-277",
+				"📍-IPV4🟢EMS-278",
+				"📍-IPV4🟢EMS-279",
+				"📍-IPV4🟢EMS-280",
+				"📍-IPV4🟢EMS-281",
+				"📍-IPV4🟢EMS-282",
+				"📍-IPV4🟢EMS-283",
+				"📍-IPV4🟢EMS-284",
+				"📍-IPV4🟢EMS-285",
+				"📍-IPV4🟢EMS-286",
+				"📍-IPV4🟢EMS-287",
+				"📍-IPV4🟢EMS-288",
+				"📍-IPV4🟢EMS-289",
+				"📍-IPV4🟢EMS-290",
+				"📍-IPV4🟢EMS-291",
+				"📍-IPV4🟢EMS-292",
+				"📍-IPV4🟢EMS-293",
+				"📍-IPV4🟢EMS-294",
+				"📍-IPV4🟢EMS-295",
+				"📍-IPV4🟢EMS-296",
+				"📍-IPV4🟢EMS-297",
+				"📍-IPV4🟢EMS-298",
+				"📍-IPV4🟢EMS-299",
+				"📍-IPV4🟢EMS-300",
+				"📍-IPV4🟢EMS-301",
+				"📍-IPV4🟢EMS-302",
+				"📍-IPV4🟢EMS-303",
+				"📍-IPV4🟢EMS-304",
+				"📍-IPV4🟢EMS-305",
+				"📍-IPV4🟢EMS-306",
+				"📍-IPV4🟢EMS-307",
+				"📍-IPV4🟢EMS-308",
+				"📍-IPV4🟢EMS-309",
+				"📍-IPV4🟢EMS-310",
+				"📍-IPV4🟢EMS-311",
+				"📍-IPV4🟢EMS-312",
+				"📍-IPV4🟢EMS-313",
+				"📍-IPV4🟢EMS-314",
+				"📍-IPV4🟢EMS-315",
+				"📍-IPV4🟢EMS-316",
+				"📍-IPV4🟢EMS-317",
+				"📍-IPV4🟢EMS-318",
+				"📍-IPV4🟢EMS-319",
+				"📍-IPV4🟢EMS-320",
+				"📍-IPV4🟢EMS-321",
+				"📍-IPV4🟢EMS-322",
+				"📍-IPV4🟢EMS-323",
+				"📍-IPV4🟢EMS-324",
+				"📍-IPV4🟢EMS-325",
+				"📍-IPV4🟢EMS-326",
+				"📍-IPV4🟢EMS-327",
+				"📍-IPV4🟢EMS-328",
+				"📍-IPV4🟢EMS-329",
+				"📍-IPV4🟢EMS-330",
+				"📍-IPV4🟢EMS-331",
+				"📍-IPV4🟢EMS-332",
+				"📍-IPV4🟢EMS-333",
+				"📍-IPV4🟢EMS-334",
+				"📍-IPV4🟢EMS-335",
+				"📍-IPV4🟢EMS-336",
+				"📍-IPV4🟢EMS-337",
+				"📍-IPV4🟢EMS-338",
+				"📍-IPV4🟢EMS-339",
+				"📍-IPV4🟢EMS-340",
+				"📍-IPV4🟢EMS-341",
+				"📍-IPV4🟢EMS-342",
+				"📍-IPV4🟢EMS-343",
+				"📍-IPV4🟢EMS-344",
+				"📍-IPV4🟢EMS-345",
+				"📍-IPV4🟢EMS-346",
+				"📍-IPV4🟢EMS-347",
+				"📍-IPV4🟢EMS-348",
+				"📍-IPV4🟢EMS-349",
+				"📍-IPV4🟢EMS-350",
+				"📍-IPV4🟢EMS-351",
+				"📍-IPV4🟢EMS-352",
+				"📍-IPV4🟢EMS-353",
+				"📍-IPV4🟢EMS-354",
+				"📍-IPV4🟢EMS-355",
+				"📍-IPV4🟢EMS-356",
+				"📍-IPV4🟢EMS-357",
+				"📍-IPV4🟢EMS-358",
+				"📍-IPV4🟢EMS-359",
+				"📍-IPV4🟢EMS-360",
+				"📍-IPV4🟢EMS-361",
+				"📍-IPV4🟢EMS-362",
+				"📍-IPV4🟢EMS-363",
+				"📍-IPV4🟢EMS-364",
+				"📍-IPV4🟢EMS-365",
+				"📍-IPV4🟢EMS-366",
+				"📍-IPV4🟢EMS-367",
+				"📍-IPV4🟢EMS-368",
+				"📍-IPV4🟢EMS-369",
+				"📍-IPV4🟢EMS-370",
+				"📍-IPV4🟢EMS-371",
+				"📍-IPV4🟢EMS-372",
+				"📍-IPV4🟢EMS-373",
+				"📍-IPV4🟢EMS-374",
+				"📍-IPV4🟢EMS-375",
+				"📍-IPV4🟢EMS-376",
+				"📍-IPV4🟢EMS-377",
+				"📍-IPV4🟢EMS-378",
+				"📍-IPV4🟢EMS-379",
+				"📍-IPV4🟢EMS-380",
+				"📍-IPV4🟢EMS-381"
+			   ],
+       "interrupt_exist_connections": true
+    },
+    {
+      "type": "urltest",
+      "tag": "Best🔹️Latency",
+      "outbounds": [
+				"📍-IPV4🟢EMS-0",
+				"📍-IPV4🟢EMS-1",
+				"📍-IPV4🟢EMS-2",
+				"📍-IPV4🟢EMS-3",
+				"📍-IPV4🟢EMS-4",
+				"📍-IPV4🟢EMS-5",
+				"📍-IPV4🟢EMS-6",
+				"📍-IPV4🟢EMS-7",
+				"📍-IPV4🟢EMS-8",
+				"📍-IPV4🟢EMS-9",
+				"📍-IPV4🟢EMS-10",
+				"📍-IPV4🟢EMS-11",
+				"📍-IPV4🟢EMS-12",
+				"📍-IPV4🟢EMS-13",
+				"📍-IPV4🟢EMS-14",
+				"📍-IPV4🟢EMS-15",
+				"📍-IPV4🟢EMS-16",
+				"📍-IPV4🟢EMS-17",
+				"📍-IPV4🟢EMS-18",
+				"📍-IPV4🟢EMS-19",
+				"📍-IPV4🟢EMS-20",
+				"📍-IPV4🟢EMS-21",
+				"📍-IPV4🟢EMS-22",
+				"📍-IPV4🟢EMS-23",
+				"📍-IPV4🟢EMS-24",
+				"📍-IPV4🟢EMS-25",
+				"📍-IPV4🟢EMS-26",
+				"📍-IPV4🟢EMS-27",
+				"📍-IPV4🟢EMS-28",
+				"📍-IPV4🟢EMS-29",
+				"📍-IPV4🟢EMS-30",
+				"📍-IPV4🟢EMS-31",
+				"📍-IPV4🟢EMS-32",
+				"📍-IPV4🟢EMS-33",
+				"📍-IPV4🟢EMS-34",
+				"📍-IPV4🟢EMS-35",
+				"📍-IPV4🟢EMS-36",
+				"📍-IPV4🟢EMS-37",
+				"📍-IPV4🟢EMS-38",
+				"📍-IPV4🟢EMS-39",
+				"📍-IPV4🟢EMS-40",
+				"📍-IPV4🟢EMS-41",
+				"📍-IPV4🟢EMS-42",
+				"📍-IPV4🟢EMS-43",
+				"📍-IPV4🟢EMS-44",
+				"📍-IPV4🟢EMS-45",
+				"📍-IPV4🟢EMS-46",
+				"📍-IPV4🟢EMS-47",
+				"📍-IPV4🟢EMS-48",
+				"📍-IPV4🟢EMS-49",
+				"📍-IPV4🟢EMS-50",
+				"📍-IPV4🟢EMS-51",
+				"📍-IPV4🟢EMS-52",
+				"📍-IPV4🟢EMS-53",
+				"📍-IPV4🟢EMS-54",
+				"📍-IPV4🟢EMS-55",
+				"📍-IPV4🟢EMS-56",
+				"📍-IPV4🟢EMS-57",
+				"📍-IPV4🟢EMS-58",
+				"📍-IPV4🟢EMS-59",
+				"📍-IPV4🟢EMS-60",
+				"📍-IPV4🟢EMS-61",
+				"📍-IPV4🟢EMS-62",
+				"📍-IPV4🟢EMS-63",
+				"📍-IPV4🟢EMS-64",
+				"📍-IPV4🟢EMS-65",
+				"📍-IPV4🟢EMS-66",
+				"📍-IPV4🟢EMS-67",
+				"📍-IPV4🟢EMS-68",
+				"📍-IPV4🟢EMS-69",
+				"📍-IPV4🟢EMS-70",
+				"📍-IPV4🟢EMS-71",
+				"📍-IPV4🟢EMS-72",
+				"📍-IPV4🟢EMS-73",
+				"📍-IPV4🟢EMS-74",
+				"📍-IPV4🟢EMS-75",
+				"📍-IPV4🟢EMS-76",
+				"📍-IPV4🟢EMS-77",
+				"📍-IPV4🟢EMS-78",
+				"📍-IPV4🟢EMS-79",
+				"📍-IPV4🟢EMS-80",
+				"📍-IPV4🟢EMS-81",
+				"📍-IPV4🟢EMS-82",
+				"📍-IPV4🟢EMS-83",
+				"📍-IPV4🟢EMS-84",
+				"📍-IPV4🟢EMS-85",
+				"📍-IPV4🟢EMS-86",
+				"📍-IPV4🟢EMS-87",
+				"📍-IPV4🟢EMS-88",
+				"📍-IPV4🟢EMS-89",
+				"📍-IPV4🟢EMS-90",
+				"📍-IPV4🟢EMS-91",
+				"📍-IPV4🟢EMS-92",
+				"📍-IPV4🟢EMS-93",
+				"📍-IPV4🟢EMS-94",
+				"📍-IPV4🟢EMS-95",
+				"📍-IPV4🟢EMS-96",
+				"📍-IPV4🟢EMS-97",
+				"📍-IPV4🟢EMS-98",
+				"📍-IPV4🟢EMS-99",
+				"📍-IPV4🟢EMS-100",
+				"📍-IPV4🟢EMS-101",
+				"📍-IPV4🟢EMS-102",
+				"📍-IPV4🟢EMS-103",
+				"📍-IPV4🟢EMS-104",
+				"📍-IPV4🟢EMS-105",
+				"📍-IPV4🟢EMS-106",
+				"📍-IPV4🟢EMS-107",
+				"📍-IPV4🟢EMS-108",
+				"📍-IPV4🟢EMS-109",
+				"📍-IPV4🟢EMS-110",
+				"📍-IPV4🟢EMS-111",
+				"📍-IPV4🟢EMS-112",
+				"📍-IPV4🟢EMS-113",
+				"📍-IPV4🟢EMS-114",
+				"📍-IPV4🟢EMS-115",
+				"📍-IPV4🟢EMS-116",
+				"📍-IPV4🟢EMS-117",
+				"📍-IPV4🟢EMS-118",
+				"📍-IPV4🟢EMS-119",
+				"📍-IPV4🟢EMS-120",
+				"📍-IPV4🟢EMS-121",
+				"📍-IPV4🟢EMS-122",
+				"📍-IPV4🟢EMS-123",
+				"📍-IPV4🟢EMS-124",
+				"📍-IPV4🟢EMS-125",
+				"📍-IPV4🟢EMS-126",
+				"📍-IPV4🟢EMS-127",
+				"📍-IPV4🟢EMS-128",
+				"📍-IPV4🟢EMS-129",
+				"📍-IPV4🟢EMS-130",
+				"📍-IPV4🟢EMS-131",
+				"📍-IPV4🟢EMS-132",
+				"📍-IPV4🟢EMS-133",
+				"📍-IPV4🟢EMS-134",
+				"📍-IPV4🟢EMS-135",
+				"📍-IPV4🟢EMS-136",
+				"📍-IPV4🟢EMS-137",
+				"📍-IPV4🟢EMS-138",
+				"📍-IPV4🟢EMS-139",
+				"📍-IPV4🟢EMS-140",
+				"📍-IPV4🟢EMS-141",
+				"📍-IPV4🟢EMS-142",
+				"📍-IPV4🟢EMS-143",
+				"📍-IPV4🟢EMS-144",
+				"📍-IPV4🟢EMS-145",
+				"📍-IPV4🟢EMS-146",
+				"📍-IPV4🟢EMS-147",
+				"📍-IPV4🟢EMS-148",
+				"📍-IPV4🟢EMS-149",
+				"📍-IPV4🟢EMS-150",
+				"📍-IPV4🟢EMS-151",
+				"📍-IPV4🟢EMS-152",
+				"📍-IPV4🟢EMS-153",
+				"📍-IPV4🟢EMS-154",
+				"📍-IPV4🟢EMS-155",
+				"📍-IPV4🟢EMS-156",
+				"📍-IPV4🟢EMS-157",
+				"📍-IPV4🟢EMS-158",
+				"📍-IPV4🟢EMS-159",
+				"📍-IPV4🟢EMS-160",
+				"📍-IPV4🟢EMS-161",
+				"📍-IPV4🟢EMS-162",
+				"📍-IPV4🟢EMS-163",
+				"📍-IPV4🟢EMS-164",
+				"📍-IPV4🟢EMS-165",
+				"📍-IPV4🟢EMS-166",
+				"📍-IPV4🟢EMS-167",
+				"📍-IPV4🟢EMS-168",
+				"📍-IPV4🟢EMS-169",
+				"📍-IPV4🟢EMS-170",
+				"📍-IPV4🟢EMS-171",
+				"📍-IPV4🟢EMS-172",
+				"📍-IPV4🟢EMS-173",
+				"📍-IPV4🟢EMS-174",
+				"📍-IPV4🟢EMS-175",
+				"📍-IPV4🟢EMS-176",
+				"📍-IPV4🟢EMS-177",
+				"📍-IPV4🟢EMS-178",
+				"📍-IPV4🟢EMS-179",
+				"📍-IPV4🟢EMS-180",
+				"📍-IPV4🟢EMS-181",
+				"📍-IPV4🟢EMS-182",
+				"📍-IPV4🟢EMS-183",
+				"📍-IPV4🟢EMS-184",
+				"📍-IPV4🟢EMS-185",
+				"📍-IPV4🟢EMS-186",
+				"📍-IPV4🟢EMS-187",
+				"📍-IPV4🟢EMS-188",
+				"📍-IPV4🟢EMS-189",
+				"📍-IPV4🟢EMS-190",
+				"📍-IPV4🟢EMS-191",
+				"📍-IPV4🟢EMS-192",
+				"📍-IPV4🟢EMS-193",
+				"📍-IPV4🟢EMS-194",
+				"📍-IPV4🟢EMS-195",
+				"📍-IPV4🟢EMS-196",
+				"📍-IPV4🟢EMS-197",
+				"📍-IPV4🟢EMS-198",
+				"📍-IPV4🟢EMS-199",
+				"📍-IPV4🟢EMS-200",
+				"📍-IPV4🟢EMS-201",
+				"📍-IPV4🟢EMS-202",
+				"📍-IPV4🟢EMS-203",
+				"📍-IPV4🟢EMS-204",
+				"📍-IPV4🟢EMS-205",
+				"📍-IPV4🟢EMS-206",
+				"📍-IPV4🟢EMS-207",
+				"📍-IPV4🟢EMS-208",
+				"📍-IPV4🟢EMS-209",
+				"📍-IPV4🟢EMS-210",
+				"📍-IPV4🟢EMS-211",
+				"📍-IPV4🟢EMS-212",
+				"📍-IPV4🟢EMS-213",
+				"📍-IPV4🟢EMS-214",
+				"📍-IPV4🟢EMS-215",
+				"📍-IPV4🟢EMS-216",
+				"📍-IPV4🟢EMS-217",
+				"📍-IPV4🟢EMS-218",
+				"📍-IPV4🟢EMS-219",
+				"📍-IPV4🟢EMS-220",
+				"📍-IPV4🟢EMS-221",
+				"📍-IPV4🟢EMS-222",
+				"📍-IPV4🟢EMS-223",
+				"📍-IPV4🟢EMS-224",
+				"📍-IPV4🟢EMS-225",
+				"📍-IPV4🟢EMS-226",
+				"📍-IPV4🟢EMS-227",
+				"📍-IPV4🟢EMS-228",
+				"📍-IPV4🟢EMS-229",
+				"📍-IPV4🟢EMS-230",
+				"📍-IPV4🟢EMS-231",
+				"📍-IPV4🟢EMS-232",
+				"📍-IPV4🟢EMS-233",
+				"📍-IPV4🟢EMS-234",
+				"📍-IPV4🟢EMS-235",
+				"📍-IPV4🟢EMS-236",
+				"📍-IPV4🟢EMS-237",
+				"📍-IPV4🟢EMS-238",
+				"📍-IPV4🟢EMS-239",
+				"📍-IPV4🟢EMS-240",
+				"📍-IPV4🟢EMS-241",
+				"📍-IPV4🟢EMS-242",
+				"📍-IPV4🟢EMS-243",
+				"📍-IPV4🟢EMS-244",
+				"📍-IPV4🟢EMS-245",
+				"📍-IPV4🟢EMS-246",
+				"📍-IPV4🟢EMS-247",
+				"📍-IPV4🟢EMS-248",
+				"📍-IPV4🟢EMS-249",
+				"📍-IPV4🟢EMS-250",
+				"📍-IPV4🟢EMS-251",
+				"📍-IPV4🟢EMS-252",
+				"📍-IPV4🟢EMS-253",
+				"📍-IPV4🟢EMS-254",
+				"📍-IPV4🟢EMS-255",
+				"📍-IPV4🟢EMS-256",
+				"📍-IPV4🟢EMS-257",
+				"📍-IPV4🟢EMS-258",
+				"📍-IPV4🟢EMS-259",
+				"📍-IPV4🟢EMS-260",
+				"📍-IPV4🟢EMS-261",
+				"📍-IPV4🟢EMS-262",
+				"📍-IPV4🟢EMS-263",
+				"📍-IPV4🟢EMS-264",
+				"📍-IPV4🟢EMS-265",
+				"📍-IPV4🟢EMS-266",
+				"📍-IPV4🟢EMS-267",
+				"📍-IPV4🟢EMS-268",
+				"📍-IPV4🟢EMS-269",
+				"📍-IPV4🟢EMS-270",
+				"📍-IPV4🟢EMS-271",
+				"📍-IPV4🟢EMS-272",
+				"📍-IPV4🟢EMS-273",
+				"📍-IPV4🟢EMS-274",
+				"📍-IPV4🟢EMS-275",
+				"📍-IPV4🟢EMS-276",
+				"📍-IPV4🟢EMS-277",
+				"📍-IPV4🟢EMS-278",
+				"📍-IPV4🟢EMS-279",
+				"📍-IPV4🟢EMS-280",
+				"📍-IPV4🟢EMS-281",
+				"📍-IPV4🟢EMS-282",
+				"📍-IPV4🟢EMS-283",
+				"📍-IPV4🟢EMS-284",
+				"📍-IPV4🟢EMS-285",
+				"📍-IPV4🟢EMS-286",
+				"📍-IPV4🟢EMS-287",
+				"📍-IPV4🟢EMS-288",
+				"📍-IPV4🟢EMS-289",
+				"📍-IPV4🟢EMS-290",
+				"📍-IPV4🟢EMS-291",
+				"📍-IPV4🟢EMS-292",
+				"📍-IPV4🟢EMS-293",
+				"📍-IPV4🟢EMS-294",
+				"📍-IPV4🟢EMS-295",
+				"📍-IPV4🟢EMS-296",
+				"📍-IPV4🟢EMS-297",
+				"📍-IPV4🟢EMS-298",
+				"📍-IPV4🟢EMS-299",
+				"📍-IPV4🟢EMS-300",
+				"📍-IPV4🟢EMS-301",
+				"📍-IPV4🟢EMS-302",
+				"📍-IPV4🟢EMS-303",
+				"📍-IPV4🟢EMS-304",
+				"📍-IPV4🟢EMS-305",
+				"📍-IPV4🟢EMS-306",
+				"📍-IPV4🟢EMS-307",
+				"📍-IPV4🟢EMS-308",
+				"📍-IPV4🟢EMS-309",
+				"📍-IPV4🟢EMS-310",
+				"📍-IPV4🟢EMS-311",
+				"📍-IPV4🟢EMS-312",
+				"📍-IPV4🟢EMS-313",
+				"📍-IPV4🟢EMS-314",
+				"📍-IPV4🟢EMS-315",
+				"📍-IPV4🟢EMS-316",
+				"📍-IPV4🟢EMS-317",
+				"📍-IPV4🟢EMS-318",
+				"📍-IPV4🟢EMS-319",
+				"📍-IPV4🟢EMS-320",
+				"📍-IPV4🟢EMS-321",
+				"📍-IPV4🟢EMS-322",
+				"📍-IPV4🟢EMS-323",
+				"📍-IPV4🟢EMS-324",
+				"📍-IPV4🟢EMS-325",
+				"📍-IPV4🟢EMS-326",
+				"📍-IPV4🟢EMS-327",
+				"📍-IPV4🟢EMS-328",
+				"📍-IPV4🟢EMS-329",
+				"📍-IPV4🟢EMS-330",
+				"📍-IPV4🟢EMS-331",
+				"📍-IPV4🟢EMS-332",
+				"📍-IPV4🟢EMS-333",
+				"📍-IPV4🟢EMS-334",
+				"📍-IPV4🟢EMS-335",
+				"📍-IPV4🟢EMS-336",
+				"📍-IPV4🟢EMS-337",
+				"📍-IPV4🟢EMS-338",
+				"📍-IPV4🟢EMS-339",
+				"📍-IPV4🟢EMS-340",
+				"📍-IPV4🟢EMS-341",
+				"📍-IPV4🟢EMS-342",
+				"📍-IPV4🟢EMS-343",
+				"📍-IPV4🟢EMS-344",
+				"📍-IPV4🟢EMS-345",
+				"📍-IPV4🟢EMS-346",
+				"📍-IPV4🟢EMS-347",
+				"📍-IPV4🟢EMS-348",
+				"📍-IPV4🟢EMS-349",
+				"📍-IPV4🟢EMS-350",
+				"📍-IPV4🟢EMS-351",
+				"📍-IPV4🟢EMS-352",
+				"📍-IPV4🟢EMS-353",
+				"📍-IPV4🟢EMS-354",
+				"📍-IPV4🟢EMS-355",
+				"📍-IPV4🟢EMS-356",
+				"📍-IPV4🟢EMS-357",
+				"📍-IPV4🟢EMS-358",
+				"📍-IPV4🟢EMS-359",
+				"📍-IPV4🟢EMS-360",
+				"📍-IPV4🟢EMS-361",
+				"📍-IPV4🟢EMS-362",
+				"📍-IPV4🟢EMS-363",
+				"📍-IPV4🟢EMS-364",
+				"📍-IPV4🟢EMS-365",
+				"📍-IPV4🟢EMS-366",
+				"📍-IPV4🟢EMS-367",
+				"📍-IPV4🟢EMS-368",
+				"📍-IPV4🟢EMS-369",
+				"📍-IPV4🟢EMS-370",
+				"📍-IPV4🟢EMS-371",
+				"📍-IPV4🟢EMS-372",
+				"📍-IPV4🟢EMS-373",
+				"📍-IPV4🟢EMS-374",
+				"📍-IPV4🟢EMS-375",
+				"📍-IPV4🟢EMS-376",
+				"📍-IPV4🟢EMS-377",
+				"📍-IPV4🟢EMS-378",
+				"📍-IPV4🟢EMS-379",
+				"📍-IPV4🟢EMS-380",
+				"📍-IPV4🟢EMS-381"
+			],
+			"url": "https://detectportal.firefox.com/success.txt",
+			"interval": "5m0s",
+			"tolerance": 50
+		},
+		{
+			"type": "direct",
+			"tag": "direct"
+		},
+		{
+			"type": "block",
+			"tag": "block"
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-0",
+			"server": "66.111.61.161",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-1",
+			"domain_strategy": "ipv4_only",
+			"server": "193.9.32.3",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-2",
+			"domain_strategy": "ipv4_only",
+			"server": "185.81.125.67",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-3",
+			"domain_strategy": "ipv4_only",
+			"server": "185.150.10.208",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-4",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.249.65",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-5",
+			"domain_strategy": "ipv4_only",
+			"server": "85.190.239.114",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-6",
+			"domain_strategy": "ipv4_only",
+			"server": "45.74.55.252",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-7",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.47",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-8",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.210.228",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-9",
+			"domain_strategy": "ipv4_only",
+			"server": "85.190.239.114",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-10",
+			"domain_strategy": "ipv4_only",
+			"server": "85.190.239.114",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-11",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.236",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-12",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.235",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-13",
+			"domain_strategy": "ipv4_only",
+			"server": "45.87.212.202",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-14",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.250",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-15",
+			"domain_strategy": "ipv4_only",
+			"server": "107.175.196.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-16",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.199",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-17",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.101",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-18",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.207",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-19",
+			"domain_strategy": "ipv4_only",
+			"server": "107.175.196.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-20",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.181.250",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-21",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.243.23",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-22",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.103",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-23",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.50",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-24",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-25",
+			"domain_strategy": "ipv4_only",
+			"server": "185.81.125.67",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-26",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.51",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-27",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.107",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-28",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.31.8",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-29",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.106",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-30",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.123.84",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-31",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.20",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-32",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.105",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-33",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.108",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-34",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.240",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-35",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.51",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-36",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.251.21",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-37",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.104",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-38",
+			"domain_strategy": "ipv4_only",
+			"server": "91.99.216.137",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-39",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.222.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-40",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.238.165",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-41",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.181.250",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-42",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-43",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.41",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-44",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.196",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-45",
+			"domain_strategy": "ipv4_only",
+			"server": "185.81.125.67",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-46",
+			"domain_strategy": "ipv4_only",
+			"server": "217.138.217.83",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-47",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.213",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-48",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.19.19",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-49",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-50",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-51",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.217.196",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-52",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-53",
+			"domain_strategy": "ipv4_only",
+			"server": "95.153.32.118",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-54",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.241",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-55",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.38",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-56",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-57",
+			"domain_strategy": "ipv4_only",
+			"server": "85.208.3.116",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-58",
+			"domain_strategy": "ipv4_only",
+			"server": "194.233.96.24",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-59",
+			"domain_strategy": "ipv4_only",
+			"server": "37.19.217.82",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-60",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-61",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.21",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-62",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-63",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.140.229",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-64",
+			"domain_strategy": "ipv4_only",
+			"server": "194.233.96.24",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-65",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.122",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-66",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-67",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.212",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-68",
+			"domain_strategy": "ipv4_only",
+			"server": "206.123.159.20",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-69",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.215.109",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-70",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-71",
+			"domain_strategy": "ipv4_only",
+			"server": "45.250.255.25",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-72",
+			"domain_strategy": "ipv4_only",
+			"server": "108.181.52.147",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-73",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.240",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-74",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.211",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-75",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.209",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-76",
+			"domain_strategy": "ipv4_only",
+			"server": "9.249.65.213",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-77",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.242",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-78",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.26",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-79",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-80",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.112.120",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-81",
+			"domain_strategy": "ipv4_only",
+			"server": "194.233.96.24",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-82",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.44.138",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-83",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.243",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-84",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.195",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-85",
+			"domain_strategy": "ipv4_only",
+			"server": "203.17.245.213",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-86",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.170.59",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-87",
+			"domain_strategy": "ipv4_only",
+			"server": "103.76.164.182",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-88",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.244",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-89",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-90",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.245",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-91",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-92",
+			"domain_strategy": "ipv4_only",
+			"server": "203.27.106.83",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-93",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.244.53",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-94",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.246",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-95",
+			"domain_strategy": "ipv4_only",
+			"server": "91.228.216.121",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-96",
+			"domain_strategy": "ipv4_only",
+			"server": "217.148.140.150",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-97",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.195",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-98",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.44.138",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-99",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.239",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-100",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.126.54",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-101",
+			"domain_strategy": "ipv4_only",
+			"server": "81.17.123.114",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-102",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.117",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-103",
+			"domain_strategy": "ipv4_only",
+			"server": "203.23.179.22",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-104",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-105",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.199.180",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-106",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.28",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-107",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.222.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-108",
+			"domain_strategy": "ipv4_only",
+			"server": "81.17.123.114",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-109",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.199",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-110",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-111",
+			"domain_strategy": "ipv4_only",
+			"server": "188.72.101.12",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-112",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-113",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.142.85",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-114",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.248",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-115",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.247",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-116",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-117",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.30.182",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-118",
+			"domain_strategy": "ipv4_only",
+			"server": "185.104.184.74",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-119",
+			"domain_strategy": "ipv4_only",
+			"server": "192.3.53.243",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-120",
+			"domain_strategy": "ipv4_only",
+			"server": "45.12.131.23",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-121",
+			"domain_strategy": "ipv4_only",
+			"server": "217.138.217.83",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-122",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.18.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-123",
+			"domain_strategy": "ipv4_only",
+			"server": "64.31.3.117",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-124",
+			"domain_strategy": "ipv4_only",
+			"server": "107.175.196.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-125",
+			"domain_strategy": "ipv4_only",
+			"server": "45.9.15.60",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-126",
+			"domain_strategy": "ipv4_only",
+			"server": "195.181.171.53",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-127",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.140.229",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-128",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.44.138",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-129",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.49.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-130",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.49.163",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-131",
+			"domain_strategy": "ipv4_only",
+			"server": "143.244.47.59",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-132",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-133",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.205.98",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-134",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.43.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-135",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.142.85",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-136",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.42.210",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-137",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.25.228",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-138",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.35.73",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-139",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.76.150",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-140",
+			"domain_strategy": "ipv4_only",
+			"server": "45.83.22.185",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-141",
+			"domain_strategy": "ipv4_only",
+			"server": "45.83.22.151",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-142",
+			"domain_strategy": "ipv4_only",
+			"server": "37.221.173.247",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-143",
+			"domain_strategy": "ipv4_only",
+			"server": "171.22.131.235",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-144",
+			"domain_strategy": "ipv4_only",
+			"server": "140.99.237.101",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-145",
+			"domain_strategy": "ipv4_only",
+			"server": "64.31.20.3",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-146",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.215.55",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-147",
+			"domain_strategy": "ipv4_only",
+			"server": "185.220.69.117",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-148",
+			"domain_strategy": "ipv4_only",
+			"server": "37.120.138.3",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-149",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.21",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-150",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-151",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.51.50",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-152",
+			"domain_strategy": "ipv4_only",
+			"server": "171.22.108.204",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-153",
+			"domain_strategy": "ipv4_only",
+			"server": "64.94.215.46",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-154",
+			"domain_strategy": "ipv4_only",
+			"server": "69.25.114.247",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-155",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.46.89",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-156",
+			"domain_strategy": "ipv4_only",
+			"server": "92.118.232.253",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-157",
+			"domain_strategy": "ipv4_only",
+			"server": "213.59.122.151",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-158",
+			"domain_strategy": "ipv4_only",
+			"server": "67.213.219.209",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-159",
+			"domain_strategy": "ipv4_only",
+			"server": "67.213.219.232",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-160",
+			"domain_strategy": "ipv4_only",
+			"server": "45.83.149.28",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-161",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.212.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-162",
+			"domain_strategy": "ipv4_only",
+			"server": "217.148.140.150",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-163",
+			"domain_strategy": "ipv4_only",
+			"server": "194.37.96.247",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-164",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.121.186",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-165",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.181.250",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-166",
+			"domain_strategy": "ipv4_only",
+			"server": "91.90.121.147",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-167",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.106.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-168",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.58.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-169",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.112.120",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-170",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.112.194",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-171",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.31.27",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-172",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.31.8",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-173",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.48.59",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-174",
+			"domain_strategy": "ipv4_only",
+			"server": "209.127.27.62",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-175",
+			"domain_strategy": "ipv4_only",
+			"server": "38.74.14.215",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-176",
+			"domain_strategy": "ipv4_only",
+			"server": "91.99.216.137",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-177",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.249.72",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-178",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.98.130",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-179",
+			"domain_strategy": "ipv4_only",
+			"server": "104.193.135.38",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-180",
+			"domain_strategy": "ipv4_only",
+			"server": "185.232.23.118",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-181",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.23.180",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-182",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.89.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-183",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.23.84",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-184",
+			"domain_strategy": "ipv4_only",
+			"server": "203.23.179.35",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-185",
+			"domain_strategy": "ipv4_only",
+			"server": "203.23.179.22",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-186",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.38.59",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-187",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.252.35",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-188",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.252.80",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-189",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.19.19",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-190",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.102.66",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-191",
+			"domain_strategy": "ipv4_only",
+			"server": "37.46.122.103",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-192",
+			"domain_strategy": "ipv4_only",
+			"server": "185.2.30.246",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-193",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.48.180",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-194",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.26.20",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-195",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.70.217",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-196",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.244.245",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-197",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.55.216",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-198",
+			"domain_strategy": "ipv4_only",
+			"server": "169.150.208.130",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-199",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.117",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-200",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.239.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-201",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.239.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-202",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.195",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-203",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.126.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-204",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.126.86",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-205",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.238.165",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-206",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.87.62",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-207",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.245",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-208",
+			"domain_strategy": "ipv4_only",
+			"server": "31.192.108.245",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-209",
+			"domain_strategy": "ipv4_only",
+			"server": "91.210.106.190",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-210",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.126.54",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-211",
+			"domain_strategy": "ipv4_only",
+			"server": "194.110.114.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-212",
+			"domain_strategy": "ipv4_only",
+			"server": "103.46.140.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-213",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.106",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-214",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.84.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-215",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.103",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-216",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.67.195",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-217",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.211.73",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-218",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.60.122",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-219",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.243.14",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-220",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-221",
+			"domain_strategy": "ipv4_only",
+			"server": "103.107.199.180",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-222",
+			"domain_strategy": "ipv4_only",
+			"server": "203.27.106.91",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-223",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.241.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-224",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.49",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-225",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.212",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-226",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.228.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-227",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.107",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-228",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.231.14",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-229",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.240",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-230",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.229.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-231",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.108",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-232",
+			"domain_strategy": "ipv4_only",
+			"server": "185.153.151.105",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-233",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.209",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-234",
+			"domain_strategy": "ipv4_only",
+			"server": "27.50.74.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-235",
+			"domain_strategy": "ipv4_only",
+			"server": "43.250.205.152",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-236",
+			"domain_strategy": "ipv4_only",
+			"server": "43.250.205.19",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-237",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-238",
+			"domain_strategy": "ipv4_only",
+			"server": "103.1.215.195",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-239",
+			"domain_strategy": "ipv4_only",
+			"server": "223.252.60.106",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-240",
+			"domain_strategy": "ipv4_only",
+			"server": "27.50.76.165",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-241",
+			"domain_strategy": "ipv4_only",
+			"server": "91.242.215.121",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-242",
+			"domain_strategy": "ipv4_only",
+			"server": "81.17.123.114",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-243",
+			"domain_strategy": "ipv4_only",
+			"server": "45.136.155.21",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-244",
+			"domain_strategy": "ipv4_only",
+			"server": "45.136.155.162",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-245",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.253.123",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-246",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.199",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-247",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.125.37",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-248",
+			"domain_strategy": "ipv4_only",
+			"server": "37.19.217.82",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-249",
+			"domain_strategy": "ipv4_only",
+			"server": "37.19.217.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-250",
+			"domain_strategy": "ipv4_only",
+			"server": "156.146.63.69",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-251",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.251.21",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-252",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.120.86",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-253",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.122",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-254",
+			"domain_strategy": "ipv4_only",
+			"server": "45.74.55.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-255",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.241",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-256",
+			"domain_strategy": "ipv4_only",
+			"server": "213.21.215.178",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-257",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.213",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-258",
+			"domain_strategy": "ipv4_only",
+			"server": "188.72.101.12",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-259",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.62.3",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-260",
+			"domain_strategy": "ipv4_only",
+			"server": "103.109.103.118",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-261",
+			"domain_strategy": "ipv4_only",
+			"server": "103.109.103.99",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-262",
+			"domain_strategy": "ipv4_only",
+			"server": "194.233.96.24",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-263",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.109.190",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-264",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.54.204",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-265",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.215.109",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-266",
+			"domain_strategy": "ipv4_only",
+			"server": "185.94.192.150",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-267",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.206",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-268",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.20",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-269",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.30.182",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-270",
+			"domain_strategy": "ipv4_only",
+			"server": "104.250.176.10",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-271",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.41",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-272",
+			"domain_strategy": "ipv4_only",
+			"server": "85.190.238.27",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-273",
+			"domain_strategy": "ipv4_only",
+			"server": "85.190.238.27",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-274",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.112",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-275",
+			"domain_strategy": "ipv4_only",
+			"server": "108.181.52.147",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-276",
+			"domain_strategy": "ipv4_only",
+			"server": "108.181.50.190",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-277",
+			"domain_strategy": "ipv4_only",
+			"server": "108.181.50.166",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-278",
+			"domain_strategy": "ipv4_only",
+			"server": "45.250.255.25",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-279",
+			"domain_strategy": "ipv4_only",
+			"server": "199.254.199.163",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-280",
+			"domain_strategy": "ipv4_only",
+			"server": "",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-281",
+			"domain_strategy": "ipv4_only",
+			"server": "203.209.219.55",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-282",
+			"domain_strategy": "ipv4_only",
+			"server": "149.88.99.251",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-283",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.41.46",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-284",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.50",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-285",
+			"domain_strategy": "ipv4_only",
+			"server": "149.102.244.53",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-286",
+			"domain_strategy": "ipv4_only",
+			"server": "194.110.114.118",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-287",
+			"domain_strategy": "ipv4_only",
+			"server": "87.249.135.117",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-288",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.213",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-289",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.55.150",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-290",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.123.84",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-291",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.123.116",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-292",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.27.115",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-293",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.27.86",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-294",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.89.60",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-295",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.217.196",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-296",
+			"domain_strategy": "ipv4_only",
+			"server": "149.50.217.195",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-297",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.103.158",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-298",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.170.59",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-299",
+			"domain_strategy": "ipv4_only",
+			"server": "45.84.121.142",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-300",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.247",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-301",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.60.121",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-302",
+			"domain_strategy": "ipv4_only",
+			"server": "203.27.106.83",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-303",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.38",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-304",
+			"domain_strategy": "ipv4_only",
+			"server": "45.134.213.38",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-305",
+			"domain_strategy": "ipv4_only",
+			"server": "85.208.3.184",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-306",
+			"domain_strategy": "ipv4_only",
+			"server": "85.208.3.122",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-307",
+			"domain_strategy": "ipv4_only",
+			"server": "185.108.107.122",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-308",
+			"domain_strategy": "ipv4_only",
+			"server": "46.166.172.171",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-309",
+			"domain_strategy": "ipv4_only",
+			"server": "46.166.163.67",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-310",
+			"domain_strategy": "ipv4_only",
+			"server": "85.206.163.208",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-311",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.211",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-312",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-313",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-314",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.52.227",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-315",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.28",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-316",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.34.213",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-317",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.234",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-318",
+			"domain_strategy": "ipv4_only",
+			"server": "31.171.155.214",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-319",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.207",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-320",
+			"domain_strategy": "ipv4_only",
+			"server": "185.174.159.190",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-321",
+			"domain_strategy": "ipv4_only",
+			"server": "95.153.32.118",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-322",
+			"domain_strategy": "ipv4_only",
+			"server": "178.175.130.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-323",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.123",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-324",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.26",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-325",
+			"domain_strategy": "ipv4_only",
+			"server": "84.247.49.221",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-326",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.253.121",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-327",
+			"domain_strategy": "ipv4_only",
+			"server": "194.150.167.132",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-328",
+			"domain_strategy": "ipv4_only",
+			"server": "212.103.50.205",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-329",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.21",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-330",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.253.85",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-331",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.253.93",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-332",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.109",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-333",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.197",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-334",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.94.62",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-335",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.244",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-336",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.226.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-337",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.105",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-338",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.239",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-339",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.111.150",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-340",
+			"domain_strategy": "ipv4_only",
+			"server": "206.123.130.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-341",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.242",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-342",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.155.60",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-343",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.155.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-344",
+			"domain_strategy": "ipv4_only",
+			"server": "89.249.65.206",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-345",
+			"domain_strategy": "ipv4_only",
+			"server": "37.120.192.6",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-346",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.243",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-347",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.20.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-348",
+			"domain_strategy": "ipv4_only",
+			"server": "146.70.33.104",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-349",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.183.14",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-350",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.51",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-351",
+			"domain_strategy": "ipv4_only",
+			"server": "104.250.183.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-352",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.246",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-353",
+			"domain_strategy": "ipv4_only",
+			"server": "185.92.210.43",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-354",
+			"domain_strategy": "ipv4_only",
+			"server": "185.92.210.44",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-355",
+			"domain_strategy": "ipv4_only",
+			"server": "91.228.216.121",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-356",
+			"domain_strategy": "ipv4_only",
+			"server": "104.243.253.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-357",
+			"domain_strategy": "ipv4_only",
+			"server": "185.253.96.248",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-358",
+			"domain_strategy": "ipv4_only",
+			"server": "45.74.48.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-359",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.107.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-360",
+			"domain_strategy": "ipv4_only",
+			"server": "45.74.17.3",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-361",
+			"domain_strategy": "ipv4_only",
+			"server": "199.71.214.6",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-362",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.4",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-363",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.33.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-364",
+			"domain_strategy": "ipv4_only",
+			"server": "172.111.211.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-365",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.16.1",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-366",
+			"domain_strategy": "ipv4_only",
+			"server": "154.47.24.245",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-367",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.23.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-368",
+			"domain_strategy": "ipv4_only",
+			"server": "172.94.13.1",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-369",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.252.102",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-370",
+			"domain_strategy": "ipv4_only",
+			"server": "149.34.252.94",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-371",
+			"domain_strategy": "ipv4_only",
+			"server": "5.254.70.178",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-372",
+			"domain_strategy": "ipv4_only",
+			"server": "172.83.45.18",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-373",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.59.108",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-374",
+			"domain_strategy": "ipv4_only",
+			"server": "46.102.153.146",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-375",
+			"domain_strategy": "ipv4_only",
+			"server": "85.190.232.156",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-376",
+			"domain_strategy": "ipv4_only",
+			"server": "138.199.43.2",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-377",
+			"domain_strategy": "ipv4_only",
+			"server": "35.183.215.163",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-378",
+			"domain_strategy": "ipv4_only",
+			"server": "89.238.150.30",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-379",
+			"domain_strategy": "ipv4_only",
+			"server": "149.40.51.5",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-380",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.44",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "http",
+			"tag": "📍-IPV4🟢EMS-381",
+			"domain_strategy": "ipv4_only",
+			"server": "91.132.137.45",
+			"server_port": 90,
+			"username": "purevpn0s12300644",
+			"password": "ioqn613v",
+			"tls": {
+				"enabled": true,
+				"server_name": "ieee.org",
+				"insecure": true,
+				"alpn": "h2,http/1.1"
+			},
+			"headers": {
+				"Host": "stream.meet.google.com"
+			}
+		},
+		{
+			"type": "direct",
+			"tag": "Direct"
+		}
+	],
+	"route": {
+		"rules": [
+			{
+				"inbound": "tun-in",
+				"action": "sniff"
+			},
+			{
+				"protocol": "dns",
+				"action": "hijack-dns"
+			},
+			{
+				"clash_mode": "Global",
+				"outbound": "Internet"
+			},
+			{
+				"clash_mode": "Direct",
+				"outbound": "DIRECT"
+			},
+			{
+				"protocol": "dns",
+				"outbound": "dns-out"
+			},
+			{
+				"network": "tcp",
+				"port": [
+					853,
+					433
+				],
+				"action": "reject"
+			},
+			{
+				"port": 443,
+				"action": "reject"
+			},
+			{
+				"action": "reject"
+			},
+			{
+				"inbound": "tun-in",
+				"action": "resolve"
+			},
+			{
+				"ip_cidr": "10.10.34.0/24",
+				"outbound": "direct"
+			},
+			{
+				"ip_is_private": true,
+				"outbound": "direct"
+			}
+		],
+		"final": "Internet",
+		"auto_detect_interface": true
+	},
+	"experimental": {
+		"cache_file": {
+			"enabled": true
+		},
+		"clash_api": {
+			"external_controller": "127.0.0.1:1234",
+			"default_mode": "Rule",
+			"access_control_allow_origin": "https://yacd.metacubex.one",
+			"access_control_allow_private_network": true
+		}
+	}
+}
+
+
+
+
+
+
+
